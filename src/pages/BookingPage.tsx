@@ -85,6 +85,10 @@ export default function BookingPage() {
     } else {
       // Sandbox mode: Realistic simulation
       setTimeout(() => {
+        console.group('%c BIM Earth Developer Sandbox ', 'background: #10b981; color: #fff; padding: 4px; font-weight: bold; border-radius: 4px;');
+        console.warn('EmailJS environment variables (VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY) are not set in the Secrets Panel.');
+        console.info('Simulated submission payload targeted to dr.ajithkumargp@gmail.com:', emailParams);
+        console.groupEnd();
         setLoading(false);
         setStatus('success');
         setIsSandbox(true);
@@ -123,40 +127,6 @@ export default function BookingPage() {
               <p className="text-xs sm:text-sm leading-relaxed font-light">
                 Thank you for scheduling. Our project desk will review your engineering parameters and send a Calendar Invitation along with access credentials directly to your email within 1 business hour.
               </p>
-
-              {/* Developer Sandbox Log */}
-              {isSandbox && (
-                <div className="mt-4 p-5 rounded-2xl bg-navy-950/80 backdrop-blur-md text-slate-300 border border-white/10 font-mono text-xs flex flex-col gap-3">
-                  <div className="flex items-center justify-between border-b border-white/10 pb-2 text-accent-blue">
-                    <span className="flex items-center gap-2">
-                      <Terminal size={14} />
-                      <span>DEVELOPER SANDBOX LOG</span>
-                    </span>
-                    <span className="text-[10px] bg-accent-blue/15 px-2 py-0.5 rounded uppercase font-bold text-accent-blue">Keys Not Found</span>
-                  </div>
-                  <p className="text-slate-400 text-[11px] leading-relaxed">
-                    Note: EmailJS variables are missing in your environment. The form simulated a successful run and would have transmitted this payload to <span className="text-white">dr.ajithkumargp@gmail.com</span>:
-                  </p>
-                  <pre className="bg-navy-900/60 p-3 rounded-lg overflow-x-auto text-[11px] text-white border border-white/5">
-{JSON.stringify({
-  from_name: "Client Name",
-  from_email: "client@company.com",
-  phone: "Preferred Phone",
-  company: "Client Corporate",
-  service: formData.service || "BIM Coordination",
-  preferred_date: formData.preferredDate || "2026-07-15",
-  preferred_time: formData.preferredTime || "10:00 AM",
-  to_email: "dr.ajithkumargp@gmail.com"
-}, null, 2)}
-                  </pre>
-                  <div className="text-[10px] text-slate-500 border-t border-white/5 pt-2 leading-relaxed">
-                    To enable real emails, define: <br />
-                    - <span className="text-accent-blue">VITE_EMAILJS_SERVICE_ID</span> <br />
-                    - <span className="text-accent-blue">VITE_EMAILJS_TEMPLATE_ID</span> <br />
-                    - <span className="text-accent-blue">VITE_EMAILJS_PUBLIC_KEY</span> inside your Secrets Panel.
-                  </div>
-                </div>
-              )}
             </motion.div>
           )}
         </AnimatePresence>
