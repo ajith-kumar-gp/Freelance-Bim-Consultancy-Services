@@ -1,0 +1,49 @@
+{
+  "history": "Founded with a vision to revolutionize the design-and-build paradigm, BIM Earth Consultancy started as a boutique engineering group specializing in 3D clash-detection. Recognizing that the future of AEC (Architecture, Engineering, and Construction) lies in digital twins and highly synchronized coordination, we integrated sustainable Architecture and high-concept Interior Design directly with native Building Information Modeling. Today, we serve premium developers, government agencies, and corporate clients globally as a trusted multi-disciplinary consultancy, driving cost reductions of up to 18% and shortening design cycles by 30%.",
+  "vision": "To be the global benchmark for carbon-conscious, digitally native architectural design and engineering, where virtual construction precision meets breathtaking aesthetics to shape a more resilient Earth.",
+  "text": "vision",
+  "mission": "To empower developers and asset managers by delivering high-fidelity architectural models, luxury interiors, and hyper-accurate MEP and Structural BIM coordination. We ensure zero field errors, optimized asset lifecycles, and timeless design beauty.",
+  "valuesIntro": "Our work is anchored on five core pillars that govern our decisions, code of conduct, and project delivery.",
+  "values": [
+    "Precision First: Absolute dimensional accuracy from draft to delivery.",
+    "Sustainable Stewardship: Designing for carbon-reduction and material efficiency.",
+    "Digital Integration: True lifecycle modeling where data drives design.",
+    "Aesthetic Luxury: Uncompromising beauty and human-centric spaces.",
+    "Uncompromising Integrity: Transparent consulting, client advocacy, and absolute reliability."
+  ],
+  "milestones": [
+    {
+      "year": "2012",
+      "title": "Establishment",
+      "description": "BIM Earth is established with a focus on structural clash detection and MEP validation in high-rise buildings."
+    },
+    {
+      "year": "2015",
+      "title": "Architecture Division Launch",
+      "description": "We expand our roster to offer full-service, carbon-efficient architectural concepts integrated directly with BIM Level 2 protocols."
+    },
+    {
+      "year": "2018",
+      "title": "International Expansion",
+      "description": "Opened global liaison offices, taking on major commercial projects and airport infrastructure modeling across North America and Southeast Asia."
+    },
+    {
+      "year": "2021",
+      "title": "Luxury Interiors & Virtual Reality Integration",
+      "description": "Introduced ultra-high-end Interior Design coupled with fully immersive VR walkthroughs mapped directly from our BIM databases."
+    },
+    {
+      "year": "2025",
+      "title": "AI & Digital Twin Leadership",
+      "description": "Pioneered automated generative design scripts and IoT-enabled digital twins for corporate real estate portfolios."
+    }
+  ],
+  "achievements": [
+    "Awarded Best BIM Consultancy of the Year - Digital AEC Summit",
+    "Completed BIM modeling for over 40 Million sq. ft. of commercial space",
+    "Certified ISO 19650 compliant organization for digital building data processes",
+    "Proud partner of key global architecture and smart-city initiatives"
+  ],
+  "seoTitle": "About BIM Earth Consultancy - Our History, Vision & Journey",
+  "seoDescription": "Learn about BIM Earth Consultancy, our history from structural clash detection to multi-disciplinary architecture and BIM design, and our mission to shape sustainable spaces."
+}

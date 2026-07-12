@@ -1,0 +1,28 @@
+{
+  "defaultTitle": "BIM Earth Consultancy - Green Architecture & BIM Engineering",
+  "defaultDescription": "Corporate architecture, interior curation, and detailed Level 500 BIM clash detection systems.",
+  "defaultKeywords": "BIM, Architectural Design, Interior Design, Clash Detection, Digital Twin, ISO 19650",
+  "defaultOgImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&h=630&q=80",
+  "pages": [
+    {
+      "pageName": "Home",
+      "title": "BIM Earth Consultancy - Sustainable Design & BIM Level 2",
+      "description": "Premium multi-disciplinary consultancy providing green Architecture, luxury interior concepts, and high-fidelity virtual twin engineering."
+    },
+    {
+      "pageName": "About",
+      "title": "About Our Enterprise - The BIM Earth Legacy",
+      "description": "Learn about our corporate milestones, sustainable governing pillars, and our journey in carbon-conscious digital construction."
+    },
+    {
+      "pageName": "Projects",
+      "title": "Our Projects Portfolio - High Fidelity Virtual Twins",
+      "description": "Explore our portfolio of skyscrapers, passive residential estates, and complex transit terminals optimized virtually."
+    },
+    {
+      "pageName": "Blog",
+      "title": "The BIM Earth Journal - Thought Leadership in AEC",
+      "description": "Expert insights, industry research, and deep dives into computational clash detection and automated digital twins."
+    }
+  ]
+}

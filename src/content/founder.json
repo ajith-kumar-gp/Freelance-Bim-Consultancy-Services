@@ -1,0 +1,22 @@
+{
+  "name": "Dr. Marcus Vance",
+  "title": "Founder & Principal Director",
+  "photo": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80",
+  "biography": "Dr. Marcus Vance is a visionary pioneer in the integration of Architectural Design and Virtual Construction. Holding a Ph.D. in Building Technology from MIT, Dr. Vance spent over two decades directing complex high-rise and infrastructure projects globally. Before founding BIM Earth Consultancy, he served as a Senior Technology Consultant to government bodies on smart-city frameworks. His research on 'Automated Clash Optimization via Computational Models' serves as a cornerstone for modern digital construction workflows. Dr. Vance frequently speaks at international summits, driving the industry toward standardized BIM adoption and carbon-neutral architectural systems.",
+  "qualifications": [
+    "Ph.D. in Building Technology & Computational Design - Massachusetts Institute of Technology (MIT)",
+    "Master of Architecture (M.Arch) - Harvard Graduate School of Design",
+    "Fellow, Royal Institute of British Architects (RIBA)",
+    "LEED Accredited Professional (LEED AP BD+C)",
+    "Certified BIM Manager - buildingSMART International"
+  ],
+  "experience": [
+    "Principal Director & Founder, BIM Earth Consultancy (2012 - Present)",
+    "Senior Vice President of Digital Engineering, Global Infra Partners (2007 - 2012)",
+    "Associate Architect & Technical Director, Foster & Partners (2001 - 2007)",
+    "Lead Computational Architect, MIT Smart Cities Lab (1998 - 2001)"
+  ],
+  "message": "At BIM Earth, we believe that a building should not be built twice — once on site, and once in a digital model. Instead, we master the virtual design so that the actual building rises seamlessly, without waste, delays, or structural compromise. We are not just designers; we are engineering architects of a sustainable, digitally-coordinated future.",
+  "seoTitle": "Dr. Marcus Vance - Founder & Principal Director of BIM Earth",
+  "seoDescription": "Meet Dr. Marcus Vance, founder of BIM Earth Consultancy. Read his biography, credentials, professional achievements, and direct message to clients."
+}

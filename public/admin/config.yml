@@ -1,0 +1,307 @@
+backend:
+  name: github
+  repo: owner/bim-earth-consultancy
+  branch: main
+
+local_backend: true
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "website_content"
+    label: "Website Pages (Singletons)"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "homepage"
+        label: "Homepage Content"
+        file: "src/content/homepage.json"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "Hero Image", name: "heroImage", widget: "image" }
+          - { label: "Primary CTA Text", name: "ctaText", widget: "string" }
+          - { label: "Stats Counter 1 Number", name: "stat1_num", widget: "string" }
+          - { label: "Stats Counter 1 Label", name: "stat1_label", widget: "string" }
+          - { label: "Stats Counter 2 Number", name: "stat2_num", widget: "string" }
+          - { label: "Stats Counter 2 Label", name: "stat2_label", widget: "string" }
+          - { label: "Stats Counter 3 Number", name: "stat3_num", widget: "string" }
+          - { label: "Stats Counter 3 Label", name: "stat3_label", widget: "string" }
+          - { label: "Stats Counter 4 Number", name: "stat4_num", widget: "string" }
+          - { label: "Stats Counter 4 Label", name: "stat4_label", widget: "string" }
+          - { label: "SEO Title", name: "seoTitle", widget: "string" }
+          - { label: "SEO Description", name: "seoDescription", widget: "text" }
+          - { label: "SEO Keywords", name: "seoKeywords", widget: "string" }
+
+      - name: "about"
+        label: "About Page Content"
+        file: "src/content/about.json"
+        fields:
+          - { label: "Company History", name: "history", widget: "text" }
+          - { label: "Vision Statement", name: "vision", widget: "text" }
+          - { label: "Mission Statement", name: "mission", widget: "text" }
+          - { label: "Core Values Intro", name: "valuesIntro", widget: "string" }
+          - { label: "Core Values List", name: "values", widget: "list", field: { label: "Value Item", name: "value", widget: "string" } }
+          - { label: "Journey Milestones", name: "milestones", widget: "list", fields: [
+              { label: "Year", name: "year", widget: "string" },
+              { label: "Title", name: "title", widget: "string" },
+              { label: "Description", name: "description", widget: "text" }
+            ]}
+          - { label: "Achievements List", name: "achievements", widget: "list", field: { label: "Achievement", name: "achievement", widget: "string" } }
+          - { label: "SEO Title", name: "seoTitle", widget: "string" }
+          - { label: "SEO Description", name: "seoDescription", widget: "text" }
+
+      - name: "founder"
+        label: "Founder Profile"
+        file: "src/content/founder.json"
+        fields:
+          - { label: "Founder Name", name: "name", widget: "string" }
+          - { label: "Title / Designation", name: "title", widget: "string" }
+          - { label: "Founder Photo", name: "photo", widget: "image" }
+          - { label: "Biography", name: "biography", widget: "text" }
+          - { label: "Qualifications List", name: "qualifications", widget: "list", field: { label: "Qualification", name: "qualification", widget: "string" } }
+          - { label: "Experience List", name: "experience", widget: "list", field: { label: "Experience Item", name: "experience", widget: "string" } }
+          - { label: "Founder Message", name: "message", widget: "text" }
+          - { label: "SEO Title", name: "seoTitle", widget: "string" }
+          - { label: "SEO Description", name: "seoDescription", widget: "text" }
+
+      - name: "services"
+        label: "Services Detailed Content"
+        file: "src/content/services.json"
+        fields:
+          - label: "Architecture Service Details"
+            name: "architecture"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - { label: "Main Description", name: "description", widget: "text" }
+              - { label: "Service Image", name: "image", widget: "image" }
+              - { label: "Sub Services", name: "subServices", widget: "list", fields: [
+                  { label: "Name", name: "name", widget: "string" },
+                  { label: "Description", name: "description", widget: "text" },
+                  { label: "Key Features", name: "features", widget: "list", field: { label: "Feature", name: "feature", widget: "string" } }
+                ]}
+          - label: "Interior Design Service Details"
+            name: "interior"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - { label: "Main Description", name: "description", widget: "text" }
+              - { label: "Service Image", name: "image", widget: "image" }
+              - { label: "Sub Services", name: "subServices", widget: "list", fields: [
+                  { label: "Name", name: "name", widget: "string" },
+                  { label: "Description", name: "description", widget: "text" },
+                  { label: "Key Features", name: "features", widget: "list", field: { label: "Feature", name: "feature", widget: "string" } }
+                ]}
+          - label: "BIM Service Details"
+            name: "bim"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - { label: "Main Description", name: "description", widget: "text" }
+              - { label: "Service Image", name: "image", widget: "image" }
+              - { label: "Sub Services", name: "subServices", widget: "list", fields: [
+                  { label: "Name", name: "name", widget: "string" },
+                  { label: "Description", name: "description", widget: "text" },
+                  { label: "Key Features", name: "features", widget: "list", field: { label: "Feature", name: "feature", widget: "string" } }
+                ]}
+
+      - name: "contact"
+        label: "Contact & Social Details"
+        file: "src/content/contact.json"
+        fields:
+          - { label: "Office Address", name: "address", widget: "string" }
+          - { label: "Primary Phone", name: "phone", widget: "string" }
+          - { label: "Primary Email", name: "email", widget: "string" }
+          - { label: "WhatsApp Contact Number", name: "whatsapp", widget: "string" }
+          - { label: "Business Hours Weekdays", name: "hoursWeekdays", widget: "string" }
+          - { label: "Business Hours Weekends", name: "hoursWeekends", widget: "string" }
+          - { label: "Google Maps Embed Link", name: "mapEmbed", widget: "text" }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+          - { label: "Instagram URL", name: "instagram", widget: "string" }
+          - { label: "Facebook URL", name: "facebook", widget: "string" }
+          - { label: "Twitter/X URL", name: "twitter", widget: "string" }
+
+      - name: "legal"
+        label: "Legal Policies"
+        file: "src/content/legal.json"
+        fields:
+          - { label: "Privacy Policy Title", name: "privacyTitle", widget: "string" }
+          - { label: "Privacy Policy Content", name: "privacyContent", widget: "text" }
+          - { label: "Terms & Conditions Title", name: "termsTitle", widget: "string" }
+          - { label: "Terms & Conditions Content", name: "termsContent", widget: "text" }
+
+      - name: "settings"
+        label: "Website Settings"
+        file: "src/content/settings.json"
+        fields:
+          - { label: "Brand Short Name", name: "brandName", widget: "string" }
+          - { label: "Brand Corporate Name", name: "fullName", widget: "string" }
+          - { label: "Website Description", name: "description", widget: "text" }
+          - { label: "Corporate Logo", name: "logo", widget: "image" }
+          - { label: "Footer Credit Text", name: "footerText", widget: "string" }
+          - { label: "Contact Email", name: "contactEmail", widget: "string" }
+          - { label: "Contact Phone", name: "contactPhone", widget: "string" }
+          - { label: "Header Notice Alert Bar", name: "headerNotice", widget: "string" }
+          - label: "Social Networks"
+            name: "socialLinks"
+            widget: "object"
+            fields:
+              - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }
+              - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+              - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
+              - { label: "Twitter / X URL", name: "twitter", widget: "string", required: false }
+              - { label: "WhatsApp Direct Link", name: "whatsapp", widget: "string", required: false }
+
+      - name: "seo"
+        label: "Global SEO Settings"
+        file: "src/content/seo.json"
+        fields:
+          - { label: "Default Meta Title", name: "defaultTitle", widget: "string" }
+          - { label: "Default Meta Description", name: "defaultDescription", widget: "text" }
+          - { label: "Default Keywords (Comma-separated)", name: "defaultKeywords", widget: "string" }
+          - { label: "Default Share Image (OpenGraph)", name: "defaultOgImage", widget: "image" }
+          - label: "Page Specific Settings"
+            name: "pages"
+            widget: "list"
+            fields:
+              - { label: "Page Name / Route Identifier", name: "pageName", widget: "string" }
+              - { label: "Page Specific Title", name: "title", widget: "string" }
+              - { label: "Page Specific Description", name: "description", widget: "text" }
+
+  - name: "projects"
+    label: "Projects Portfolio"
+    folder: "src/content/projects"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "select", options: ["Architecture", "Interior Design", "BIM Services"] }
+      - { label: "Industry", name: "industry", widget: "string" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Completion Year", name: "year", widget: "string" }
+      - { label: "Image URL", name: "image", widget: "image" }
+      - { label: "Detailed Description", name: "description", widget: "text" }
+      - { label: "Key Milestone or Highlight", name: "highlight", widget: "string" }
+      - { label: "Order (Numeric sort priority)", name: "order", widget: "number", value_type: "int", default: 10 }
+
+  - name: "gallery"
+    label: "Gallery Grid"
+    folder: "src/content/gallery"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{caption}}"
+    fields:
+      - { label: "Image URL", name: "image", widget: "image" }
+      - { label: "Caption", name: "caption", widget: "string" }
+      - { label: "Category", name: "category", widget: "select", options: ["All", "Architecture", "Interior Design", "BIM"] }
+      - { label: "Order", name: "order", widget: "number", value_type: "int", default: 10 }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "src/content/testimonials"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{name}}"
+    fields:
+      - { label: "Client Name", name: "name", widget: "string" }
+      - { label: "Role / Designation", name: "role", widget: "string" }
+      - { label: "Company Name", name: "company", widget: "string" }
+      - { label: "Review Content", name: "content", widget: "text" }
+      - { label: "Rating (1-5)", name: "rating", widget: "number", value_type: "int", min: 1, max: 5, default: 5 }
+      - { label: "Project Connected", name: "project", widget: "string" }
+      - { label: "Order", name: "order", widget: "number", value_type: "int", default: 10 }
+
+  - name: "faqs"
+    label: "FAQs"
+    folder: "src/content/faqs"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{question}}"
+    fields:
+      - { label: "Question", name: "question", widget: "string" }
+      - { label: "Answer", name: "answer", widget: "text" }
+      - { label: "Category", name: "category", widget: "select", options: ["Architecture", "Interior Design", "BIM", "General"] }
+      - { label: "Order", name: "order", widget: "number", value_type: "int", default: 10 }
+
+  - name: "team_members"
+    label: "Team Members"
+    folder: "src/content/team-members"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{name}}"
+    fields:
+      - { label: "Full Name", name: "name", widget: "string" }
+      - { label: "Role / Designation", name: "role", widget: "string" }
+      - { label: "Photo", name: "photo", widget: "image" }
+      - { label: "Short Biography", name: "bio", widget: "text" }
+      - { label: "LinkedIn Profile URL", name: "linkedin", widget: "string", required: false }
+      - { label: "Corporate Email Address", name: "email", widget: "string", required: false }
+      - { label: "Order", name: "order", widget: "number", value_type: "int", default: 10 }
+
+  - name: "clients"
+    label: "Clients List"
+    folder: "src/content/clients"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{name}}"
+    fields:
+      - { label: "Client Name", name: "name", widget: "string" }
+      - { label: "Corporate Logo", name: "logo", widget: "image" }
+      - { label: "Client Website URL", name: "website", widget: "string", required: false }
+      - { label: "Order", name: "order", widget: "number", value_type: "int", default: 10 }
+
+  - name: "certifications"
+    label: "Certifications & Merits"
+    folder: "src/content/certifications"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{title}}"
+    fields:
+      - { label: "Certification Title", name: "title", widget: "string" }
+      - { label: "Issuing Authority", name: "issuer", widget: "string" }
+      - { label: "Year Awarded", name: "year", widget: "string" }
+      - { label: "Lucide Icon Name or Logo Image", name: "logo_or_icon", widget: "string" }
+      - { label: "Verification Link", name: "verification_url", widget: "string", required: false }
+      - { label: "Order", name: "order", widget: "number", value_type: "int", default: 10 }
+
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/content/blog"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug URL Identifier", name: "slug", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Author Name", name: "author", widget: "string" }
+      - { label: "Author Designation / Role", name: "authorRole", widget: "string" }
+      - { label: "Author Profile Picture", name: "authorImage", widget: "image" }
+      - { label: "Cover Header Image", name: "coverImage", widget: "image" }
+      - { label: "Short Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Post Body (Markdown)", name: "body", widget: "markdown" }
+      - { label: "Tags / Categories", name: "tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
+      - { label: "Sort Order priority", name: "order", widget: "number", value_type: "int", default: 10 }

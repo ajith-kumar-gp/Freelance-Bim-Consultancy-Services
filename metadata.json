@@ -1,0 +1,6 @@
+{
+  "name": "BIM Earth Consultancy",
+  "description": "Premium architectural, interior design, and BIM engineering consultancy website with interactive booking, portfolio showcase, and dynamic Decap CMS configuration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,6 @@
+{
+  "question": "What is 'Level of Development' (LOD) in your BIM services?",
+  "answer": "LOD represents the level of detail and reliability associated with a BIM element. We provide modeling services from LOD 100 (conceptual layouts) up to LOD 500 (as-built digital twins including spatial locations, material characteristics, manufacturer SKU, and operational metadata for facility management).",
+  "category": "BIM",
+  "order": 1
+}

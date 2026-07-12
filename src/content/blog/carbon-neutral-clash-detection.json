@@ -1,0 +1,13 @@
+{
+  "title": "Unlocking Carbon Neutrals via Computational Clash Detection",
+  "slug": "carbon-neutrality-and-clash-detection",
+  "date": "2026-07-02",
+  "author": "Sarah Connor",
+  "authorRole": "Director of Structural BIM & Coordination",
+  "authorImage": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&h=120&q=80",
+  "coverImage": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+  "excerpt": "Material waste in commercial construction accounts for 10% of global carbon emissions. Learn how computational clash coordination and pre-fabrication minimize wastage to zero.",
+  "content": "For decades, the construction industry has tolerated a certain level of physical rework on-site. When plumbing pipe runs into structural concrete beams or air vents clash with electrical conduits, materials are scrapped, labor stalls, and budgets soar.\n\nBut in 2026, material waste is no longer just a financial problem—it is an environmental disaster. Scrapping structural elements on site generates thousands of tons of avoidable carbon emissions.\n\n### Virtual Construction and Prefabrication\n\nBy leveraging advanced clash-detection algorithms, our engineering team aggregates structural, architectural, and MEP (Mechanical, Electrical, Plumbing) drawings into a single high-fidelity, unified coordination database. Our models flag overlaps before a single shovel touches the soil.\n\nBecause we resolve all 4,500+ potential clashes in the virtual space, components can be prefabricated in controlled off-site facilities to millimeter precision. Prefabricating structural frames under optimized factory conditions cuts raw material scrap rates from an average of 14% down to less than 1.5%.\n\n### A True Green Protocol\n\nWhen we eliminate field errors, we also reduce heavy machine idling, transportation runs, and overall construction durations. High-precision virtual coordination is not merely a tool for cost containment—it is one of our most potent instruments for achieving carbon-neutral construction.",
+  "tags": ["Clash Detection", "Green Building", "MEP Engineering", "Prefabrication"],
+  "order": 2
+}

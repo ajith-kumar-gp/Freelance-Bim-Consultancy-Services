@@ -1,0 +1,107 @@
+{
+  "architecture": {
+    "title": "Architecture Design",
+    "subtitle": "Carbon-Smart, Timeless Architectural Environments",
+    "description": "We craft architectural wonders that harmonize structural integrity with human comfort. Our designs are carbon-smart, fully compliant with international building codes, and simulated virtually prior to breaking ground.",
+    "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+    "subServices": [
+      {
+        "name": "Residential Architecture",
+        "description": "High-end bespoke villas, premium multi-family complexes, and sustainable masterplanned estates.",
+        "features": [
+          "Bespoke architectural layout tailored to local microclimates",
+          "Passive heating/cooling integration for energy cost reduction",
+          "Ultra-realistic 3D walkthroughs and material specifications"
+        ]
+      },
+      {
+        "name": "Commercial Architecture",
+        "description": "State-of-the-art office headquarters, lifestyle retail hubs, and mixed-use high-rise towers.",
+        "features": [
+          "Flexible floor plate design to accommodate changing lease layouts",
+          "Acoustic, fire, and structural hazard simulation integration",
+          "High-traffic circulation planning and glass facade optimization"
+        ]
+      },
+      {
+        "name": "Infrastructure Design",
+        "description": "Mass transit stations, municipal centers, utility architecture, and smart-city landscape integration.",
+        "features": [
+          "Heavy-duty civil structural engineering coordination",
+          "Public safety and crowd circulation computational simulations",
+          "Carbon-neutral, resilient, and climate-adaptive materials"
+        ]
+      }
+    ]
+  },
+  "interior": {
+    "title": "Interior Design",
+    "subtitle": "Ergonomic Luxury & Human-Centric Spaces",
+    "description": "Our interior design division marries aesthetic elegance with deep space-planning ergonomics. We deliver curated spatial identities that increase wellness, collaboration, and spatial efficiency.",
+    "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80",
+    "subServices": [
+      {
+        "name": "Residential Interiors",
+        "description": "High-end luxury apartments, personalized penthouses, and bespoke custom furniture curation.",
+        "features": [
+          "Custom millwork and acoustic insulation design",
+          "Curated lighting choreography using circadian-rhythm LED technologies",
+          "Premium, non-toxic, sustainable material palettes"
+        ]
+      },
+      {
+        "name": "Office Space Interiors",
+        "description": "Acoustically sound collaborative zones, productive workspaces, and modular focus areas.",
+        "features": [
+          "Biophilic air-filtration plants and natural light mapping",
+          "Modular partitioning for rapid workspace re-configurations",
+          "Integrated cable management and under-floor service pathways"
+        ]
+      },
+      {
+        "name": "Commercial Interiors",
+        "description": "Hospitality lobbies, retail experiences, dining spaces, and customer showrooms.",
+        "features": [
+          "Aesthetic sensory branding and customer journey layout flow",
+          "Heavy-traffic commercial grade flooring and textile durability",
+          "Integrated audio-visual and experiential sensory zones"
+        ]
+      }
+    ]
+  },
+  "bim": {
+    "title": "BIM Engineering Services",
+    "subtitle": "High-Fidelity Virtual Construction Modeling",
+    "description": "The operational core of BIM Earth. We translate 2D conceptual designs into unified, clash-free, intelligent 3D BIM models up to LOD 500 (Level of Development) for complete asset lifecycle management.",
+    "image": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80",
+    "subServices": [
+      {
+        "name": "Architecture BIM",
+        "description": "Detailed parametric modeling of building envelopes, interior partitions, and high-performance material scheduling.",
+        "features": [
+          "Intelligent Revit family creation and architectural schedule mapping",
+          "Exact quantities and material take-offs (QTO) generated from the model",
+          "LOD 100 to LOD 500 complete architectural modeling transition"
+        ]
+      },
+      {
+        "name": "Structural BIM",
+        "description": "Parametric detailing of structural concrete, steel framing, rebar placements, and foundation geometries.",
+        "features": [
+          "Deep steel connection modeling and reinforcement scheduling",
+          "Analytical model linking for FEA structural structural testing",
+          "Precast and post-tension concrete element virtual scheduling"
+        ]
+      },
+      {
+        "name": "MEP BIM",
+        "description": "Clash-resolved coordination of HVAC ducts, electrical conduits, plumbing networks, and fire safety systems.",
+        "features": [
+          "Advanced multi-trade clash detection and automated resolution workflow",
+          "Spatial routing optimization for maximum ceiling heights",
+          "Pre-fabrication drawings and laser-scanning point cloud registration"
+        ]
+      }
+    ]
+  }
+}
