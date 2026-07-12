@@ -20,10 +20,24 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="BIM Earth Consultancy" />
     <meta name="twitter:description" content="High-fidelity Architecture, Interior Design, and unified BIM coordinate consulting." />
+    
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>
 

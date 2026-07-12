@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: owner/bim-earth-consultancy
+  name: git-gateway
   branch: main
 
 local_backend: true
