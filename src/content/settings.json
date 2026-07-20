@@ -7,6 +7,8 @@
   "contactEmail": "bimearthconsultancy@gmail.com",
   "contactPhone": "+91 8826175595",
   "headerNotice": "⭐ Proud partner of global smart-city initiatives and ISO 19650 certification protocols",
+  "minimumRatingToDisplay": 5,
+  "prioritizeFiveStars": true,
   "socialLinks": {
     "linkedin": "https://linkedin.com/company/bimearth",
     "instagram": "https://instagram.com/bimearth",

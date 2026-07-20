@@ -48,7 +48,16 @@ collections:
               { label: "Title", name: "title", widget: "string" },
               { label: "Description", name: "description", widget: "text" }
             ]}
-          - { label: "Achievements List", name: "achievements", widget: "list", field: { label: "Achievement", name: "achievement", widget: "string" } }
+          - label: "Achievements List"
+            name: "achievements"
+            widget: "list"
+            fields:
+              - { label: "Achievement Title", name: "title", widget: "string" }
+              - { label: "Statistic Value (e.g. Winner, 40M+)", name: "statValue", widget: "string" }
+              - { label: "Statistic Label (e.g. sq. ft.)", name: "statLabel", widget: "string" }
+              - { label: "Detailed Description", name: "description", widget: "text" }
+              - { label: "Key Milestones achieved", name: "milestones", widget: "list", field: { label: "Milestone", name: "milestone", widget: "string" } }
+              - { label: "Chronological Progression / Timeline", name: "timeline", widget: "list", field: { label: "Timeline Step", name: "step", widget: "string" } }
           - { label: "SEO Title", name: "seoTitle", widget: "string" }
           - { label: "SEO Description", name: "seoDescription", widget: "text" }
 
@@ -147,6 +156,8 @@ collections:
           - { label: "Contact Email", name: "contactEmail", widget: "string" }
           - { label: "Contact Phone", name: "contactPhone", widget: "string" }
           - { label: "Header Notice Alert Bar", name: "headerNotice", widget: "string" }
+          - { label: "Minimum Testimonial Rating to Display (1-5)", name: "minimumRatingToDisplay", widget: "select", options: [1, 2, 3, 4, 5], default: 5 }
+          - { label: "Prioritize 5-Star Reviews at Top", name: "prioritizeFiveStars", widget: "boolean", default: true }
           - label: "Social Networks"
             name: "socialLinks"
             widget: "object"

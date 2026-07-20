@@ -53,7 +53,7 @@ export default function Layout({ children }: LayoutProps) {
     { name: 'Gallery', path: '/gallery' },
     { name: 'Blog', path: '/blog' },
     { name: 'About', path: '/about' },
-    { name: 'Founder', path: '/founder' },
+    // { name: 'Founder', path: '/founder' },
     { name: 'Testimonials', path: '/testimonials' },
     { name: 'FAQ', path: '/faq' },
     { name: 'Contact', path: '/contact' }
@@ -121,6 +121,9 @@ export default function Layout({ children }: LayoutProps) {
               </span>
               <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-blue-700/80 dark:text-accent-blue -mt-0.5 font-mono">
                 Consultancy
+              </span>
+              <span className="text-[8px] tracking-wider text-slate-500 dark:text-slate-400 font-mono italic mt-1 uppercase font-bold leading-none">
+                We Build Future
               </span>
             </div>
           </Link>
@@ -256,9 +259,14 @@ export default function Layout({ children }: LayoutProps) {
                 <div className="bg-accent-blue p-1.5 rounded-lg text-navy-950">
                   <Compass size={18} strokeWidth={2.5} />
                 </div>
-                <span className="font-sans font-extrabold tracking-widest text-lg text-white">
-                  BIM EARTH
-                </span>
+                <div className="flex flex-col">
+                  <span className="font-sans font-extrabold tracking-widest text-lg text-white leading-none">
+                    BIM EARTH
+                  </span>
+                  <span className="text-[8px] tracking-wider text-slate-400 font-mono italic mt-1 uppercase font-bold leading-none">
+                    We Build Future
+                  </span>
+                </div>
               </div>
               <p className="text-slate-400 text-xs leading-relaxed">
                 Elite corporate multi-disciplinary consultancy providing state-of-the-art Architectural design, luxury Interior execution, and lifecycle Level 2 & 3 BIM coordination.

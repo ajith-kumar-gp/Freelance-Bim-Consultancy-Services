@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Phone, Mail, MapPin, Clock, Terminal, CheckCircle2 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import contactData from '../content/contact.json';
+import settingsData from '../content/settings.json';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -37,8 +38,10 @@ export default function ContactPage() {
       from_name: formData.name,
       from_email: formData.email,
       subject_line: formData.subject,
+      subject: formData.subject,
       message_content: formData.message,
-      to_email: 'dr.ajithkumargp@gmail.com' // From user email metadata
+      message: formData.message,
+      to_email: settingsData.contactEmail || 'dr.ajithkumargp@gmail.com'
     };
 
     if (serviceId && templateId && publicKey) {

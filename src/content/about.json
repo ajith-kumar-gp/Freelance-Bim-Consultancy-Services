@@ -39,10 +39,71 @@
     }
   ],
   "achievements": [
-    "Awarded Best BIM Consultancy of the Year - Digital AEC Summit",
-    "Completed BIM modeling for over 40 Million sq. ft. of commercial space",
-    "Certified ISO 19650 compliant organization for digital building data processes",
-    "Proud partner of key global architecture and smart-city initiatives"
+    {
+      "title": "Awarded Best BIM Consultancy of the Year",
+      "statValue": "Winner",
+      "statLabel": "AEC Digital Summit",
+      "description": "Recognized globally for exceptional standards in level 2 BIM compliance, automated collision detection, and client satisfaction metrics. The judging panel highly commended BIM Earth for delivering high-fidelity, zero-error structural models on massive multi-trade projects.",
+      "milestones": [
+        "Nominated among 120 global AEC consultancies",
+        "Scored 98.7% on technical BIM Level 2 compliance audits",
+        "Awarded Grand Prize at the Singapore AEC Digital Summit"
+      ],
+      "timeline": [
+        "Q1 2025: Nominated for Digital Innovation Standards",
+        "Q2 2025: Rigorous Technical Evaluation & Workflow Audit",
+        "Q3 2025: Shortlisted to Top 3 finalists",
+        "Q4 2025: Official presentation ceremony and trophy award"
+      ]
+    },
+    {
+      "title": "Completed BIM modeling for over 40 Million sq. ft.",
+      "statValue": "40M+ sq.ft.",
+      "statLabel": "Commercial Space Modeled",
+      "description": "Delivering massive structural coordinates, architectural assets, and MEP coordination grids for premium commercial real estate developers, high-rises, and smart infrastructure hubs across multiple regions.",
+      "milestones": [
+        "Modeled a 12 Million sq. ft. smart-city commercial corridor",
+        "Coordinated MEP systems for 5 global international airport terminals",
+        "Delivered error-free building twins for 140 corporate towers"
+      ],
+      "timeline": [
+        "2012-2016: Reached first 5 Million sq. ft. of completed models",
+        "2017-2021: Scaled operations, surpassing 20 Million sq. ft.",
+        "2022-2026: Accelerated digital deliveries, crossing 40 Million sq. ft."
+      ]
+    },
+    {
+      "title": "Certified ISO 19650 Compliant Organization",
+      "statValue": "100% Compliant",
+      "statLabel": "ISO 19650 Certified",
+      "description": "Established standard-setting data management, validation, and delivery pipelines. Every single project follows international BIM protocols for absolute security, interoperability, and asset longevity.",
+      "milestones": [
+        "Trained 100% of architectural and engineering teams in ISO standard",
+        "Unified master templates for universal coordinate data sharing",
+        "Approved with zero non-conformances by the lead certification registrar"
+      ],
+      "timeline": [
+        "2023: Commenced organizational alignment to ISO standard rules",
+        "2024: Internal workflow adaptation and compliance mock audits",
+        "2025: Final verification and receipt of official compliance certificate"
+      ]
+    },
+    {
+      "title": "Partner of global architecture & smart-city initiatives",
+      "statValue": "15+ Alliances",
+      "statLabel": "Smart-City Partnerships",
+      "description": "Coordinating with government bodies and international agencies to plan eco-conscious infrastructure, IoT-enabled buildings, and virtual structural twins designed for net-zero carbon footprints.",
+      "milestones": [
+        "Built dynamic municipal digital twin models for 3 cities",
+        "Developed carbon-smart material usage guidelines for AEC partners",
+        "Appointed as specialized digital lifecycle advisors to urban planning council"
+      ],
+      "timeline": [
+        "2019: Joined regional smart infrastructure research group",
+        "2022: Added international green building consortium alliances",
+        "2026: Standardized advisory integration across 15 smart cities"
+      ]
+    }
   ],
   "seoTitle": "About BIM Earth Consultancy - Our History, Vision & Journey",
   "seoDescription": "Learn about BIM Earth Consultancy, our history from structural clash detection to multi-disciplinary architecture and BIM design, and our mission to shape sustainable spaces."

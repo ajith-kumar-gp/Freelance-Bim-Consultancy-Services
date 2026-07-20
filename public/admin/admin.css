@@ -1,255 +1,547 @@
-/* BIM Earth Admin Panel Custom Premium Stylesheet */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+/* BIM Earth Admin Panel Custom Premium Stylesheet - White & Blue Theme */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
-/* Main Body & Workspace */
-body {
-  font-family: 'Plus Jakarta Sans', sans-serif !important;
-  background-color: #f3f7f5 !important;
-  color: #1a362c !important;
+/* Global Variables & Themes */
+:root {
+  --bg-primary: #f8fafc;             /* Soft off-white slate */
+  --bg-secondary: #f1f5f9;           /* Clean light grey-blue */
+  --bg-card: #ffffff;                /* Pure white cards */
+  --border-light: rgba(37, 99, 235, 0.08); /* Soft blue border */
+  --border-medium: #e2e8f0;          /* Distinct grey-blue border */
+  --accent-blue: #2563eb;            /* Royal Blue */
+  --accent-cobalt: #1e40af;          /* Deep Cobalt Blue */
+  --accent-light-blue: #eff6ff;      /* Light blue accent background */
+  --accent-sky: #0ea5e9;             /* Bright sky tech highlight */
+  --text-main: #0f172a;              /* Deep slate/navy text */
+  --text-muted: #64748b;             /* Slate grey */
+  --text-dark: #0f172a;              /* Rich slate-navy */
 }
 
-/* Override Decap Global Fonts */
+/* Base Body Styles */
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+  background-color: var(--bg-primary) !important;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(14, 165, 233, 0.03) 0px, transparent 50%) !important;
+  color: var(--text-main) !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Force Font Override across Decap Elements */
 * {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
 }
 
-/* Scrollbars */
+/* Scrollbar Engineering */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f4f8f6;
+  background: var(--bg-secondary);
 }
 ::-webkit-scrollbar-thumb {
-  background: #c2dbd1;
-  border-radius: 4px;
+  background: #cbd5e1;
+  border: 2px solid var(--bg-secondary);
+  border-radius: 99px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #93bfae;
+  background: var(--accent-blue);
 }
 
-/* Header Styling (Premium Biophilic Dark Slate) */
-header, 
-[class*="AppHeader"] {
-  background-color: #0f1e19 !important; /* Deep forest-charcoal */
-  border-bottom: 2px solid #10b981 !important; /* Emerald highlight border */
-  box-shadow: 0 4px 30px rgba(7, 15, 12, 0.4) !important;
-  padding: 0 24px !important;
-  height: 64px !important;
+/* ==========================================================================
+   1. NETLIFY IDENTITY LOGIN PAGE MAKEOVER
+   ========================================================================== */
+[class*="LoginContainer"], 
+.nc-login-container,
+[class*="LoginPage"] {
+  background-color: var(--bg-secondary) !important;
+  background-image: 
+    radial-gradient(circle at 50% 30%, rgba(37, 99, 235, 0.08), transparent 60%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
-/* Header Text / Title styling */
-header a, 
-[class*="AppHeader"] a,
-[class*="AppHeader"] span {
+[class*="LoginCard"], 
+[class*="LoginPaper"] {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(37, 99, 235, 0.15) !important;
+  border-radius: 32px !important;
+  box-shadow: 
+    0 20px 50px rgba(15, 23, 42, 0.08),
+    0 0 40px rgba(37, 99, 235, 0.02) !important;
+  padding: 48px !important;
+  max-width: 440px !important;
+  width: 100% !important;
+}
+
+/* Identity / Login Buttons */
+[class*="LoginButton"],
+.nc-login-button {
+  background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cobalt) 100%) !important;
+  color: #ffffff !important;
   font-family: 'Space Grotesk', sans-serif !important;
   font-weight: 700 !important;
-  letter-spacing: 0.05em !important;
-  color: #10b981 !important;
-}
-
-/* Header Navigation items */
-header nav a,
-[class*="AppHeader"] nav a,
-[class*="AppHeaderNav"] a {
-  color: #e2ede8 !important;
   font-size: 14px !important;
-  font-weight: 500 !important;
-  padding: 8px 16px !important;
-  border-radius: 8px !important;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  margin: 0 4px !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  padding: 16px 32px !important;
+  border-radius: 16px !important;
+  border: none !important;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer !important;
 }
 
-header nav a:hover,
-[class*="AppHeader"] nav a:hover {
-  background-color: rgba(16, 185, 129, 0.15) !important;
-  color: #10b981 !important;
+[class*="LoginButton"]:hover,
+.nc-login-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 
+    0 12px 30px rgba(37, 99, 235, 0.35),
+    0 0 15px rgba(14, 165, 233, 0.2) !important;
 }
 
-header nav a[aria-current="page"],
-[class*="AppHeader"] nav a[class*="active"] {
-  background-color: #10b981 !important;
-  color: #ffffff !important;
+/* ==========================================================================
+   2. APP HEADER NAVIGATION
+   ========================================================================== */
+header, 
+[class*="AppHeader"] {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid var(--border-medium) !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.02) !important;
+  padding: 0 32px !important;
+  height: 72px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+/* Logo & Slogan Branding */
+header a[class*="LogoLink"], 
+[class*="AppHeader"] a {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 850 !important;
+  font-size: 19px !important;
+  letter-spacing: 0.12em !important;
+  color: var(--text-dark) !important;
+  text-decoration: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  line-height: 1.1 !important;
+}
+
+/* Slogan underneath corporate name */
+header a[class*="LogoLink"]::after,
+[class*="AppHeader"] a::after {
+  content: "WE BUILD FUTURE • BIM CORPORATE" !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 8px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.22em !important;
+  color: var(--accent-blue) !important;
+  margin-top: 4px !important;
+  opacity: 0.9 !important;
+}
+
+/* App Header Nav Links */
+[class*="AppHeaderNav"] a,
+header nav a {
+  color: var(--text-muted) !important;
+  font-size: 13.5px !important;
   font-weight: 600 !important;
+  padding: 10px 20px !important;
+  border-radius: 12px !important;
+  transition: all 0.2s ease !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
 }
 
-/* Left Sidebar Customization */
+[class*="AppHeaderNav"] a:hover,
+header nav a:hover {
+  color: var(--accent-blue) !important;
+  background: var(--accent-light-blue) !important;
+}
+
+[class*="AppHeaderNav"] a[class*="active"],
+header nav a[aria-current="page"] {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cobalt) 100%) !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2) !important;
+  font-weight: 700 !important;
+}
+
+/* Quick access quick-add button inside header */
+[class*="AppHeaderActions"] [class*="Button"] {
+  background: var(--accent-light-blue) !important;
+  color: var(--accent-blue) !important;
+  border: 1px solid rgba(37, 99, 235, 0.15) !important;
+}
+
+/* ==========================================================================
+   3. SIDEBAR NAVIGATION
+   ========================================================================== */
 aside, 
 [class*="SidebarContainer"] {
   background-color: #ffffff !important;
-  border-right: 1px solid #e2ede8 !important;
-  padding: 24px 16px !important;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.01) !important;
+  border-right: 1px solid var(--border-medium) !important;
+  padding: 32px 18px !important;
+  width: 280px !important;
 }
 
-/* Sidebar Links */
-aside a, 
+/* Sidebar Heading */
+[class*="SidebarHeading"] {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  color: var(--text-muted) !important;
+  text-transform: uppercase !important;
+  margin-bottom: 16px !important;
+  padding-left: 12px !important;
+}
+
+/* Sidebar Links styling */
 [class*="SidebarLink"] {
-  border-radius: 12px !important;
+  border-radius: 14px !important;
   margin-bottom: 8px !important;
   padding: 12px 16px !important;
-  color: #2f6250 !important; /* Forest-slate */
-  font-weight: 500 !important;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  font-size: 14px !important;
+  color: var(--text-muted) !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  background: transparent !important;
   border-left: 3px solid transparent !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-aside a:hover, 
 [class*="SidebarLink"]:hover {
-  background-color: #f4f8f6 !important;
-  color: #10b981 !important;
-  transform: translateX(4px);
-  border-left-color: #93bfae !important;
+  background-color: var(--accent-light-blue) !important;
+  color: var(--accent-blue) !important;
+  transform: translateX(4px) !important;
+  border-left-color: var(--accent-blue) !important;
 }
 
-/* Active Sidebar Navigation Item */
-aside a[aria-current="page"], 
 [class*="SidebarLink"][class*="active"],
 [class*="SidebarLink"][aria-current="page"] {
-  background-color: #e2ede8 !important;
-  color: #244e40 !important;
+  background: var(--accent-light-blue) !important;
+  color: var(--accent-blue) !important;
   font-weight: 700 !important;
-  border-left: 4px solid #10b981 !important;
-  transform: translateX(4px);
+  border-left: 4px solid var(--accent-blue) !important;
+  box-shadow: inset 4px 0 0 rgba(37, 99, 235, 0.05) !important;
+  transform: translateX(4px) !important;
 }
 
-/* Page Headers & Titles */
-h1, h2, h3, [class*="Heading"] {
+/* ==========================================================================
+   4. CARDS & GRID LISTS
+   ========================================================================== */
+main, 
+[class*="CollectionPageContainer"] {
+  background-color: var(--bg-primary) !important;
+  padding: 40px !important;
+}
+
+/* Collection Title and Counts */
+[class*="CollectionPageTitle"] {
   font-family: 'Space Grotesk', sans-serif !important;
-  color: #0f1e19 !important;
+  font-weight: 800 !important;
+  font-size: 32px !important;
+  color: var(--text-dark) !important;
+  letter-spacing: -0.02em !important;
 }
 
-/* Card view & Grid Layout */
+/* Search bar styling */
+[class*="SearchContainer"] input {
+  background-color: #ffffff !important;
+  border: 1px solid var(--border-medium) !important;
+  border-radius: 16px !important;
+  color: var(--text-dark) !important;
+  padding: 14px 20px 14px 44px !important;
+  font-size: 14px !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.01) !important;
+}
+
+[class*="SearchContainer"] input:focus {
+  border-color: var(--accent-blue) !important;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1) !important;
+}
+
+/* Collection Cards Grid */
 [class*="CardsContainer"] {
   grid-gap: 24px !important;
-  padding: 8px !important;
+  margin-top: 32px !important;
 }
 
-/* Individual collections & pages list cards */
+/* Individual Card Blocks */
 [class*="Card"], 
 [class*="listCard"], 
 [class*="CardContainer"] {
-  border-radius: 20px !important;
-  border: 1px solid #e2ede8 !important;
-  box-shadow: 0 4px 12px rgba(15, 30, 25, 0.03) !important;
-  overflow: hidden !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  background-color: #ffffff !important;
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-medium) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.02) !important;
   padding: 24px !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
 [class*="Card"]:hover, 
 [class*="listCard"]:hover {
   transform: translateY(-4px) !important;
-  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.12) !important;
-  border-color: #93bfae !important;
+  border-color: rgba(37, 99, 235, 0.3) !important;
+  box-shadow: 
+    0 12px 30px rgba(15, 23, 42, 0.05),
+    0 0 20px rgba(37, 99, 235, 0.03) !important;
 }
 
-/* Editor form field containers */
+/* Inside Card text components */
+[class*="Card"] h2,
+[class*="listCard"] h2,
+[class*="CardTitle"] {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  color: var(--text-dark) !important;
+  margin-bottom: 8px !important;
+}
+
+[class*="Card"] p,
+[class*="CardDescription"] {
+  color: var(--text-muted) !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+
+/* ==========================================================================
+   5. EDITOR FORM PANELS & WIDGETS
+   ========================================================================== */
 [class*="EditorContainer"] {
   background-color: #ffffff !important;
-  border-radius: 24px !important;
-  padding: 32px !important;
-  border: 1px solid #e2ede8 !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+  border-radius: 32px !important;
+  padding: 40px !important;
+  border: 1px solid var(--border-medium) !important;
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.03) !important;
 }
 
-/* Labels */
+/* Editor Field Titles */
 [class*="ControlLabel"] {
-  color: #244e40 !important;
-  font-weight: 600 !important;
-  font-size: 14px !important;
-  margin-bottom: 8px !important;
+  color: var(--accent-blue) !important;
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 750 !important;
+  font-size: 12.5px !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
+  letter-spacing: 0.08em !important;
+  margin-bottom: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
 }
 
-/* Text Fields and input boxes */
+[class*="ControlLabel"]::before {
+  content: "" !important;
+  display: inline-block !important;
+  width: 6px !important;
+  height: 6px !important;
+  background-color: var(--accent-blue) !important;
+  border-radius: 99px !important;
+  box-shadow: 0 0 6px var(--accent-blue) !important;
+}
+
+/* Text Fields, Textareas, Select Menus */
 input, 
 select, 
 textarea,
-[class*="ControlPane"] input,
 [class*="ControlPane"] textarea,
 [class*="ControlPane"] select {
-  border-radius: 12px !important;
-  border: 1.5px solid #c2dbd1 !important;
-  padding: 12px 16px !important;
-  font-size: 14px !important;
-  color: #1a362c !important;
   background-color: #ffffff !important;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: 1.5px solid var(--border-medium) !important;
+  border-radius: 14px !important;
+  color: var(--text-dark) !important;
+  font-size: 14px !important;
+  padding: 14px 18px !important;
+  transition: all 0.2s ease !important;
+  width: 100% !important;
 }
 
 input:focus, 
-select:focus, 
 textarea:focus,
 [class*="ControlPane"] input:focus,
-[class*="ControlPane"] textarea:focus {
-  border-color: #10b981 !important;
-  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.12) !important;
-  outline: none !important;
+[class*="ControlPane"] textarea:focus,
+[class*="ControlPane"] select:focus {
+  border-color: var(--accent-blue) !important;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08) !important;
   background-color: #ffffff !important;
+  outline: none !important;
 }
 
-/* Action Buttons styling */
-button, 
-[class*="Button"] {
-  border-radius: 12px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.02em !important;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  padding: 10px 20px !important;
-}
-
-/* Add / Quick Add Buttons */
-[class*="Button-button-default"], 
-[class*="Button-button-medium"],
-[class*="quick-add-button"],
-[class*="PublishButton"] {
-  background-color: #10b981 !important;
-  color: #ffffff !important;
-  border: none !important;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2) !important;
-}
-
-[class*="Button-button-default"]:hover, 
-[class*="Button-button-medium"]:hover,
-[class*="PublishButton"]:hover {
-  background-color: #2f6250 !important;
-  box-shadow: 0 6px 16px rgba(47, 98, 80, 0.3) !important;
-  transform: translateY(-1px) !important;
-}
-
-/* Cancel / Back Buttons */
-[class*="Button-button-gray"],
-[class*="Button-button-light"] {
-  background-color: #e2ede8 !important;
-  color: #2f6250 !important;
-  border: none !important;
-}
-
-[class*="Button-button-gray"]:hover,
-[class*="Button-button-light"]:hover {
-  background-color: #c2dbd1 !important;
-  color: #244e40 !important;
-}
-
-/* Decap Login Screen Makeover */
-[class*="LoginButton"] {
-  background-color: #10b981 !important;
-  color: #ffffff !important;
-  border-radius: 12px !important;
-  font-weight: 600 !important;
-  padding: 14px 28px !important;
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3) !important;
+/* File / Image Upload widgets */
+[class*="ImageUpload"] {
+  background-color: var(--bg-primary) !important;
+  border: 2px dashed rgba(37, 99, 235, 0.2) !important;
+  border-radius: 20px !important;
+  padding: 32px !important;
+  text-align: center !important;
   transition: all 0.2s ease !important;
 }
 
-[class*="LoginButton"]:hover {
-  background-color: #2f6250 !important;
-  box-shadow: 0 6px 20px rgba(47, 98, 80, 0.3) !important;
-  transform: translateY(-1px) !important;
+[class*="ImageUpload"]:hover {
+  border-color: var(--accent-blue) !important;
+  background-color: var(--accent-light-blue) !important;
+}
+
+/* Nested Object Lists & Accordions */
+[class*="ListControl"] {
+  background-color: rgba(37, 99, 235, 0.01) !important;
+  border: 1px solid rgba(37, 99, 235, 0.08) !important;
+  border-radius: 24px !important;
+  padding: 24px !important;
+  margin-top: 16px !important;
+}
+
+[class*="ListItem"] {
+  background-color: #ffffff !important;
+  border: 1px solid var(--border-medium) !important;
+  border-radius: 18px !important;
+  margin-bottom: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.01) !important;
+}
+
+[class*="ListItemHeader"] {
+  background-color: var(--bg-secondary) !important;
+  border-bottom: 1px solid var(--border-medium) !important;
+  padding: 14px 20px !important;
+  font-weight: 700 !important;
+  color: var(--text-dark) !important;
+}
+
+/* ==========================================================================
+   6. ACTION BUTTONS & TOOLBARS
+   ========================================================================== */
+button, 
+[class*="Button"] {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 700 !important;
+  border-radius: 14px !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer !important;
+}
+
+/* Primary Action Buttons */
+[class*="Button-button-default"], 
+[class*="Button-button-medium"],
+[class*="quick-add-button"],
+[class*="PublishButton"],
+[class*="SaveButton"] {
+  background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-cobalt) 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.15) !important;
+  padding: 12px 24px !important;
+}
+
+[class*="Button-button-default"]:hover, 
+[class*="quick-add-button"]:hover,
+[class*="PublishButton"]:hover,
+[class*="SaveButton"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 
+    0 12px 24px rgba(37, 99, 235, 0.25),
+    0 0 15px rgba(37, 99, 235, 0.1) !important;
+}
+
+/* Danger / Delete buttons */
+[class*="DeleteButton"],
+[class*="remove-button"],
+[class*="Button-button-danger"] {
+  background: rgba(239, 68, 68, 0.08) !important;
+  color: #dc2626 !important;
+  border: 1px solid rgba(239, 68, 68, 0.15) !important;
+  padding: 10px 20px !important;
+}
+
+[class*="DeleteButton"]:hover,
+[class*="remove-button"]:hover,
+[class*="Button-button-danger"]:hover {
+  background: #dc2626 !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.2) !important;
+}
+
+/* Editor Bottom or Sticky Save Toolbar */
+[class*="ToolbarContainer"] {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-top: 1px solid var(--border-medium) !important;
+  padding: 16px 32px !important;
+  border-radius: 0 0 24px 24px !important;
+}
+
+/* ==========================================================================
+   7. PREVIEW IFRAME OVERRIDES
+   ========================================================================== */
+/* Set preview container panel as a gorgeous terminal-like white-bordered frame */
+[class*="PreviewPaneContainer"] {
+  background-color: var(--bg-secondary) !important;
+  border-left: 1px solid var(--border-medium) !important;
+  padding: 16px !important;
+}
+
+[class*="PreviewPaneContainer"] iframe {
+  border-radius: 20px !important;
+  border: 1px solid var(--border-medium) !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04) !important;
+  background-color: #ffffff !important;
+}
+
+/* Inside Preview Iframe Custom Styled Render */
+.nc-previewPane-frame {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Direct preview markup overrides for beautiful, consistent content visualization */
+h1.preview-title,
+.preview-title {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 28px !important;
+  color: var(--text-dark) !important;
+  letter-spacing: -0.02em !important;
+  border-bottom: 2px solid var(--accent-blue) !important;
+  padding-bottom: 12px !important;
+  margin-bottom: 24px !important;
+}
+
+/* Styling lists/fields inside standard preview */
+div[class*="preview-field"] {
+  margin-bottom: 16px !important;
+  font-size: 13px !important;
+}
+
+span[class*="preview-label"] {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  color: var(--accent-blue) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  display: block !important;
+  margin-bottom: 6px !important;
+}
+
+/* Rich Preview Cards */
+div.preview-card {
+  background-color: #ffffff !important;
+  border: 1px solid var(--border-medium) !important;
+  border-radius: 16px !important;
+  padding: 20px !important;
+  margin-top: 12px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.01) !important;
 }
