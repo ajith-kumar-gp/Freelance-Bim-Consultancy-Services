@@ -1,0 +1,31 @@
+{
+  "title": "DELHI UNIVERSITY BOYS HOSTEL",
+  "category": "Institutional",
+  "industry": "Higher Education Campus Infrastructure",
+  "location": "Delhi University Campus, Delhi",
+  "year": "2023 - 2024",
+  "image": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80",
+  "images": [
+    {
+      "title": "Campus Residential Block.jpg",
+      "caption": "Architectural Facade & Structural Documentation",
+      "type": "Architecture",
+      "url": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "HVAC & Sanitary Coordination.jpg",
+      "caption": "Hostel Drainage, Water Supply, and Ventilation Routes",
+      "type": "MEP BIM",
+      "url": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "Construction Shop Drawings.jpg",
+      "caption": "LOD 400 Fabrication and On-Site Execution Drawings",
+      "type": "Shop Drawings",
+      "url": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1200&q=80"
+    }
+  ],
+  "description": "Institutional residential facility for Delhi University scholars. Multi-disciplinary architectural and structural BIM documentation, optimized MEP distribution networks, and coordinated pre-construction shop drawings.",
+  "highlight": "Streamlined construction timeline with fully coordinated pre-construction drawings.",
+  "order": 3
+}

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Compass, Target, ShieldCheck, Milestone, Award, Star, Mail, Linkedin, ExternalLink, Users, Briefcase, X, Clock, TrendingUp, Sparkles, ArrowUpRight } from 'lucide-react';
 import aboutData from '../content/about.json';
+import { AboutBimVisual } from '../components/AboutBimVisual';
 
 // Dynamic imports of repeatable collections
 const teamModules = import.meta.glob('/src/content/team-members/*.json', { eager: true });
@@ -53,29 +54,31 @@ export default function About() {
         <div className="text-center flex flex-col items-center gap-4">
           <span className="text-xs font-mono font-bold tracking-[0.3em] text-blue-600 dark:text-accent-blue uppercase">The Enterprise</span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-sans font-light text-slate-900 dark:text-white tracking-tight">
-            About <span className="font-bold text-blue-900 dark:text-accent-blue italic">BIM Earth</span>
+            About <span className="font-bold text-blue-900 dark:text-accent-blue italic">BIM Earth Consultancy</span>
           </h1>
-          <p className="text-slate-500 dark:text-slate-400 text-sm max-w-xl font-light">
-            Pioneering digital building synchronization and structural architecture since 2012.
+          <p className="text-slate-500 dark:text-slate-400 text-sm max-w-2xl font-light">
+            Where innovation, precision, and collaboration come together to transform the Architecture, Engineering, and Construction (AEC) industry.
           </p>
         </div>
 
         {/* History Details */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7 flex flex-col gap-6">
-            <h2 className="text-2xl sm:text-3xl font-sans font-semibold text-slate-900 dark:text-white">Our Corporate Legacy</h2>
-            <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed whitespace-pre-line font-light">
-              {aboutData.history}
-            </p>
+          <div className="lg:col-span-12 flex flex-col gap-6">
+            <h2 className="text-2xl sm:text-3xl font-sans font-semibold text-slate-900 dark:text-white">About Us</h2>
+            <div className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed flex flex-col gap-4 font-light">
+              <p>
+                BIM Earth Consultancy, where innovation, precision, and collaboration come together to transform the Architecture, Engineering, and Construction (AEC) industry. We specialize in delivering high-quality Building Information Modeling (BIM) solutions that help clients design, construct, and manage projects more efficiently. BIM Earth Consultancy (BEC) was established in 2021 to serve the needs of AEC and Design/ build industry. With years of practice and experience in Building information modelling, BEC offers BIM services covering 3D BIM modelling, Clash detection, 4D scheduling and simulation, 5D cost estimation services and Facilities & Assets Information Management.
+              </p>
+              <p>
+                At BIM Earth Consultancy, we believe that every successful project starts with accurate information and intelligent planning. Our team combines technical expertise with industry best practices to provide BIM services that improve coordination, reduce project risks, and optimize construction workflows. Today, we serve premium developers, government agencies, and corporate clients globally as a trusted multi-disciplinary consultancy, driving cost reductions of up to 18% and shortening design cycles by 30%.
+              </p>
+            </div>
           </div>
-          <div className="lg:col-span-5 relative rounded-[2.5rem] overflow-hidden shadow-xl glass-card p-2">
-            <img 
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" 
-              alt="BIM Earth skyscraper structural facade" 
-              className="w-full h-[360px] object-cover rounded-[2rem]"
-              referrerPolicy="no-referrer"
-            />
-          </div>
+        </section>
+
+        {/* Building Information Modeling Architectural Presentation */}
+        <section className="w-full">
+          <AboutBimVisual />
         </section>
 
         {/* Vision, Mission, Values */}
@@ -92,7 +95,7 @@ export default function About() {
               <Compass size={22} />
             </div>
             <h3 className="font-sans font-bold text-lg text-slate-900 dark:text-white">Our Corporate Vision</h3>
-            <p className="text-slate-500 dark:text-slate-400 text-xs leading-relaxed font-light">
+            <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
               {aboutData.vision}
             </p>
           </motion.div>
@@ -108,7 +111,7 @@ export default function About() {
               <Target size={22} />
             </div>
             <h3 className="font-sans font-bold text-lg text-slate-900 dark:text-white">Our Professional Mission</h3>
-            <p className="text-slate-500 dark:text-slate-400 text-xs leading-relaxed font-light">
+            <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
               {aboutData.mission}
             </p>
           </motion.div>
@@ -124,8 +127,8 @@ export default function About() {
               <ShieldCheck size={22} />
             </div>
             <h3 className="font-sans font-bold text-lg text-slate-900 dark:text-white">Our Corporate Integrity</h3>
-            <p className="text-slate-500 dark:text-slate-400 text-xs leading-relaxed font-light">
-              {aboutData.valuesIntro}
+            <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
+              {aboutData.integrity || aboutData.valuesIntro}
             </p>
           </motion.div>
 
@@ -145,13 +148,26 @@ export default function About() {
         </section>
 
         {/* Chronological Journey Timeline */}
-        <section className="flex flex-col gap-10">
-          <div className="flex items-center gap-3">
-            <Milestone size={24} className="text-blue-600 dark:text-accent-blue" />
-            <h2 className="text-2xl sm:text-3xl font-sans font-bold text-slate-900 dark:text-white">Our Chronological Timeline</h2>
+        <section className="flex flex-col gap-8">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <Milestone size={24} className="text-blue-600 dark:text-accent-blue" />
+              <h2 className="text-2xl sm:text-3xl font-sans font-bold text-slate-900 dark:text-white">Our Journey</h2>
+            </div>
           </div>
-          <div className="relative border-l border-slate-200 dark:border-white/10 ml-4 pl-8 flex flex-col gap-10">
-            {aboutData.milestones.map((milestone, idx) => (
+
+          {/* Journey in One Line Ribbon */}
+          {aboutData.journeySummary && (
+            <div className="p-4 sm:p-6 rounded-2xl glass-card bg-blue-600/5 dark:bg-accent-blue/5 border border-blue-600/20 dark:border-accent-blue/20">
+              <span className="text-[10px] font-mono uppercase font-bold tracking-widest text-blue-600 dark:text-accent-blue block mb-1">Our Journey in One Line</span>
+              <p className="text-xs sm:text-sm font-semibold text-slate-900 dark:text-slate-100 font-mono tracking-wide">
+                {aboutData.journeySummary}
+              </p>
+            </div>
+          )}
+
+          <div className="relative border-l-2 border-blue-600/20 dark:border-accent-blue/20 ml-4 pl-8 flex flex-col gap-10 mt-2">
+            {aboutData.milestones.map((milestone: any, idx: number) => (
               <motion.div 
                 key={idx}
                 custom={idx}
@@ -162,16 +178,37 @@ export default function About() {
                 className="relative"
               >
                 {/* Timeline node */}
-                <div className="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-blue-600 dark:bg-accent-blue border-4 border-slate-50 dark:border-navy-950 flex items-center justify-center"></div>
+                <div className="absolute -left-[41px] top-2 w-5 h-5 rounded-full bg-blue-600 dark:bg-accent-blue border-4 border-slate-50 dark:border-navy-950 flex items-center justify-center shadow-sm"></div>
                 
-                <div className="flex flex-col gap-1.5 max-w-3xl glass-card p-6 rounded-2xl shadow-sm">
-                  <span className="text-xs font-mono font-bold text-blue-600 dark:text-accent-blue tracking-widest">{milestone.year}</span>
+                <div className="flex flex-col gap-2.5 max-w-3xl glass-card p-6 sm:p-7 rounded-2xl shadow-sm">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <span className="text-xs font-mono font-extrabold text-blue-600 dark:text-accent-blue tracking-widest uppercase bg-blue-50 dark:bg-white/5 px-2.5 py-1 rounded-md">
+                      {milestone.phase ? `${milestone.year} — ${milestone.phase}` : milestone.year}
+                    </span>
+                  </div>
                   <h4 className="font-sans font-bold text-base sm:text-lg text-slate-950 dark:text-white">{milestone.title}</h4>
-                  <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm leading-relaxed font-light">{milestone.description}</p>
+                  <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed font-light whitespace-pre-line">{milestone.description}</p>
                 </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Our Commitment Statement */}
+          {aboutData.commitment && (
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-6 p-8 sm:p-10 rounded-[2.5rem] bg-gradient-to-r from-blue-900 to-slate-900 dark:from-navy-900 dark:to-blue-950 text-white shadow-xl relative overflow-hidden border border-blue-500/20"
+            >
+              <div className="relative z-10 flex flex-col gap-3 max-w-3xl">
+                <span className="text-xs font-mono uppercase font-bold tracking-[0.25em] text-accent-blue">Our Commitment</span>
+                <p className="text-base sm:text-xl font-sans font-light italic leading-relaxed text-slate-100">
+                  {aboutData.commitment}
+                </p>
+              </div>
+            </motion.div>
+          )}
         </section>
 
         {/* Corporate Achievements */}

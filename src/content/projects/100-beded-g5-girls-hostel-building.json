@@ -1,0 +1,31 @@
+{
+  "title": "100 BEDED G+5 GIRLS HOSTEL BUILDING",
+  "category": "Institutional",
+  "industry": "Educational & Institutional Housing",
+  "location": "Delhi NCR, India",
+  "year": "2023 - 2024",
+  "image": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1200&q=80",
+  "images": [
+    {
+      "title": "Hostel Elevation & Structural BIM.jpg",
+      "caption": "G+5 Structural Framing and Architectural Elevation",
+      "type": "Architecture & BIM",
+      "url": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "MEP Multi-Disciplinary Coordination.jpg",
+      "caption": "Sanitary, Electrical, and Fire Fighting System Routing",
+      "type": "MEP Coordination",
+      "url": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "Floor Plan & Room Modules.jpg",
+      "caption": "100-Bed Student Living Quarter Space Optimization",
+      "type": "Space Planning",
+      "url": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80"
+    }
+  ],
+  "description": "Comprehensive G+5 institutional hostel development providing 100-bed student accommodation. Executed multi-disciplinary BIM coordination, structural design validation, MEP utility integration, and complete construction documentation.",
+  "highlight": "Zero MEP clash on-site with optimal spatial and circulation efficiency for 100 residents.",
+  "order": 1
+}

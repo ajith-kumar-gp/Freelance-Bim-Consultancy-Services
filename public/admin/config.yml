@@ -19,6 +19,7 @@ collections:
         file: "src/content/homepage.json"
         fields:
           - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Main Heading", name: "heroHeading", widget: "string" }
           - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
           - { label: "Hero Image", name: "heroImage", widget: "image" }
           - { label: "Primary CTA Text", name: "ctaText", widget: "string" }
@@ -30,6 +31,12 @@ collections:
           - { label: "Stats Counter 3 Label", name: "stat3_label", widget: "string" }
           - { label: "Stats Counter 4 Number", name: "stat4_num", widget: "string" }
           - { label: "Stats Counter 4 Label", name: "stat4_label", widget: "string" }
+          - { label: "Stats Counter 5 Number", name: "stat5_num", widget: "string" }
+          - { label: "Stats Counter 5 Label", name: "stat5_label", widget: "string" }
+          - { label: "Who We Are Heading", name: "whoWeAreHeading", widget: "string" }
+          - { label: "Who We Are Paragraph 1", name: "whoWeAreP1", widget: "text" }
+          - { label: "Who We Are Paragraph 2", name: "whoWeAreP2", widget: "text" }
+          - { label: "Who We Are Paragraph 3", name: "whoWeAreP3", widget: "text" }
           - { label: "SEO Title", name: "seoTitle", widget: "string" }
           - { label: "SEO Description", name: "seoDescription", widget: "text" }
           - { label: "SEO Keywords", name: "seoKeywords", widget: "string" }
@@ -41,10 +48,14 @@ collections:
           - { label: "Company History", name: "history", widget: "text" }
           - { label: "Vision Statement", name: "vision", widget: "text" }
           - { label: "Mission Statement", name: "mission", widget: "text" }
+          - { label: "Corporate Integrity Statement", name: "integrity", widget: "text" }
           - { label: "Core Values Intro", name: "valuesIntro", widget: "string" }
           - { label: "Core Values List", name: "values", widget: "list", field: { label: "Value Item", name: "value", widget: "string" } }
+          - { label: "Journey in One Line Summary", name: "journeySummary", widget: "string" }
+          - { label: "Our Commitment Statement", name: "commitment", widget: "text" }
           - { label: "Journey Milestones", name: "milestones", widget: "list", fields: [
               { label: "Year", name: "year", widget: "string" },
+              { label: "Phase / Stage", name: "phase", widget: "string" },
               { label: "Title", name: "title", widget: "string" },
               { label: "Description", name: "description", widget: "text" }
             ]}
@@ -194,7 +205,7 @@ collections:
     slug: "{{title}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Category", name: "category", widget: "select", options: ["Architecture", "Interior Design", "BIM Services"] }
+      - { label: "Category", name: "category", widget: "select", options: ["Architectural", "Interiors", "BIM", "Institutional", "Transit & Infrastructure", "Commercial & Retail", "Residential Development"] }
       - { label: "Industry", name: "industry", widget: "string" }
       - { label: "Location", name: "location", widget: "string" }
       - { label: "Completion Year", name: "year", widget: "string" }

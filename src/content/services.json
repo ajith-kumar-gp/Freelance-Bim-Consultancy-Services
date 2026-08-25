@@ -1,105 +1,184 @@
 {
   "architecture": {
-    "title": "Architecture Design",
-    "subtitle": "Carbon-Smart, Timeless Architectural Environments",
-    "description": "We craft architectural wonders that harmonize structural integrity with human comfort. Our designs are carbon-smart, fully compliant with international building codes, and simulated virtually prior to breaking ground.",
-    "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+    "title": "Architectural BIM Services",
+    "subtitle": "Intelligent 3D Visualization, Constructability & Code Validation",
+    "description": "Over the past years, we have successfully implemented BIM for Architects, Building Designers, General Contractors and other Architectural firms within their design and construction processes. Our Architectural BIM services facilitate our clients with digital visualization of their concept design, in an intelligent 3D BIM model, allowing them to make changes within the design before it reaches the construction field.",
+    "overview": "The models designed by our BIM experts undergo regular quality checks to ensure the adherence to design discrepancies, coordination issues and constructability. The final validation of design is done as per applicable local and international codes. We work on all prevalent software applications including Revit, AutoCAD, Navisworks and Assets Management.",
+    "sectors": "Infrastructure like Metro/rail, residential project, commercials like hotel, restaurants or office premises or building complexes for healthcare/educational purposes such as hospitals, school or colleges, we provide architectural BIM services for all types of construction projects.",
+    "image": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/3D Architecture.jpg",
     "subServices": [
       {
-        "name": "Residential Architecture",
-        "description": "High-end bespoke villas, premium multi-family complexes, and sustainable masterplanned estates.",
+        "name": "Intelligent 3D Concept Visualization",
+        "description": "Digital visualization of concept designs in intelligent 3D BIM models, enabling seamless design iteration prior to construction.",
         "features": [
-          "Bespoke architectural layout tailored to local microclimates",
-          "Passive heating/cooling integration for energy cost reduction",
-          "Ultra-realistic 3D walkthroughs and material specifications"
+          "Parametric 3D architectural modeling from 2D sketches and CAD concepts",
+          "Virtual walkthroughs and spatial daylight/circulation simulation",
+          "Early-stage design optimization reducing on-site rework"
         ]
       },
       {
-        "name": "Commercial Architecture",
-        "description": "State-of-the-art office headquarters, lifestyle retail hubs, and mixed-use high-rise towers.",
+        "name": "Quality Assurance & Constructability",
+        "description": "Rigorous QA/QC protocols to identify design discrepancies and ensure construction feasibility.",
         "features": [
-          "Flexible floor plate design to accommodate changing lease layouts",
-          "Acoustic, fire, and structural hazard simulation integration",
-          "High-traffic circulation planning and glass facade optimization"
+          "Regular quality audits for constructability and geometric accuracy",
+          "Design discrepancy identification and interdisciplinary coordination",
+          "Final validation compliant with local and international building codes"
         ]
       },
       {
-        "name": "Infrastructure Design",
-        "description": "Mass transit stations, municipal centers, utility architecture, and smart-city landscape integration.",
+        "name": "Multi-Sector Project Execution",
+        "description": "Tailored BIM delivery across complex infrastructure, commercial, and institutional sectors.",
         "features": [
-          "Heavy-duty civil structural engineering coordination",
-          "Public safety and crowd circulation computational simulations",
-          "Carbon-neutral, resilient, and climate-adaptive materials"
+          "Metro & Rail transit corridors and civil infrastructure",
+          "Commercial complexes, hotels, restaurants, and office premises",
+          "Healthcare facilities, hospitals, schools, and university complexes"
+        ]
+      },
+      {
+        "name": "Software Stack & Asset Management",
+        "description": "Cross-platform model development leveraging the industry's most advanced tools.",
+        "features": [
+          "Autodesk Revit Architecture parametric family and template creation",
+          "AutoCAD 2D/3D integration and Navisworks clash coordination",
+          "COBie and Asset Management data population for facility handover"
         ]
       }
     ]
   },
   "interior": {
-    "title": "Interior Design",
-    "subtitle": "Ergonomic Luxury & Human-Centric Spaces",
-    "description": "Our interior design division marries aesthetic elegance with deep space-planning ergonomics. We deliver curated spatial identities that increase wellness, collaboration, and spatial efficiency.",
-    "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80",
+    "title": "Structural BIM Services",
+    "subtitle": "Coordinated Analytical & Geometric Structural Detailing",
+    "description": "We have a strong team of structural engineers, modelers and drafters thrived to deliver coordinated construction BIM models and documentation, helping you in accurately maintaining your vision throughout the construction process. Our Structural BIM services ensure enhanced coordination between all project stakeholders and furnish an editable analytical representation of structural elements along with the geometric model.",
+    "overview": "Structural engineers are believed to be captivating a leadership role as far as BIM adoption in the industry is concerned. BIM offers a platform for structural engineers to work more efficiently and accurately with tools that support CAD-based workflows.",
+    "sectors": "Integrating Revit with Autodesk Navisworks enables the integration of multiple 3D models and data formats into a single model that architects, engineers and contractors can simulate analyse and review for better coordination, conflict resolution and planning, long before construction begins.",
+    "image": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/3D Structure.jpg",
     "subServices": [
       {
-        "name": "Residential Interiors",
-        "description": "High-end luxury apartments, personalized penthouses, and bespoke custom furniture curation.",
+        "name": "Coordinated Construction BIM Models",
+        "description": "High-fidelity structural BIM modeling and detailed documentation preserving engineering intent from foundation to superstructure.",
         "features": [
-          "Custom millwork and acoustic insulation design",
-          "Curated lighting choreography using circadian-rhythm LED technologies",
-          "Premium, non-toxic, sustainable material palettes"
+          "Detailed modeling of reinforced concrete (RCC), steel frames, and timber systems",
+          "Automated generation of structural framing plans, sections, and elevations",
+          "Precise coordination between architectural concepts and structural frames"
         ]
       },
       {
-        "name": "Office Space Interiors",
-        "description": "Acoustically sound collaborative zones, productive workspaces, and modular focus areas.",
+        "name": "Analytical & Geometric Detailing",
+        "description": "Editable analytical representations interconnected with geometric 3D structural members.",
         "features": [
-          "Biophilic air-filtration plants and natural light mapping",
-          "Modular partitioning for rapid workspace re-configurations",
-          "Integrated cable management and under-floor service pathways"
+          "Bidirectional linking of analytical models with structural analysis engines",
+          "Accurate structural member schedules, material properties, and load definitions",
+          "Seamless transition between CAD-based drafter workflows and parametric BIM"
         ]
       },
       {
-        "name": "Commercial Interiors",
-        "description": "Hospitality lobbies, retail experiences, dining spaces, and customer showrooms.",
+        "name": "Multi-Model Integration & Navisworks Simulation",
+        "description": "Consolidation of heterogeneous formats into unified models for simulation and pre-construction planning.",
         "features": [
-          "Aesthetic sensory branding and customer journey layout flow",
-          "Heavy-traffic commercial grade flooring and textile durability",
-          "Integrated audio-visual and experiential sensory zones"
+          "Autodesk Revit and Navisworks multi-model integration and 4D/5D simulations",
+          "Multi-stakeholder review workflows for contractors, engineers, and owners",
+          "Virtual constructability reviews long before on-site ground-breaking"
+        ]
+      },
+      {
+        "name": "Structural Conflict Resolution & QTO",
+        "description": "Proactive clash detection and accurate structural material takeoff schedules.",
+        "features": [
+          "Structural rebar and concrete volume quantity take-offs (QTO)",
+          "Clash identification between structural frames, MEP routing, and architecture",
+          "Rebar shop drawing generation and placement sequencing"
         ]
       }
     ]
   },
   "bim": {
-    "title": "BIM Engineering Services",
-    "subtitle": "High-Fidelity Virtual Construction Modeling",
-    "description": "The operational core of BIM Earth. We translate 2D conceptual designs into unified, clash-free, intelligent 3D BIM models up to LOD 500 (Level of Development) for complete asset lifecycle management.",
-    "image": "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80",
+    "title": "BIM MEP Services",
+    "subtitle": "Mechanical, Electrical, Plumbing & Fire Protection Engineering",
+    "description": "BIM Earth Consultancy provides end-to-end multi-disciplinary MEPF BIM modeling, cross-discipline coordination, and clash resolution, ensuring seamless building services integration and accurate material take-offs.",
+    "overview": "Our MEP division delivers high-precision modeling across Mechanical systems, Electrical infrastructure, Plumbing networks, and Fire Protection systems to eliminate on-site spatial conflicts and optimize installation workflows.",
+    "sectors": "Applied across residential towers, commercial offices, healthcare facilities, industrial plants, and transit infrastructure hubs worldwide.",
+    "image": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/3D Coorination View.jpg",
     "subServices": [
       {
-        "name": "Architecture BIM",
-        "description": "Detailed parametric modeling of building envelopes, interior partitions, and high-performance material scheduling.",
+        "name": "Mechanical BIM Services",
+        "description": "BIM Earth Consultancy is recognised as an expert in the field of mechanical BIM services for Mechanical BIM modelling, MEP coordination services, MEP Revit family creation, construction simulation and cost estimation of materials related to the MEP domain.",
         "features": [
-          "Intelligent Revit family creation and architectural schedule mapping",
-          "Exact quantities and material take-offs (QTO) generated from the model",
-          "LOD 100 to LOD 500 complete architectural modeling transition"
+          "HVAC ductwork, air handling units (AHU), and chiller plant 3D modeling",
+          "Parametric MEP Revit family creation with custom engineering parameters",
+          "Construction simulation, spatial clearance checking, and MEP cost estimation"
         ]
       },
       {
-        "name": "Structural BIM",
-        "description": "Parametric detailing of structural concrete, steel framing, rebar placements, and foundation geometries.",
+        "name": "Electrical BIM Services",
+        "description": "With the support of our team of BIM experts, we offer end-to-end solutions for electrical BIM modelling services. We specialize in modelling conduits, electrical equipment, lighting fixtures, cable trays, communication and data transmission devices, fire alarm systems, and network routing.",
         "features": [
-          "Deep steel connection modeling and reinforcement scheduling",
-          "Analytical model linking for FEA structural structural testing",
-          "Precast and post-tension concrete element virtual scheduling"
+          "Containment modeling: cable trays, ladder racks, and conduit routing",
+          "Lighting fixtures, power distribution panels, and switchgear layouts",
+          "Data, communication, security systems, and fire alarm network routing"
         ]
       },
       {
-        "name": "MEP BIM",
-        "description": "Clash-resolved coordination of HVAC ducts, electrical conduits, plumbing networks, and fire safety systems.",
+        "name": "Plumbing BIM Services",
+        "description": "With our plumbing BIM services, one can facilitate 3D visualization of all kinds of plumbing related elements in a building. Our BIM plumbing solutions track coordination and checks for interference for all elements of MEPF BIM, whether fabrication drawings, fittings, spool drawings, or quantity estimation.",
         "features": [
-          "Advanced multi-trade clash detection and automated resolution workflow",
-          "Spatial routing optimization for maximum ceiling heights",
-          "Pre-fabrication drawings and laser-scanning point cloud registration"
+          "Domestic water supply, drainage, waste, and vent piping networks",
+          "Detailed spool drawings, pipe sleeve layouts, and fabrication documentation",
+          "Interference checking and clash-free routing through structural elements"
+        ]
+      },
+      {
+        "name": "Fire System BIM Services",
+        "description": "Revit modelling India is highly competent and renowned for handling fire protection needs effectively and efficiently with the help of its Fire system BIM modelling services. We hold specialisation in fire system BIM modelling, firefighting design, validation and shop drawings, and have emerged as a major MEP BIM modelling and coordination service provider.",
+        "features": [
+          "Sprinkler pipe routing, standpipe systems, and fire pump room detailing",
+          "Hydraulic calculation alignment and fire protection code validation",
+          "Comprehensive firefighting shop drawings and life-safety MEP coordination"
+        ]
+      }
+    ]
+  },
+  "training": {
+    "title": "BIM Training Programs",
+    "subtitle": "Industry-Ready Masterclasses in Revit Architecture, Revit Structure & Navisworks",
+    "description": "Our training courses have the capability to provide the most relevant and up-to-date information working in the real-world environment and market. We enable professionals and students to learn how to effectively manage information across different stages of a construction project for career advancement.",
+    "overview": "All training courses with BIM Earth Consultancy are fully aligned with the latest international BIM standards, making it easier for you to deliver quality projects and meet strict requirements within specified timelines. Our courses provide the essential knowledge needed to graduate as a qualified BIM expert.",
+    "sectors": "Professional training tailored for Architects, Civil & Structural Engineers, MEP Modelers, CAD Drafters, Project Managers, and Engineering Students.",
+    "image": "/About Us.png",
+    "subServices": [
+      {
+        "name": "REVIT Architecture Masterclass",
+        "description": "Comprehensive hands-on training in Autodesk Revit Architecture from conceptual modeling to complete construction documentation.",
+        "features": [
+          "Parametric building elements, multi-tier wall systems, and curtain walls",
+          "Floor plans, elevations, sections, and automated schedule generation",
+          "Family creation (RFA) and custom template standardization"
+        ]
+      },
+      {
+        "name": "REVIT Structure Masterclass",
+        "description": "Master structural modeling, reinforcement detailing, and analytical model generation in Revit Structure.",
+        "features": [
+          "Structural columns, beams, foundation footings, and slab systems",
+          "3D rebar placement, bar bending schedules (BBS), and structural connections",
+          "Linking structural models with analytical design software"
+        ]
+      },
+      {
+        "name": "Autodesk Navisworks Coordination",
+        "description": "Learn multi-disciplinary clash detection, 4D construction scheduling, and project model review.",
+        "features": [
+          "Multi-discipline model aggregation (Architecture + Structure + MEP)",
+          "Clash Detective: hard clash, soft clash, and clearance reporting workflows",
+          "TimeLiner: 4D construction timeline simulation and walkthrough animation"
+        ]
+      },
+      {
+        "name": "BIM Standards & Information Management",
+        "description": "Learn to manage information effectively across all project lifecycle stages in compliance with industry standards.",
+        "features": [
+          "ISO 19650 BIM workflows, Common Data Environments (CDE), and BEP alignment",
+          "Level of Development (LOD 100 - LOD 500) specification standards",
+          "Career mentorship, portfolio development, and live project case studies"
         ]
       }
     ]

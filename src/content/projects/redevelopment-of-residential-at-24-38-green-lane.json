@@ -1,0 +1,31 @@
+{
+  "title": "REDEVLOPMENT OF RESIDENTIAL AT 24-38 GREEN LANE",
+  "category": "Residential Development",
+  "industry": "Residential Regeneration & Redevelopment",
+  "location": "24-38 Green Lane",
+  "year": "2024 - 2025",
+  "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+  "images": [
+    {
+      "title": "Residential Regeneration BIM.jpg",
+      "caption": "Historic Facade Preservation & Modern Retrofit Model",
+      "type": "Architecture",
+      "url": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "Structural Strengthening & Extensions.jpg",
+      "caption": "Load Bearing Verification and Foundation Underpinning",
+      "type": "Structural Engineering",
+      "url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "Interior Layouts & MEP Modernization.jpg",
+      "caption": "Contemporary Living Spaces and Smart Energy Systems",
+      "type": "Interiors & MEP",
+      "url": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80"
+    }
+  ],
+  "description": "Full redevelopment and architectural renewal of multi-unit residential property at 24-38 Green Lane. Integrated structural retrofitting, architectural layouts, updated MEP utilities, and comprehensive 3D digital twins.",
+  "highlight": "Preserved structural integrity while delivering contemporary living spaces and updated utilities.",
+  "order": 10
+}

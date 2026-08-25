@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { 
@@ -5,6 +6,8 @@ import {
 } from 'lucide-react';
 import homepageData from '../content/homepage.json';
 import servicesData from '../content/services.json';
+import { ProjectCard, ProjectData } from '../components/ProjectCard';
+import { ProjectModal } from '../components/ProjectModal';
 
 // Dynamic folder collections imports
 const projectModules = import.meta.glob('/src/content/projects/*.json', { eager: true });
@@ -23,6 +26,13 @@ const faqsList = Object.values(faqModules)
   .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
 export default function Home() {
+  const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
+  const [modalInitialImageIdx, setModalInitialImageIdx] = useState<number>(0);
+
+  const handleOpenProjectModal = (project: ProjectData, imageIndex: number = 0) => {
+    setSelectedProject(project);
+    setModalInitialImageIdx(imageIndex);
+  };
   
   // Slide animation helpers
   const fadeInUp = {
@@ -58,19 +68,19 @@ export default function Home() {
             variants={staggerContainer}
             className="lg:col-span-7 flex flex-col gap-6"
           >
-            <motion.div 
+            {/* <motion.div 
               variants={fadeInUp}
               className="inline-flex items-center gap-2 bg-white/40 dark:bg-navy-950/45 backdrop-blur-md border border-white/60 dark:border-white/10 px-4 py-2 rounded-full text-xs font-mono font-bold tracking-widest text-blue-900 dark:text-accent-blue uppercase w-fit shadow-sm"
             >
               <Cpu size={14} className="animate-pulse text-blue-600 dark:text-accent-blue" />
-              <span>LOD 500 BIM & Engineering Architecture</span>
-            </motion.div>
+              <span>LOD 500 Intelligent BIM Solutions</span>
+            </motion.div> */}
 
             <motion.h1 
               variants={fadeInUp}
-              className="text-4xl sm:text-5xl lg:text-7xl font-sans font-light tracking-tight leading-[1.1] text-slate-900 dark:text-white"
+              className="text-4xl sm:text-5xl lg:text-6xl font-sans font-light tracking-tight leading-[1.15] text-slate-900 dark:text-white"
             >
-              Engineering the <span className="font-bold text-blue-900 dark:text-accent-blue italic">digital twin</span> of tomorrow.
+              Building the future through <span className="font-bold text-blue-900 dark:text-accent-blue italic">intelligent BIM Solutions</span>
             </motion.h1>
 
             <motion.p 
@@ -99,7 +109,7 @@ export default function Home() {
             </motion.div>
           </motion.div>
 
-          {/* Right Geometric Mockup/Image Column */}
+          {/* Right Hero Visual Column */}
           <motion.div 
             initial={{ opacity: 0, x: 40, scale: 0.95 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -109,43 +119,30 @@ export default function Home() {
             {/* Soft decorative blur ring */}
             <div className="absolute -inset-2 bg-blue-600/10 dark:bg-accent-blue/10 rounded-[2.5rem] blur opacity-50 animate-pulse"></div>
             
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/60 dark:border-white/10 shadow-2xl glass-card p-2.5">
-              <div className="rounded-[1.5rem] overflow-hidden relative">
-                <img 
-                  src={homepageData.heroImage} 
-                  alt="BIM Earth Corporate Facility" 
-                  className="w-full h-[390px] object-cover hover:scale-105 transition-transform duration-700"
-                  referrerPolicy="no-referrer"
-                />
-                
-                {/* Glassmorphic Overlay Badge */}
-                <div className="absolute bottom-5 left-5 right-5 glass-panel p-5 rounded-2xl border border-white/40 text-slate-950 dark:text-white flex items-center justify-between shadow-xl">
-                  <div>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-blue-800 dark:text-accent-blue font-mono block mb-1">Featured Project</span>
-                    <span className="font-sans font-extrabold text-sm text-slate-900 dark:text-white">The Vertex Commercial Tower</span>
-                  </div>
-                  <Link to="/projects" className="text-blue-900 dark:text-accent-blue hover:text-white p-2.5 rounded-xl bg-white/60 dark:bg-navy-950/60 hover:bg-blue-600 dark:hover:bg-navy-900 transition-colors shadow-sm">
-                    <ArrowRight size={16} />
-                  </Link>
-                </div>
-              </div>
+            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl glass-card p-2 border border-white/60 dark:border-white/10">
+              <img 
+                src={homepageData.heroImage || "/Home Page Image.jpeg"} 
+                alt="BIM Earth Intelligent BIM Solutions" 
+                className="w-full h-auto max-h-[460px] object-cover rounded-[2rem] shadow-inner"
+                referrerPolicy="no-referrer"
+              />
             </div>
           </motion.div>
 
         </div>
       </section>
 
-      {/* 2. Statistics Counter Section */}
+      {/* 2. Statistics Counter Section (All 5 Project & Business Stats) */}
       <section className="relative py-14 bg-transparent border-b border-white/20 dark:border-white/5 transition-colors duration-300 z-10">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 text-center">
             
             <motion.div 
               whileHover={{ y: -4 }}
               className="p-6 rounded-3xl glass-card transition-all shadow-sm flex flex-col justify-center items-center"
             >
               <h3 className="text-3xl sm:text-4xl font-mono font-extrabold text-blue-900 dark:text-accent-blue">{homepageData.stat1_num}</h3>
-              <p className="text-[10px] uppercase tracking-[0.2em] font-medium text-slate-500 mt-2">{homepageData.stat1_label}</p>
+              <p className="text-[10px] uppercase tracking-[0.15em] font-semibold text-slate-500 mt-2">{homepageData.stat1_label}</p>
             </motion.div>
 
             <motion.div 
@@ -153,7 +150,7 @@ export default function Home() {
               className="p-6 rounded-3xl glass-card transition-all shadow-sm flex flex-col justify-center items-center"
             >
               <h3 className="text-3xl sm:text-4xl font-mono font-extrabold text-blue-900 dark:text-accent-blue">{homepageData.stat2_num}</h3>
-              <p className="text-[10px] uppercase tracking-[0.2em] font-medium text-slate-500 mt-2">{homepageData.stat2_label}</p>
+              <p className="text-[10px] uppercase tracking-[0.15em] font-semibold text-slate-500 mt-2">{homepageData.stat2_label}</p>
             </motion.div>
 
             <motion.div 
@@ -161,7 +158,7 @@ export default function Home() {
               className="p-6 rounded-3xl glass-card transition-all shadow-sm flex flex-col justify-center items-center"
             >
               <h3 className="text-3xl sm:text-4xl font-mono font-extrabold text-blue-900 dark:text-accent-blue">{homepageData.stat3_num}</h3>
-              <p className="text-[10px] uppercase tracking-[0.2em] font-medium text-slate-500 mt-2">{homepageData.stat3_label}</p>
+              <p className="text-[10px] uppercase tracking-[0.15em] font-semibold text-slate-500 mt-2">{homepageData.stat3_label}</p>
             </motion.div>
 
             <motion.div 
@@ -169,14 +166,22 @@ export default function Home() {
               className="p-6 rounded-3xl glass-card transition-all shadow-sm flex flex-col justify-center items-center"
             >
               <h3 className="text-3xl sm:text-4xl font-mono font-extrabold text-blue-900 dark:text-accent-blue">{homepageData.stat4_num}</h3>
-              <p className="text-[10px] uppercase tracking-[0.2em] font-medium text-slate-500 mt-2">{homepageData.stat4_label}</p>
+              <p className="text-[10px] uppercase tracking-[0.15em] font-semibold text-slate-500 mt-2">{homepageData.stat4_label}</p>
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ y: -4 }}
+              className="p-6 rounded-3xl glass-card transition-all shadow-sm flex flex-col justify-center items-center col-span-2 md:col-span-1"
+            >
+              <h3 className="text-3xl sm:text-4xl font-mono font-extrabold text-blue-900 dark:text-accent-blue">{homepageData.stat5_num}</h3>
+              <p className="text-[10px] uppercase tracking-[0.15em] font-semibold text-slate-500 mt-2">{homepageData.stat5_label}</p>
             </motion.div>
 
           </div>
         </div>
       </section>
 
-      {/* 3. Company Overview Section */}
+      {/* 3. Company Overview Section - Who We Are? */}
       <section className="relative py-24 px-6 bg-transparent transition-colors duration-300 z-10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
@@ -184,24 +189,27 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-6 flex flex-col gap-6"
+            className="lg:col-span-7 flex flex-col gap-6"
           >
-            <span className="text-xs font-mono font-bold tracking-[0.3em] text-blue-600 dark:text-accent-blue uppercase">Who We Are</span>
+            <span className="text-xs font-mono font-bold tracking-[0.3em] text-blue-600 dark:text-accent-blue uppercase">Who We Are?</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-light text-slate-900 dark:text-white tracking-tight leading-[1.2]">
-              An Architectural Design Studio Infused with <span className="font-bold text-blue-900 dark:text-accent-blue italic">Engineering Precision</span>
+              {homepageData.whoWeAreHeading || "From Vision to Reality — Powered by BIM"}
             </h2>
             <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-              BIM Earth Consultancy represents the pinnacle of multi-disciplinary structural coordination. We operate at the intersection of creative building envelope design and robust engineering logic.
+              {homepageData.whoWeAreP1}
             </p>
             <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed font-light">
-              Our unique unified process ensures that spatial luxury, energy conservation, structural longevity, and mechanical piping are fully resolved inside a rich virtual model before on-site steel is cast. We bring transparency, schedule certainty, and immense architectural beauty to our corporate clients.
+              {homepageData.whoWeAreP2}
+            </p>
+            <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed font-light">
+              {homepageData.whoWeAreP3}
             </p>
             <div className="mt-2">
               <Link 
                 to="/about" 
                 className="inline-flex items-center gap-2 text-sm font-bold text-blue-700 dark:text-accent-blue hover:underline"
               >
-                <span>Read Our Corporate Journey</span>
+                <span>Read Full About Us & Journey</span>
                 <ArrowRight size={16} />
               </Link>
             </div>
@@ -211,12 +219,12 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="lg:col-span-6 relative rounded-[2.5rem] overflow-hidden shadow-xl glass-card p-2"
+            className="lg:col-span-5 relative rounded-[2.5rem] overflow-hidden shadow-xl glass-card p-2 border border-white/60 dark:border-white/10"
           >
             <img 
-              src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" 
-              alt="BIM Engineering Office" 
-              className="w-full h-[380px] object-cover rounded-[2rem]"
+              src={homepageData.whoWeAreImage || "/About Us.png"} 
+              alt="About BIM Earth Consultancy" 
+              className="w-full h-auto max-h-[460px] object-cover rounded-[2rem] shadow-inner"
               referrerPolicy="no-referrer"
             />
           </motion.div>
@@ -236,102 +244,134 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
             {/* Architecture Card - Glassmorphic */}
             <motion.div 
               whileHover={{ y: -8 }}
-              className="p-8 rounded-[2.5rem] glass-card flex flex-col gap-5 transition-all shadow-sm"
+              className="p-6 sm:p-7 rounded-[2.2rem] glass-card flex flex-col gap-4 transition-all shadow-sm border border-white/40 dark:border-white/10"
             >
-              <div className="w-12 h-12 bg-white dark:bg-navy-950 rounded-2xl flex items-center justify-center shadow-md">
-                <Building size={22} className="text-blue-900 dark:text-accent-blue" />
+              <div className="w-11 h-11 bg-white dark:bg-navy-950 rounded-2xl flex items-center justify-center shadow-md">
+                <Building size={20} className="text-blue-900 dark:text-accent-blue" />
               </div>
-              <h3 className="font-sans font-bold text-xl text-slate-950 dark:text-white">{servicesData.architecture.title}</h3>
-              <p className="text-xs text-blue-600 dark:text-accent-blue font-mono font-bold uppercase tracking-wider">{servicesData.architecture.subtitle}</p>
-              <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed font-light">
+              <h3 className="font-sans font-bold text-lg text-slate-950 dark:text-white">{servicesData.architecture.title}</h3>
+              <p className="text-[11px] text-blue-600 dark:text-accent-blue font-mono font-bold uppercase tracking-wider">{servicesData.architecture.subtitle}</p>
+              <p className="text-slate-600 dark:text-slate-400 text-xs leading-relaxed font-light line-clamp-4">
                 {servicesData.architecture.description}
               </p>
-              <ul className="flex flex-col gap-2.5 text-xs font-medium text-slate-700 dark:text-slate-300 mt-2">
+              <ul className="flex flex-col gap-2 text-xs font-medium text-slate-700 dark:text-slate-300 mt-1">
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 size={14} className="text-blue-600 dark:text-accent-blue shrink-0" />
-                  <span>Residential estates & custom villas</span>
+                  <CheckCircle2 size={13} className="text-blue-600 dark:text-accent-blue shrink-0" />
+                  <span>3D Digital Concept Visualization</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 size={14} className="text-blue-600 dark:text-accent-blue shrink-0" />
-                  <span>High-rise office buildings & retail</span>
+                  <CheckCircle2 size={13} className="text-blue-600 dark:text-accent-blue shrink-0" />
+                  <span>Constructability & Code Validation</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 size={14} className="text-blue-600 dark:text-accent-blue shrink-0" />
-                  <span>Municipal infrastructure planning</span>
+                  <CheckCircle2 size={13} className="text-blue-600 dark:text-accent-blue shrink-0" />
+                  <span>Revit, AutoCAD & Navisworks</span>
                 </li>
               </ul>
-              <Link to="/services" className="text-xs font-bold text-blue-700 dark:text-accent-blue hover:underline inline-flex items-center gap-1.5 mt-auto pt-4">
-                <span>Learn More →</span>
+              <Link to="/services" className="text-xs font-bold text-blue-700 dark:text-accent-blue hover:underline inline-flex items-center gap-1.5 mt-auto pt-3">
+                <span>Explore Architectural →</span>
               </Link>
             </motion.div>
 
-            {/* Interior Design Card - Glassmorphic */}
+            {/* Structural BIM Card - Glassmorphic */}
             <motion.div 
               whileHover={{ y: -8 }}
-              className="p-8 rounded-[2.5rem] glass-card flex flex-col gap-5 transition-all shadow-sm"
+              className="p-6 sm:p-7 rounded-[2.2rem] glass-card flex flex-col gap-4 transition-all shadow-sm border border-white/40 dark:border-white/10"
             >
-              <div className="w-12 h-12 bg-white dark:bg-navy-950 rounded-2xl flex items-center justify-center shadow-md">
-                <LayoutGrid size={22} className="text-blue-900 dark:text-accent-blue" />
+              <div className="w-11 h-11 bg-white dark:bg-navy-950 rounded-2xl flex items-center justify-center shadow-md">
+                <LayoutGrid size={20} className="text-blue-900 dark:text-accent-blue" />
               </div>
-              <h3 className="font-sans font-bold text-xl text-slate-950 dark:text-white">{servicesData.interior.title}</h3>
-              <p className="text-xs text-blue-600 dark:text-accent-blue font-mono font-bold uppercase tracking-wider">{servicesData.interior.subtitle}</p>
-              <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed font-light">
+              <h3 className="font-sans font-bold text-lg text-slate-950 dark:text-white">{servicesData.interior.title}</h3>
+              <p className="text-[11px] text-blue-600 dark:text-accent-blue font-mono font-bold uppercase tracking-wider">{servicesData.interior.subtitle}</p>
+              <p className="text-slate-600 dark:text-slate-400 text-xs leading-relaxed font-light line-clamp-4">
                 {servicesData.interior.description}
               </p>
-              <ul className="flex flex-col gap-2.5 text-xs font-medium text-slate-700 dark:text-slate-300 mt-2">
+              <ul className="flex flex-col gap-2 text-xs font-medium text-slate-700 dark:text-slate-300 mt-1">
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 size={14} className="text-blue-600 dark:text-accent-blue shrink-0" />
-                  <span>High-end luxury apartment curation</span>
+                  <CheckCircle2 size={13} className="text-blue-600 dark:text-accent-blue shrink-0" />
+                  <span>Coordinated Analytical Models</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 size={14} className="text-blue-600 dark:text-accent-blue shrink-0" />
-                  <span>Ergonomic, modern corporate workspaces</span>
+                  <CheckCircle2 size={13} className="text-blue-600 dark:text-accent-blue shrink-0" />
+                  <span>Geometric Structural Detailing</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 size={14} className="text-blue-600 dark:text-accent-blue shrink-0" />
-                  <span>Hospitality & retail sensory layouts</span>
+                  <CheckCircle2 size={13} className="text-blue-600 dark:text-accent-blue shrink-0" />
+                  <span>Navisworks Pre-Build Simulations</span>
                 </li>
               </ul>
-              <Link to="/services" className="text-xs font-bold text-blue-700 dark:text-accent-blue hover:underline inline-flex items-center gap-1.5 mt-auto pt-4">
-                <span>Learn More →</span>
+              <Link to="/services" className="text-xs font-bold text-blue-700 dark:text-accent-blue hover:underline inline-flex items-center gap-1.5 mt-auto pt-3">
+                <span>Explore Structural →</span>
               </Link>
             </motion.div>
 
-            {/* BIM Card - Standout Blue Card matching "Frosted Glass" theme specs */}
+            {/* BIM MEP Card - Standout Accent Card */}
             <motion.div 
               whileHover={{ y: -8 }}
-              className="p-8 rounded-[2.5rem] bg-blue-600 dark:bg-blue-600/90 text-white flex flex-col gap-5 transition-all shadow-xl shadow-blue-600/30 border border-blue-500 relative overflow-hidden"
+              className="p-6 sm:p-7 rounded-[2.2rem] bg-blue-600 dark:bg-blue-600/90 text-white flex flex-col gap-4 transition-all shadow-xl shadow-blue-600/30 border border-blue-500 relative overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-              <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-md relative z-10">
-                <Cpu size={22} className="text-blue-900" />
+              <div className="absolute top-0 right-0 w-28 h-28 bg-white/10 rounded-full blur-2xl"></div>
+              <div className="w-11 h-11 bg-white rounded-2xl flex items-center justify-center shadow-md relative z-10">
+                <Cpu size={20} className="text-blue-900" />
               </div>
-              <h3 className="font-sans font-bold text-xl text-white relative z-10">{servicesData.bim.title}</h3>
-              <p className="text-xs text-blue-100 font-mono font-bold uppercase tracking-wider relative z-10">{servicesData.bim.subtitle}</p>
-              <p className="text-blue-50/90 text-xs sm:text-sm leading-relaxed font-light relative z-10">
+              <h3 className="font-sans font-bold text-lg text-white relative z-10">{servicesData.bim.title}</h3>
+              <p className="text-[11px] text-blue-100 font-mono font-bold uppercase tracking-wider relative z-10">{servicesData.bim.subtitle}</p>
+              <p className="text-blue-50/90 text-xs leading-relaxed font-light relative z-10 line-clamp-4">
                 {servicesData.bim.description}
               </p>
-              <ul className="flex flex-col gap-2.5 text-xs font-medium text-blue-50 mt-2 relative z-10">
+              <ul className="flex flex-col gap-2 text-xs font-medium text-blue-50 mt-1 relative z-10">
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 size={14} className="text-white shrink-0" />
-                  <span>LOD 100 - 500 BIM Model compilation</span>
+                  <CheckCircle2 size={13} className="text-white shrink-0" />
+                  <span>Mechanical & HVAC 3D BIM</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 size={14} className="text-white shrink-0" />
-                  <span>Advanced Structural concrete detailing</span>
+                  <CheckCircle2 size={13} className="text-white shrink-0" />
+                  <span>Electrical, Lighting & Data Tray</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 size={14} className="text-white shrink-0" />
-                  <span>Multi-trade MEP clash analysis</span>
+                  <CheckCircle2 size={13} className="text-white shrink-0" />
+                  <span>Plumbing & Fire Protection Systems</span>
                 </li>
               </ul>
-              <Link to="/services" className="text-xs font-bold text-white hover:underline inline-flex items-center gap-1.5 mt-auto pt-4 relative z-10">
-                <span>Learn More →</span>
+              <Link to="/services" className="text-xs font-bold text-white hover:underline inline-flex items-center gap-1.5 mt-auto pt-3 relative z-10">
+                <span>Explore MEPF →</span>
+              </Link>
+            </motion.div>
+
+            {/* BIM Training Card - Glassmorphic */}
+            <motion.div 
+              whileHover={{ y: -8 }}
+              className="p-6 sm:p-7 rounded-[2.2rem] glass-card flex flex-col gap-4 transition-all shadow-sm border border-white/40 dark:border-white/10"
+            >
+              <div className="w-11 h-11 bg-white dark:bg-navy-950 rounded-2xl flex items-center justify-center shadow-md">
+                <Cpu size={20} className="text-blue-900 dark:text-accent-blue" />
+              </div>
+              <h3 className="font-sans font-bold text-lg text-slate-950 dark:text-white">{servicesData.training.title}</h3>
+              <p className="text-[11px] text-blue-600 dark:text-accent-blue font-mono font-bold uppercase tracking-wider">{servicesData.training.subtitle}</p>
+              <p className="text-slate-600 dark:text-slate-400 text-xs leading-relaxed font-light line-clamp-4">
+                {servicesData.training.description}
+              </p>
+              <ul className="flex flex-col gap-2 text-xs font-medium text-slate-700 dark:text-slate-300 mt-1">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 size={13} className="text-blue-600 dark:text-accent-blue shrink-0" />
+                  <span>Revit Architecture & Structure</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 size={13} className="text-blue-600 dark:text-accent-blue shrink-0" />
+                  <span>Navisworks Clash Management</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 size={13} className="text-blue-600 dark:text-accent-blue shrink-0" />
+                  <span>Industry Standards & Certification</span>
+                </li>
+              </ul>
+              <Link to="/services" className="text-xs font-bold text-blue-700 dark:text-accent-blue hover:underline inline-flex items-center gap-1.5 mt-auto pt-3">
+                <span>View Training Courses →</span>
               </Link>
             </motion.div>
 
@@ -357,41 +397,12 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projectsList.slice(0, 3).map((project, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="group rounded-[2.2rem] overflow-hidden glass-card shadow-sm transition-all hover:shadow-xl hover:-translate-y-1 p-2"
-              >
-                <div className="relative overflow-hidden h-[240px] rounded-[1.8rem]">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute top-4 left-4 bg-white/40 dark:bg-navy-950/55 backdrop-blur-md border border-white/40 dark:border-white/10 px-3.5 py-1.5 rounded-full text-[10px] font-mono tracking-widest uppercase text-blue-900 dark:text-accent-blue font-bold">
-                    {project.category}
-                  </div>
-                </div>
-                <div className="p-6 flex flex-col gap-3">
-                  <div className="flex justify-between items-center text-[10px] text-slate-500 font-bold uppercase tracking-wider font-mono">
-                    <span>{project.location}</span>
-                    <span>{project.year}</span>
-                  </div>
-                  <h3 className="font-sans font-bold text-lg text-slate-950 dark:text-white">{project.title}</h3>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-3 font-light">
-                    {project.description}
-                  </p>
-                  <div className="border-t border-slate-200/40 dark:border-white/10 pt-4 mt-2">
-                    <span className="text-[10px] font-bold text-blue-800 dark:text-accent-blue font-mono uppercase block mb-1">Highlight Outcome:</span>
-                    <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">{project.highlight}</span>
-                  </div>
-                </div>
-              </motion.div>
+            {projectsList.slice(0, 6).map((project) => (
+              <ProjectCard 
+                key={project.title}
+                project={project}
+                onOpenModal={handleOpenProjectModal}
+              />
             ))}
           </div>
 
@@ -584,6 +595,15 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Project Detail & Deliverables Modal */}
+      {selectedProject && (
+        <ProjectModal
+          project={selectedProject}
+          initialImageIndex={modalInitialImageIdx}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
 
     </div>
   );

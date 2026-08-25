@@ -1,0 +1,31 @@
+{
+  "title": "BHOPAL METRO",
+  "category": "Transit & Infrastructure",
+  "industry": "Mass Rapid Transit System (MRTS)",
+  "location": "Bhopal, Madhya Pradesh",
+  "year": "2023 - 2025",
+  "image": "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=1200&q=80",
+  "images": [
+    {
+      "title": "Bhopal Metro Station Viaduct BIM.jpg",
+      "caption": "Elevated Metro Station BIM Model & Track Alignment",
+      "type": "Transit BIM",
+      "url": "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "Concourse Structural Steel & Civil.jpg",
+      "caption": "Passenger Concourse Multi-Tier Structural Clearance Analysis",
+      "type": "Structural Steel",
+      "url": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "title": "Traction & Utility Routing.jpg",
+      "caption": "Overhead Electrification & Station MEP Infrastructure",
+      "type": "MEP Infrastructure",
+      "url": "https://images.unsplash.com/photo-1508873696983-2df5293cb32f?auto=format&fit=crop&w=1200&q=80"
+    }
+  ],
+  "description": "Large-scale infrastructure BIM modeling and station engineering for the Bhopal Metro network. Delivered high-precision structural detailing, track alignment interfaces, station MEP coordination, and virtual construction simulations.",
+  "highlight": "100% clash-free spatial coordination across civil, electrical, and viaduct interfaces.",
+  "order": 2
+}

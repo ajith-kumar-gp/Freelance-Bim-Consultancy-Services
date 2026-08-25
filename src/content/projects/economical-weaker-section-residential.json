@@ -1,0 +1,67 @@
+{
+  "title": "ECONOMICAL WEAKER SECTION RESIDENTIAL",
+  "category": "Architectural",
+  "industry": "Affordable Housing & Urban Development",
+  "location": "Greater Noida / Delhi NCR",
+  "year": "2023 - 2024",
+  "image": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/3D Architecture.jpg",
+  "images": [
+    {
+      "title": "3D Architecture.jpg",
+      "caption": "3D Architectural Render & Facade Modeling",
+      "type": "3D BIM View",
+      "url": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/3D Architecture.jpg"
+    },
+    {
+      "title": "3D Coorination View.jpg",
+      "caption": "3D Multi-Disciplinary Spatial Coordination & Clash Prevention",
+      "type": "Coordination",
+      "url": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/3D Coorination View.jpg"
+    },
+    {
+      "title": "3D Structure.jpg",
+      "caption": "3D Structural Framing & Load-Bearing Model",
+      "type": "Structural",
+      "url": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/3D Structure.jpg"
+    },
+    {
+      "title": "Brick Count & Material Take off.PNG",
+      "caption": "Masonry Quantity Schedule & Brick Count Schedule Take-Off",
+      "type": "Material Take-Off",
+      "url": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/Brick Count & Material Take off.PNG"
+    },
+    {
+      "title": "Exterior & Interior Wall Plaster Material take off.PNG",
+      "caption": "Wall Surface Area & Plaster Finish BOQ Schedule",
+      "type": "Material Take-Off",
+      "url": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/Exterior & Interior Wall Plaster Material take off.PNG"
+    },
+    {
+      "title": "RCC Column Material Take off.PNG",
+      "caption": "Reinforced Cement Concrete (RCC) Column Volumetric Schedule",
+      "type": "Material Take-Off",
+      "url": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/RCC Column Material Take off.PNG"
+    },
+    {
+      "title": "RCC Slab Material Take off.PNG",
+      "caption": "Floor Slab Concrete & Reinforcement Steel BOQ Quantity Extraction",
+      "type": "Material Take-Off",
+      "url": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/RCC Slab Material Take off.PNG"
+    },
+    {
+      "title": "RCC Structural Framing Material Take off.PNG",
+      "caption": "Comprehensive Structural Framing Quantities & Beam Schedules",
+      "type": "Material Take-Off",
+      "url": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/RCC Structural Framing Material Take off.PNG"
+    },
+    {
+      "title": "Wall Tile Material Take off.PNG",
+      "caption": "Wet Areas & Interior Wall Tile Surface Calculations",
+      "type": "Material Take-Off",
+      "url": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/Wall Tile Material Take off.PNG"
+    }
+  ],
+  "description": "Full-scale architectural design, space planning, and layout engineering for Economical Weaker Section (EWS) residential community housing. Maximized structural area efficiency, sustainable natural ventilation, and compliant architectural construction documentation.",
+  "highlight": "Optimized unit layouts and 100% compliant architectural construction documentation.",
+  "order": 4
+}
