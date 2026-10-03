@@ -1,8 +1,34 @@
+# Dependencies
 node_modules/
+
+# Build output
 build/
 dist/
 coverage/
-.DS_Store
-*.log
+*.tsbuildinfo
+.vite/
+
+# Environment variables (keep the template)
 .env*
 !.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# Netlify local folder (created by `netlify dev` / `netlify link`)
+.netlify/
+
+# Local AI assistant / preview settings
+.claude/
+
+# Editors
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
