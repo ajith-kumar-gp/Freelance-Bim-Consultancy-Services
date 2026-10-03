@@ -182,7 +182,7 @@ export default function Home() {
       </section>
 
       {/* 3. Company Overview Section - Who We Are? */}
-      <section className="relative py-24 px-6 bg-transparent transition-colors duration-300 z-10">
+      <section id="who-we-are" className="scroll-mt-28 relative py-24 px-6 bg-transparent transition-colors duration-300 z-10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <motion.div 
@@ -233,7 +233,7 @@ export default function Home() {
       </section>
 
       {/* 4. Services Preview Section */}
-      <section className="relative py-24 px-6 bg-transparent transition-colors duration-300 z-10">
+      <section id="services" className="scroll-mt-28 relative py-24 px-6 bg-transparent transition-colors duration-300 z-10">
         <div className="max-w-7xl mx-auto">
           
           <div className="text-center flex flex-col items-center gap-4 mb-16">
@@ -380,7 +380,7 @@ export default function Home() {
       </section>
 
       {/* 5. Featured Projects Showcase */}
-      <section className="relative py-24 px-6 bg-transparent transition-colors duration-300 z-10">
+      <section id="featured-projects" className="scroll-mt-28 relative py-24 px-6 bg-transparent transition-colors duration-300 z-10">
         <div className="max-w-7xl mx-auto">
           
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
@@ -410,7 +410,7 @@ export default function Home() {
       </section>
 
       {/* 6. Why Choose Us Section */}
-      <section className="relative py-24 px-6 bg-transparent transition-colors duration-300 z-10">
+      <section id="why-choose-us" className="scroll-mt-28 relative py-24 px-6 bg-transparent transition-colors duration-300 z-10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <motion.div 
@@ -492,7 +492,7 @@ export default function Home() {
       </section>
 
       {/* 7. Client Testimonial Segment */}
-      <section className="relative py-24 px-6 bg-transparent transition-colors duration-300 z-10">
+      <section id="testimonials" className="scroll-mt-28 relative py-24 px-6 bg-transparent transition-colors duration-300 z-10">
         <div className="max-w-7xl mx-auto">
           
           <div className="text-center flex flex-col items-center gap-4 mb-16">
@@ -532,7 +532,7 @@ export default function Home() {
       </section>
 
       {/* 8. FAQ Preview Accordion */}
-      <section className="relative py-24 px-6 bg-transparent transition-colors duration-300 z-10">
+      <section id="faqs" className="scroll-mt-28 relative py-24 px-6 bg-transparent transition-colors duration-300 z-10">
         <div className="max-w-5xl mx-auto">
           
           <div className="text-center flex flex-col items-center gap-4 mb-16">

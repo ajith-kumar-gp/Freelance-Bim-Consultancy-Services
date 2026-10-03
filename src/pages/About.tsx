@@ -64,7 +64,7 @@ export default function About() {
         </div>
 
         {/* History Details */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <section id="about-us" className="scroll-mt-28 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-12 flex flex-col gap-6">
             <h2 className="text-2xl sm:text-3xl font-sans font-semibold text-slate-900 dark:text-white">About Us</h2>
             <div className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed flex flex-col gap-4 font-light">
@@ -84,7 +84,7 @@ export default function About() {
         </section>
 
         {/* Vision, Mission, Values */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <section id="vision-mission" className="scroll-mt-28 grid grid-cols-1 md:grid-cols-3 gap-8">
           
           <motion.div 
             variants={cardVariants}
@@ -137,7 +137,7 @@ export default function About() {
         </section>
 
         {/* Core Values Bullets */}
-        <section className="p-8 sm:p-10 rounded-[2.5rem] glass-card shadow-sm">
+        <section id="core-values" className="scroll-mt-28 p-8 sm:p-10 rounded-[2.5rem] glass-card shadow-sm">
           <h3 className="font-sans font-bold text-xl text-slate-900 dark:text-white mb-6">Our Core Governing Pillars</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {aboutData.values.map((val, idx) => (
@@ -150,7 +150,7 @@ export default function About() {
         </section>
 
         {/* Chronological Journey Timeline */}
-        <section className="flex flex-col gap-8">
+        <section id="our-journey" className="scroll-mt-28 flex flex-col gap-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <Milestone size={24} className="text-blue-600 dark:text-accent-blue" />
@@ -239,7 +239,7 @@ export default function About() {
 
         {/* Certifications Section */}
         {certificationsData.length > 0 && (
-          <section className="flex flex-col gap-8">
+          <section id="certifications" className="scroll-mt-28 flex flex-col gap-8">
             <div className="flex items-center gap-3">
               <ShieldCheck size={24} className="text-blue-600 dark:text-accent-blue" />
               <h2 className="text-2xl sm:text-3xl font-sans font-bold text-slate-900 dark:text-white">Certifications & Compliance</h2>
@@ -276,7 +276,7 @@ export default function About() {
 
         {/* Clients Section */}
         {clientsData.length > 0 && (
-          <section className="flex flex-col gap-8">
+          <section id="clients" className="scroll-mt-28 flex flex-col gap-8">
             <div className="flex items-center gap-3">
               <Briefcase size={24} className="text-blue-600 dark:text-accent-blue" />
               <h2 className="text-2xl sm:text-3xl font-sans font-bold text-slate-900 dark:text-white">Our Trusted Corporate Clients</h2>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { MessageSquare, Quote, Star, PenTool, X, CheckCircle2, ShieldCheck, HeartHandshake } from 'lucide-react';
 import settingsData from '../content/settings.json';
@@ -11,6 +12,13 @@ const fileReviews = Object.values(testimonialModules)
 export default function TestimonialsPage() {
   const [guestReviews, setGuestReviews] = useState<any[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
+
+  // "Share Your Review" in the navigation menu links here with ?write=1
+  useEffect(() => {
+    if (searchParams.get('write') === '1') setIsModalOpen(true);
+  }, [location.key]);
   const [formSubmitted, setFormSubmitted] = useState(false);
   
   // Form State
@@ -153,7 +161,7 @@ export default function TestimonialsPage() {
         </div>
 
         {/* Grid List of Reviews */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+        <div id="reviews" className="scroll-mt-28 grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
           {sortedReviews.length === 0 ? (
             <div className="col-span-full text-center py-20 bg-slate-50/50 dark:bg-white/5 rounded-3xl border border-slate-200/50 dark:border-white/5">
               <p className="text-slate-400 font-sans text-sm font-light">No reviews match the current display filter threshold ({minRating} Stars).</p>

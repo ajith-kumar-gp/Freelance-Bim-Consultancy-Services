@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  Menu, X, Sun, Moon, Phone, Mail, MapPin, Clock, ArrowUp, Compass, ChevronRight
+  Menu, X, Sun, Moon, Phone, Mail, MapPin, Clock, ArrowUp, Compass, ChevronRight, ChevronDown
 } from 'lucide-react';
+import { navItems } from './navMenu';
 import contactData from '../content/contact.json';
 import settingsData from '../content/settings.json';
 
@@ -17,6 +18,8 @@ export default function Layout({ children }: LayoutProps) {
     return saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
   });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const location = useLocation();
@@ -40,23 +43,26 @@ export default function Layout({ children }: LayoutProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Scroll to top on route change
+  // On navigation: close menus, then scroll to the #section if the link has one, otherwise to the top
   useEffect(() => {
-    window.scrollTo(0, 0);
     setMobileMenuOpen(false);
+    setOpenMenu(null);
+    if (!location.hash) {
+      window.scrollTo(0, 0);
+      return;
+    }
+    const id = decodeURIComponent(location.hash.slice(1));
+    let attempts = 0;
+    let timer: ReturnType<typeof setTimeout>;
+    // The target may not be rendered yet right after a page change, so retry briefly
+    const scrollToSection = () => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      else if (attempts++ < 20) timer = setTimeout(scrollToSection, 50);
+    };
+    scrollToSection();
+    return () => clearTimeout(timer);
   }, [location]);
-
-  const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Gallery', path: '/gallery' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'About', path: '/about' },
-    { name: 'Testimonials', path: '/testimonials' },
-    { name: 'FAQ', path: '/faq' },
-    { name: 'Contact', path: '/contact' }
-  ];
 
   const footerLinks = [
     { name: 'Home', path: '/' },
@@ -123,7 +129,7 @@ export default function Layout({ children }: LayoutProps) {
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group">
+          <Link to="/" className="flex items-center gap-2.5 group shrink-0">
             {settingsData.logo ? (
               <img 
                 src={settingsData.logo} 
@@ -149,35 +155,82 @@ export default function Layout({ children }: LayoutProps) {
             </div>
           </Link>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-7">
-            {navLinks.map((link) => {
-              const isActive = location.pathname === link.path;
+          {/* Desktop Nav Links with hover sub-menus */}
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-7" onKeyDown={(e) => e.key === 'Escape' && setOpenMenu(null)}>
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.path;
+              const isOpen = openMenu === item.name;
               return (
-                <Link 
-                  key={link.path} 
-                  to={link.path} 
-                  className={`relative py-1 text-sm font-semibold tracking-wide transition-colors ${
-                    isActive 
-                      ? 'text-navy-700 dark:text-accent-blue' 
-                      : 'text-navy-800/85 hover:text-navy-900 dark:text-slate-200 dark:hover:text-white'
-                  }`}
+                <div
+                  key={item.path}
+                  className="relative"
+                  onMouseEnter={() => setOpenMenu(item.name)}
+                  onMouseLeave={() => setOpenMenu(null)}
+                  onFocus={() => setOpenMenu(item.name)}
+                  onBlur={(e) => {
+                    if (!e.currentTarget.contains(e.relatedTarget as Node)) setOpenMenu(null);
+                  }}
                 >
-                  {link.name}
-                  {isActive && (
-                    <motion.div 
-                      layoutId="activeNavIndicator" 
-                      className="absolute -bottom-1.5 left-0 right-0 h-0.5 bg-navy-600 dark:bg-accent-blue rounded-full" 
-                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                </Link>
+                  <Link
+                    to={item.path}
+                    aria-haspopup="true"
+                    aria-expanded={isOpen}
+                    className={`relative py-1 flex items-center gap-1 text-sm font-semibold tracking-wide transition-colors ${
+                      isActive || isOpen
+                        ? 'text-navy-700 dark:text-accent-blue'
+                        : 'text-navy-800/85 hover:text-navy-900 dark:text-slate-200 dark:hover:text-white'
+                    }`}
+                  >
+                    {item.name}
+                    <ChevronDown size={13} className={`hidden xl:block opacity-60 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+                    {isActive && (
+                      <motion.div
+                        layoutId="activeNavIndicator"
+                        className="absolute -bottom-1.5 left-0 right-0 h-0.5 bg-navy-600 dark:bg-accent-blue rounded-full"
+                        transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                      />
+                    )}
+                  </Link>
+
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 8 }}
+                        transition={{ duration: 0.16 }}
+                        // pt-4 keeps a hover "bridge" between the link and the panel
+                        className="absolute left-1/2 -translate-x-1/2 top-full pt-4 z-50"
+                      >
+                        <div className={`${item.name === 'Blog' ? 'w-80' : 'w-60'} rounded-2xl bg-white dark:bg-navy-900 border border-slate-200/80 dark:border-white/10 shadow-xl shadow-slate-900/10 p-2`}>
+                          <span className="block px-3 pt-2 pb-1.5 text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-blue-600 dark:text-accent-blue">
+                            {item.name}
+                          </span>
+                          <ul className="flex flex-col">
+                            {item.children.map((child) => (
+                              <li key={child.to}>
+                                <Link
+                                  to={child.to}
+                                  onClick={() => setOpenMenu(null)}
+                                  className="group flex items-start gap-2 px-3 py-2 rounded-xl text-[13px] font-medium leading-snug text-slate-700 dark:text-slate-200 hover:bg-blue-50 hover:text-blue-700 dark:hover:bg-white/5 dark:hover:text-accent-blue focus:bg-blue-50 dark:focus:bg-white/5 outline-none transition-colors"
+                                >
+                                  <ChevronRight size={13} className="mt-0.5 shrink-0 text-slate-300 dark:text-slate-600 group-hover:text-blue-600 dark:group-hover:text-accent-blue group-hover:translate-x-0.5 transition-all" />
+                                  <span>{child.name}</span>
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               );
             })}
           </nav>
 
           {/* CTA & Dark Mode Toggle Container */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-4 shrink-0">
             
             {/* Dark Mode Toggle */}
             <button 
@@ -234,22 +287,58 @@ export default function Layout({ children }: LayoutProps) {
             transition={{ duration: 0.25 }}
             className="lg:hidden glass-nav border-b border-navy-100 dark:border-navy-900/60 sticky top-[68px] z-40 overflow-hidden"
           >
-            <div className="px-6 py-5 flex flex-col gap-4">
-              {navLinks.map((link) => {
-                const isActive = location.pathname === link.path;
+            <div className="px-6 py-5 flex flex-col gap-3 max-h-[calc(100vh-80px)] overflow-y-auto">
+              {navItems.map((item) => {
+                const isActive = location.pathname === item.path;
+                const isExpanded = mobileExpanded === item.name;
                 return (
-                  <Link 
-                    key={link.path} 
-                    to={link.path} 
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`py-1 text-base font-semibold transition-colors ${
-                      isActive 
-                        ? 'text-navy-700 dark:text-accent-blue' 
-                        : 'text-navy-800/80 hover:text-navy-900 dark:text-slate-300 dark:hover:text-white'
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
+                  <div key={item.path} className="flex flex-col">
+                    <div className="flex items-center justify-between">
+                      <Link
+                        to={item.path}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`py-1 text-base font-semibold transition-colors ${
+                          isActive
+                            ? 'text-navy-700 dark:text-accent-blue'
+                            : 'text-navy-800/80 hover:text-navy-900 dark:text-slate-300 dark:hover:text-white'
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                      <button
+                        type="button"
+                        onClick={() => setMobileExpanded(isExpanded ? null : item.name)}
+                        className="p-1.5 -mr-1.5 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-navy-50 dark:hover:bg-white/5"
+                        aria-label={`Show ${item.name} sections`}
+                        aria-expanded={isExpanded}
+                      >
+                        <ChevronDown size={18} className={`transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
+                      </button>
+                    </div>
+                    <AnimatePresence initial={false}>
+                      {isExpanded && (
+                        <motion.ul
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="overflow-hidden border-l-2 border-blue-600/20 dark:border-accent-blue/30 ml-1 pl-4 flex flex-col"
+                        >
+                          {item.children.map((child) => (
+                            <li key={child.to}>
+                              <Link
+                                to={child.to}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className="block py-1.5 text-sm text-slate-600 dark:text-slate-400 hover:text-blue-700 dark:hover:text-accent-blue transition-colors"
+                              >
+                                {child.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </motion.ul>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 );
               })}
               <Link 

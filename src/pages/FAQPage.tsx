@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { HelpCircle, Search, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -12,7 +13,19 @@ type FAQCategory = 'All' | 'General' | 'Architectural BIM' | 'Structural BIM' | 
 
 export default function FAQPage() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [activeCategory, setActiveCategory] = useState<FAQCategory>('All');
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
+  const categoryFromUrl = (): FAQCategory => {
+    const category = searchParams.get('category') as FAQCategory | null;
+    return category && ['All', 'General', 'Architectural BIM', 'Structural BIM', 'MEP BIM', 'BIM Training'].includes(category) ? category : 'All';
+  };
+  const [activeCategory, setActiveCategory] = useState<FAQCategory>(categoryFromUrl);
+
+  // Apply the category chosen from the navigation menu (?category=...)
+  useEffect(() => {
+    setActiveCategory(categoryFromUrl());
+    setExpandedIndex(null);
+  }, [location.key]);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const categories: FAQCategory[] = ['All', 'General', 'Architectural BIM', 'Structural BIM', 'MEP BIM', 'BIM Training'];

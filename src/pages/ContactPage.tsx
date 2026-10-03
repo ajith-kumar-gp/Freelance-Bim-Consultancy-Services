@@ -109,7 +109,7 @@ export default function ContactPage() {
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mt-4">
           
           {/* Left Column: Contact Cards */}
-          <div className="lg:col-span-5 flex flex-col gap-6">
+          <div id="contact-details" className="scroll-mt-28 lg:col-span-5 flex flex-col gap-6">
             
             <div className="p-6 rounded-2xl glass-card shadow-sm flex items-start gap-4">
               <div className="bg-white/40 dark:bg-navy-950/40 text-blue-900 dark:text-accent-blue p-3.5 rounded-xl shrink-0 shadow-sm border border-white/50 dark:border-white/10">
@@ -159,7 +159,7 @@ export default function ContactPage() {
           </div>
 
           {/* Right Column: Contact Form */}
-          <div className="lg:col-span-7 p-8 rounded-[2.5rem] glass-card shadow-lg">
+          <div id="contact-form" className="scroll-mt-28 lg:col-span-7 p-8 rounded-[2.5rem] glass-card shadow-lg">
             <h3 className="font-sans font-bold text-xl text-slate-900 dark:text-white border-b border-slate-200/30 dark:border-white/10 pb-2 mb-6">Send Message</h3>
             
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
@@ -243,7 +243,7 @@ export default function ContactPage() {
         </section>
 
         {/* Google Maps Section - Glass Wrapped Frame */}
-        <section className="rounded-[2.5rem] overflow-hidden border border-white/40 dark:border-white/10 shadow-xl glass-card p-2">
+        <section id="office-location" className="scroll-mt-28 rounded-[2.5rem] overflow-hidden border border-white/40 dark:border-white/10 shadow-xl glass-card p-2">
           <iframe 
             src={contactData.mapEmbed}
             width="100%" 

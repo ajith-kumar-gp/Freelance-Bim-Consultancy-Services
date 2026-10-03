@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Calendar, User, Clock, ArrowRight, Search, Tag, X } from 'lucide-react';
 
@@ -48,6 +49,15 @@ export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [readingPost, setReadingPost] = useState<any | null>(null);
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
+
+  // Open the article chosen from the navigation menu (?post=slug)
+  useEffect(() => {
+    const slug = searchParams.get('post');
+    const post = slug && blogData.find((p) => p.slug === slug);
+    if (post) setReadingPost(post);
+  }, [location.key]);
 
   // Extract all unique tags
   const allTags = Array.from(

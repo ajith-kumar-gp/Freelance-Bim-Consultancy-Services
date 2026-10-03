@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { FolderOpen, ArrowRight, Layers, Sparkles } from 'lucide-react';
 import { ProjectCard, ProjectData } from '../components/ProjectCard';
@@ -14,7 +15,18 @@ const projectsData: ProjectData[] = Object.values(projectModules)
 const categories: string[] = ['All', ...Array.from(new Set(projectsData.map((p) => p.category)))];
 
 export default function ProjectsPage() {
-  const [filter, setFilter] = useState<string>('All');
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
+  const categoryFromUrl = () => {
+    const category = searchParams.get('category');
+    return category && categories.includes(category) ? category : 'All';
+  };
+  const [filter, setFilter] = useState<string>(categoryFromUrl);
+
+  // Apply the category chosen from the navigation menu (?category=...)
+  useEffect(() => {
+    setFilter(categoryFromUrl());
+  }, [location.key]);
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
   const [modalInitialImageIdx, setModalInitialImageIdx] = useState<number>(0);
 

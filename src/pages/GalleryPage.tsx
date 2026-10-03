@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Search, Image as ImageIcon } from 'lucide-react';
 
@@ -11,7 +12,18 @@ const galleryData = Object.values(galleryModules)
 type GalleryCategory = 'All' | 'Architecture' | 'Interior Design' | 'BIM';
 
 export default function GalleryPage() {
-  const [filter, setFilter] = useState<GalleryCategory>('All');
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
+  const categoryFromUrl = (): GalleryCategory => {
+    const category = searchParams.get('category') as GalleryCategory | null;
+    return category && ['All', 'Architecture', 'Interior Design', 'BIM'].includes(category) ? category : 'All';
+  };
+  const [filter, setFilter] = useState<GalleryCategory>(categoryFromUrl);
+
+  // Apply the category chosen from the navigation menu (?category=...)
+  useEffect(() => {
+    setFilter(categoryFromUrl());
+  }, [location.key]);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const categories: GalleryCategory[] = ['All', 'Architecture', 'Interior Design', 'BIM'];

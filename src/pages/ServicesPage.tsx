@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   Building, LayoutGrid, Cpu, CheckCircle2, ArrowRight, Layers, Sparkles, Monitor, Award, BookOpen,
   Box, FileText, Building2, Puzzle, ScanLine, Calculator, GitMerge, Wrench
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import servicesData from '../content/services.json';
 import { BimMainCard } from '../components/BimMainCard';
 import { BimBackCard } from '../components/BimBackCard';
@@ -15,7 +15,19 @@ type ServiceKey = 'architecture' | 'interior' | 'bim' | 'training';
 const moduleIcons = [Box, FileText, LayoutGrid, Building2, Puzzle, ScanLine, Calculator, GitMerge, Wrench, Layers];
 
 export default function ServicesPage() {
-  const [activeTab, setActiveTab] = useState<ServiceKey>('architecture');
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
+  const tabFromUrl = (): ServiceKey | null => {
+    const tab = searchParams.get('tab');
+    return tab && tab in servicesData ? (tab as ServiceKey) : null;
+  };
+  const [activeTab, setActiveTab] = useState<ServiceKey>(() => tabFromUrl() ?? 'architecture');
+
+  // Open the tab chosen from the navigation menu (?tab=...)
+  useEffect(() => {
+    const tab = tabFromUrl();
+    if (tab) setActiveTab(tab);
+  }, [location.key]);
 
   const tabs = [
     { key: 'architecture', label: 'ARCHITECTURAL BIM', icon: Building },
