@@ -130,6 +130,20 @@ collections:
           - { label: "Header Notice Alert Bar", name: "headerNotice", widget: "string" }
           - { label: "Minimum Testimonial Rating to Display (1-5)", name: "minimumRatingToDisplay", widget: "select", options: [1, 2, 3, 4, 5], default: 5 }
           - { label: "Prioritize 5-Star Reviews at Top", name: "prioritizeFiveStars", widget: "boolean", default: true }
+          - label: "Show / Hide Pages"
+            name: "visiblePages"
+            widget: "object"
+            hint: "Switch a page off to remove it from the menu and footer. Its address will redirect to the homepage. Changes go live after the site rebuilds (1-2 minutes)."
+            collapsed: false
+            fields:
+              - { label: "Services", name: "services", widget: "boolean", default: true }
+              - { label: "Projects", name: "projects", widget: "boolean", default: true }
+              - { label: "Gallery", name: "gallery", widget: "boolean", default: true }
+              - { label: "Blog", name: "blog", widget: "boolean", default: true }
+              - { label: "About", name: "about", widget: "boolean", default: true }
+              - { label: "Testimonials", name: "testimonials", widget: "boolean", default: true }
+              - { label: "FAQ", name: "faq", widget: "boolean", default: true }
+              - { label: "Contact", name: "contact", widget: "boolean", default: true }
           - label: "Social Networks"
             name: "socialLinks"
             widget: "object"

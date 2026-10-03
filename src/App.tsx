@@ -11,6 +11,7 @@ import BookingPage from './pages/BookingPage';
 import ContactPage from './pages/ContactPage';
 import FAQPage from './pages/FAQPage';
 import LegalPage from './pages/LegalPage';
+import { isPageVisible } from './components/pageVisibility';
 
 export default function App() {
   return (
@@ -18,15 +19,15 @@ export default function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/testimonials" element={<TestimonialsPage />} />
+          {isPageVisible('/about') && <Route path="/about" element={<About />} />}
+          {isPageVisible('/services') && <Route path="/services" element={<ServicesPage />} />}
+          {isPageVisible('/projects') && <Route path="/projects" element={<ProjectsPage />} />}
+          {isPageVisible('/gallery') && <Route path="/gallery" element={<GalleryPage />} />}
+          {isPageVisible('/blog') && <Route path="/blog" element={<BlogPage />} />}
+          {isPageVisible('/testimonials') && <Route path="/testimonials" element={<TestimonialsPage />} />}
           <Route path="/booking" element={<BookingPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/faq" element={<FAQPage />} />
+          {isPageVisible('/contact') && <Route path="/contact" element={<ContactPage />} />}
+          {isPageVisible('/faq') && <Route path="/faq" element={<FAQPage />} />}
           <Route path="/legal" element={<LegalPage />} />
           
           {/* Fallback to homepage for any unmatched routes */}

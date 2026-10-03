@@ -1,4 +1,5 @@
 import servicesData from '../content/services.json';
+import { isPageVisible } from './pageVisibility';
 
 // Sub-menus shown when hovering the main navigation. Lists that depend on
 // content (project categories, blog posts, FAQ categories...) are built from
@@ -31,7 +32,7 @@ const unique = (values: string[]) => Array.from(new Set(values.filter(Boolean)))
 const withParam = (path: string, key: string, value: string) =>
   `${path}?${key}=${encodeURIComponent(value)}`;
 
-export const navItems: NavItem[] = [
+const allNavItems: NavItem[] = [
   {
     name: 'Home',
     path: '/',
@@ -126,3 +127,8 @@ export const navItems: NavItem[] = [
     ],
   },
 ];
+
+// Only pages switched on in the CMS appear in the menu (and their sub-links to other hidden pages are dropped)
+export const navItems: NavItem[] = allNavItems
+  .filter((item) => isPageVisible(item.path))
+  .map((item) => ({ ...item, children: item.children.filter((child) => isPageVisible(child.to)) }));

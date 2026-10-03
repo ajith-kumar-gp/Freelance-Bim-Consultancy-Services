@@ -15,5 +15,15 @@
     "facebook": "https://facebook.com/bimearth",
     "twitter": "https://twitter.com/bimearth",
     "whatsapp": "https://wa.me/918826175595"
+  },
+  "visiblePages": {
+    "services": true,
+    "projects": true,
+    "gallery": false,
+    "blog": false,
+    "about": true,
+    "testimonials": true,
+    "faq": true,
+    "contact": true
   }
 }

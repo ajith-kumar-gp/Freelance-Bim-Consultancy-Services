@@ -5,6 +5,7 @@ import {
   Menu, X, Sun, Moon, Phone, Mail, MapPin, Clock, ArrowUp, Compass, ChevronRight, ChevronDown
 } from 'lucide-react';
 import { navItems } from './navMenu';
+import { isPageVisible } from './pageVisibility';
 import contactData from '../content/contact.json';
 import settingsData from '../content/settings.json';
 
@@ -75,7 +76,7 @@ export default function Layout({ children }: LayoutProps) {
     { name: 'FAQs', path: '/faq' },
     { name: 'Contact', path: '/contact' },
     { name: 'Book Consultation', path: '/booking' }
-  ];
+  ].filter((link) => isPageVisible(link.path));
 
   const footerServices = [
     'Architectural BIM Services',

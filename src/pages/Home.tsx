@@ -5,6 +5,7 @@ import {
   Building, LayoutGrid, Cpu, CheckCircle2, Shield, ArrowRight, UserCheck, MessageSquare, Award
 } from 'lucide-react';
 import homepageData from '../content/homepage.json';
+import { isPageVisible } from '../components/pageVisibility';
 import servicesData from '../content/services.json';
 import { ProjectCard, ProjectData } from '../components/ProjectCard';
 import { ProjectModal } from '../components/ProjectModal';
@@ -100,12 +101,14 @@ export default function Home() {
               >
                 {homepageData.ctaText}
               </Link>
+              {isPageVisible('/projects') && (
               <Link 
                 to="/projects" 
                 className="bg-white/50 backdrop-blur-sm border border-slate-200 dark:border-white/10 hover:bg-white text-slate-900 dark:text-white dark:bg-navy-900/40 px-8 py-4 rounded-xl font-bold text-sm shadow-sm transition-all hover:bg-white/10"
               >
                 View Our Portfolio
               </Link>
+              )}
             </motion.div>
           </motion.div>
 
@@ -205,6 +208,7 @@ export default function Home() {
               {homepageData.whoWeAreP3}
             </p>
             <div className="mt-2">
+              {isPageVisible('/about') && (
               <Link 
                 to="/about" 
                 className="inline-flex items-center gap-2 text-sm font-bold text-blue-700 dark:text-accent-blue hover:underline"
@@ -212,6 +216,7 @@ export default function Home() {
                 <span>Read Full About Us & Journey</span>
                 <ArrowRight size={16} />
               </Link>
+              )}
             </div>
           </motion.div>
 
@@ -273,9 +278,11 @@ export default function Home() {
                   <span>Revit, AutoCAD & Navisworks</span>
                 </li>
               </ul>
+              {isPageVisible('/services') && (
               <Link to="/services" className="text-xs font-bold text-blue-700 dark:text-accent-blue hover:underline inline-flex items-center gap-1.5 mt-auto pt-3">
                 <span>Explore Architectural →</span>
               </Link>
+              )}
             </motion.div>
 
             {/* Structural BIM Card - Glassmorphic */}
@@ -305,9 +312,11 @@ export default function Home() {
                   <span>Navisworks Pre-Build Simulations</span>
                 </li>
               </ul>
+              {isPageVisible('/services') && (
               <Link to="/services" className="text-xs font-bold text-blue-700 dark:text-accent-blue hover:underline inline-flex items-center gap-1.5 mt-auto pt-3">
                 <span>Explore Structural →</span>
               </Link>
+              )}
             </motion.div>
 
             {/* BIM MEP Card - Standout Accent Card */}
@@ -338,9 +347,11 @@ export default function Home() {
                   <span>Plumbing & Fire Protection Systems</span>
                 </li>
               </ul>
+              {isPageVisible('/services') && (
               <Link to="/services" className="text-xs font-bold text-white hover:underline inline-flex items-center gap-1.5 mt-auto pt-3 relative z-10">
                 <span>Explore MEPF →</span>
               </Link>
+              )}
             </motion.div>
 
             {/* BIM Training Card - Glassmorphic */}
@@ -370,9 +381,11 @@ export default function Home() {
                   <span>Industry Standards & Certification</span>
                 </li>
               </ul>
+              {isPageVisible('/services') && (
               <Link to="/services" className="text-xs font-bold text-blue-700 dark:text-accent-blue hover:underline inline-flex items-center gap-1.5 mt-auto pt-3">
                 <span>View Training Courses →</span>
               </Link>
+              )}
             </motion.div>
 
           </div>
@@ -388,12 +401,14 @@ export default function Home() {
               <span className="text-xs font-mono font-bold tracking-[0.3em] text-blue-600 dark:text-accent-blue uppercase">Selected Works</span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-light text-slate-900 dark:text-white tracking-tight">Our High-Profile Portfolio</h2>
             </div>
+            {isPageVisible('/projects') && (
             <Link 
               to="/projects" 
               className="bg-blue-600 text-white hover:bg-blue-700 dark:bg-white dark:text-navy-950 dark:hover:bg-slate-100 px-6 py-3.5 rounded-xl text-xs font-bold tracking-wider uppercase transition-all shadow-md"
             >
               Explore Complete Portfolio
             </Link>
+            )}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -554,6 +569,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-10">
+            {isPageVisible('/faq') && (
             <Link 
               to="/faq" 
               className="inline-flex items-center gap-2 text-sm font-bold text-blue-700 dark:text-accent-blue hover:underline"
@@ -561,6 +577,7 @@ export default function Home() {
               <span>Explore Complete FAQ Database</span>
               <ArrowRight size={15} />
             </Link>
+            )}
           </div>
 
         </div>
@@ -586,12 +603,14 @@ export default function Home() {
             >
               Book Corporate Consult
             </Link>
+            {isPageVisible('/contact') && (
             <Link 
               to="/contact" 
               className="border border-slate-500 hover:border-white px-8 py-4 rounded-xl text-xs font-bold tracking-widest uppercase transition-all hover:bg-white/5"
             >
               Contact Our Office
             </Link>
+            )}
           </div>
         </div>
       </section>
