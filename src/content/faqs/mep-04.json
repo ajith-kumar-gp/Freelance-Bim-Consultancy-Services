@@ -1,0 +1,6 @@
+{
+  "question": "What LOD levels do you support for MEP BIM?",
+  "answer": "We support BIM model development from LOD 100 to LOD 300/350, depending on the project scope and required deliverables.",
+  "category": "MEP BIM",
+  "order": 31
+}

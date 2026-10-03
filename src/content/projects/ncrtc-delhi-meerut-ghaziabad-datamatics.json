@@ -1,31 +1,133 @@
 {
   "title": "NCRTC DELHI-MEERUT-GHAZIABAD CORRIDOR(DATAMATICS)",
   "category": "Transit & Infrastructure",
-  "industry": "Automated Fare Collection & IT Systems",
-  "location": "Delhi - Meerut RRTS Corridor",
+  "client": "Datamatics India",
+  "industry": "Regional Rapid Transit System (RRTS)",
+  "location": "Delhi - Ghaziabad - Meerut RRTS Corridor",
   "year": "2023 - 2025",
-  "image": "https://images.unsplash.com/photo-1508873696983-2df5293cb32f?auto=format&fit=crop&w=1200&q=80",
+  "image": "/ProjectImages/ncrtc-datamatics/mep-bim/station-3d-view-01.jpg",
   "images": [
     {
-      "title": "AFC Automated Fare Collection Gates.jpg",
-      "caption": "Turnstile Gate Trenching & Network Conduit BIM",
-      "type": "AFC Infrastructure",
-      "url": "https://images.unsplash.com/photo-1508873696983-2df5293cb32f?auto=format&fit=crop&w=1200&q=80"
+      "title": "Station Concourse AFC & Ticketing Area",
+      "caption": "Station concourse with AFC gates, ticket office and security screening modelled in Revit",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/ncrtc-datamatics/mep-bim/station-3d-view-01.jpg"
     },
     {
-      "title": "Station Server & Telecom Room.jpg",
-      "caption": "Datamatics Server Rack Clearance & Precision Cooling",
-      "type": "Telecom Systems",
-      "url": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
+      "title": "Station 3D View 02",
+      "caption": "Coordinated BIM model of RRTS station systems",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/ncrtc-datamatics/mep-bim/station-3d-view-02.jpg"
     },
     {
-      "title": "CCTV & Fiber Conduit Routing.jpg",
-      "caption": "Station Security and Optical Fiber Cable Trays",
-      "type": "Low Voltage Systems",
-      "url": "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=1200&q=80"
+      "title": "Station 3D View 03",
+      "caption": "Coordinated BIM model of RRTS station systems",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/ncrtc-datamatics/mep-bim/station-3d-view-03.jpg"
+    },
+    {
+      "title": "Station 3D View 04",
+      "caption": "Coordinated BIM model of RRTS station systems",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/ncrtc-datamatics/mep-bim/station-3d-view-04.jpg"
+    },
+    {
+      "title": "AFC Automatic End Gate",
+      "caption": "Automatic Fare Collection end gate Revit family",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/ncrtc-datamatics/mep-bim/afc-automatic-end-gate.jpg"
+    },
+    {
+      "title": "AFC Automatic Middle Gate",
+      "caption": "Automatic Fare Collection middle gate Revit family",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/ncrtc-datamatics/mep-bim/afc-automatic-middle-gate.jpg"
+    },
+    {
+      "title": "Ticket Vending Machine",
+      "caption": "Ticket Vending Machine (TVM) Revit family",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/ncrtc-datamatics/mep-bim/ticket-vending-machine.jpg"
+    },
+    {
+      "title": "Ticket Office Room 01",
+      "caption": "Ticket office room layout and equipment model",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/ncrtc-datamatics/mep-bim/ticket-office-room-01.jpg"
+    },
+    {
+      "title": "Ticket Office Room 02",
+      "caption": "Ticket office room layout and equipment model",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/ncrtc-datamatics/mep-bim/ticket-office-room-02.jpg"
+    },
+    {
+      "title": "Ticket Office Room 03",
+      "caption": "Ticket office room layout and equipment model",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/ncrtc-datamatics/mep-bim/ticket-office-room-03.jpg"
+    },
+    {
+      "title": "Excess Fare Office Room 01",
+      "caption": "Excess fare office room layout and equipment model",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/ncrtc-datamatics/mep-bim/excess-fare-office-room-01.jpg"
+    },
+    {
+      "title": "Excess Fare Office Room 02",
+      "caption": "Excess fare office room layout and equipment model",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/ncrtc-datamatics/mep-bim/excess-fare-office-room-02.jpg"
+    },
+    {
+      "title": "Excess Fare Office Room 03",
+      "caption": "Excess fare office room layout and equipment model",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/ncrtc-datamatics/mep-bim/excess-fare-office-room-03.jpg"
+    },
+    {
+      "title": "Excess Fare Office Equipment",
+      "caption": "Excess fare office equipment modelling",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/ncrtc-datamatics/mep-bim/excess-fare-office-equipment.jpg"
+    },
+    {
+      "title": "Layout of Fixtures 01",
+      "caption": "Fixture layout drawing generated from the BIM model",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/ncrtc-datamatics/mep-bim/layout-of-fixtures-01.jpg"
+    },
+    {
+      "title": "Layout of Fixtures 02",
+      "caption": "Fixture layout drawing generated from the BIM model",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/ncrtc-datamatics/mep-bim/layout-of-fixtures-02.jpg"
+    },
+    {
+      "title": "Asset Information 01",
+      "caption": "Asset information embedded in the BIM model for handover",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/ncrtc-datamatics/mep-bim/asset-information-01.jpg"
+    },
+    {
+      "title": "Asset Information 02",
+      "caption": "Asset information embedded in the BIM model for handover",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/ncrtc-datamatics/mep-bim/asset-information-02.jpg"
     }
   ],
-  "description": "Automated Fare Collection (AFC), telecommunications, and Datamatics systems integration across RRTS corridor stations. Coordinated electrical conduits, server rooms, and ticketing gate infrastructure.",
-  "highlight": "Seamless integration of critical AFC cable routing and hardware infrastructure.",
+  "description": "BIM Earth Consultancy provided comprehensive BIM services for the NCRTC Delhi–Ghaziabad–Meerut Corridor for Datamatics India. The scope of work included BIM model development, Revit family creation, multidisciplinary coordination, clash detection, and asset management. BIM Earth Consultancy supported the project from the Detailed Design stage through the As-Built stage, ensuring accurate, coordinated, and updated BIM information throughout the project lifecycle. These services helped enhance design coordination, identify and resolve clashes, and establish reliable asset information for project handover and future facility management.",
+  "scope": [
+    "Development and updating of BIM models in accordance with project requirements",
+    "Creation and placement of project-specific Revit families",
+    "Multidisciplinary BIM coordination and model integration",
+    "Identification and management of design conflicts through clash detection",
+    "Coordination and resolution of clashes between different disciplines and systems",
+    "Updating BIM models based on design revisions and site requirements",
+    "Development and maintenance of models from Detailed Design to As-Built stage",
+    "Incorporation of relevant asset information into the BIM environment",
+    "Asset management and structured information development for project handover"
+  ],
+  "highlight": "Supported the project from Detailed Design to As-Built stage, with reliable asset information delivered for handover and facility management.",
   "order": 8
 }

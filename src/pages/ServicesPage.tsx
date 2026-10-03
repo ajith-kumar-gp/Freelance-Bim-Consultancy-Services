@@ -1,12 +1,18 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Building, LayoutGrid, Cpu, CheckCircle2, ArrowRight, Layers, Sparkles, Monitor, Award, BookOpen } from 'lucide-react';
+import {
+  Building, LayoutGrid, Cpu, CheckCircle2, ArrowRight, Layers, Sparkles, Monitor, Award, BookOpen,
+  Box, FileText, Building2, Puzzle, ScanLine, Calculator, GitMerge, Wrench
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import servicesData from '../content/services.json';
 import { BimMainCard } from '../components/BimMainCard';
 import { BimBackCard } from '../components/BimBackCard';
 
 type ServiceKey = 'architecture' | 'interior' | 'bim' | 'training';
+
+// Icons cycled across the module cards
+const moduleIcons = [Box, FileText, LayoutGrid, Building2, Puzzle, ScanLine, Calculator, GitMerge, Wrench, Layers];
 
 export default function ServicesPage() {
   const [activeTab, setActiveTab] = useState<ServiceKey>('architecture');
@@ -93,7 +99,7 @@ export default function ServicesPage() {
                   {currentService.description}
                 </p>
                 {currentService.overview && (
-                  <div className="p-4 rounded-2xl bg-blue-50/60 dark:bg-navy-950/60 border border-blue-100/50 dark:border-white/5 text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light mt-1">
+                  <div className="p-4 rounded-2xl bg-blue-50/60 dark:bg-navy-950/60 border border-blue-100/50 dark:border-white/5 text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light mt-1 whitespace-pre-line">
                     {currentService.overview}
                   </div>
                 )}
@@ -110,20 +116,29 @@ export default function ServicesPage() {
               {/* Sub-services mapping */}
               <div className="flex flex-col gap-6">
                 <h3 className="font-sans font-bold text-base text-slate-900 dark:text-white uppercase tracking-wider border-b border-slate-200/40 dark:border-white/10 pb-2">
-                  Key Disciplines & Specialized Modules
+                  {currentService.modulesHeading || 'Key Disciplines & Specialized Modules'}
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {currentService.subServices.map((sub, sidx) => (
+                  {currentService.subServices.map((sub, sidx) => {
+                    const ModuleIcon = moduleIcons[sidx % moduleIcons.length];
+                    return (
                     <div 
                       key={sidx}
                       className="p-6 rounded-[1.8rem] glass-card flex flex-col gap-3 hover:shadow-lg hover:-translate-y-0.5 transition-all border border-white/40 dark:border-white/10"
                     >
-                      <h4 className="font-sans font-bold text-base text-slate-900 dark:text-white">
-                        {sub.name}
-                      </h4>
-                      <p className="text-slate-500 dark:text-slate-400 text-xs leading-relaxed font-light">
-                        {sub.description}
-                      </p>
+                      <div className="flex items-center gap-3">
+                        <span className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-navy-950/60 border border-blue-100/60 dark:border-white/10 flex items-center justify-center shrink-0">
+                          <ModuleIcon size={18} className="text-blue-600 dark:text-accent-blue" />
+                        </span>
+                        <h4 className="font-sans font-bold text-base text-slate-900 dark:text-white leading-snug">
+                          {sub.name}
+                        </h4>
+                      </div>
+                      {sub.description && (
+                        <p className="text-slate-500 dark:text-slate-400 text-xs leading-relaxed font-light">
+                          {sub.description}
+                        </p>
+                      )}
                       
                       <div className="border-t border-slate-200/30 dark:border-white/10 pt-3 mt-auto flex flex-col gap-2">
                         <span className="text-[10px] font-mono font-bold text-blue-600 dark:text-accent-blue uppercase tracking-wider block">
@@ -138,7 +153,8 @@ export default function ServicesPage() {
                       </div>
 
                     </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
 
@@ -201,9 +217,9 @@ export default function ServicesPage() {
                   <Layers size={14} />
                   <span>Main Services Card</span>
                 </span>
-                <span className="text-[10px] font-mono text-slate-400">Architecture • Interiors • BIM</span>
+                <span className="text-[10px] font-mono text-slate-400">Architecture • Structural • BIM</span>
               </div>
-              <BimMainCard />
+              <BimMainCard className="flex-1" />
             </div>
 
             {/* 2. Corporate Contact Card (bimbackcard) */}
@@ -215,7 +231,7 @@ export default function ServicesPage() {
                 </span>
                 <span className="text-[10px] font-mono text-slate-400">We Build Future • Greater Noida West</span>
               </div>
-              <BimBackCard />
+              <BimBackCard className="flex-1" />
             </div>
 
           </div>

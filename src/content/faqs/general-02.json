@@ -1,0 +1,6 @@
+{
+  "question": "What LOD levels do you support?",
+  "answer": "We support BIM model development from LOD 100 to LOD 300/350, depending on project requirements, scope and deliverable standards.",
+  "category": "General",
+  "order": 2
+}

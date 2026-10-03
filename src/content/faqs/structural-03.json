@@ -1,0 +1,6 @@
+{
+  "question": "What LOD levels do you support for Structural BIM?",
+  "answer": "We support structural model development from LOD 100 to LOD 300/350, based on project requirements and agreed deliverables.",
+  "category": "Structural BIM",
+  "order": 21
+}

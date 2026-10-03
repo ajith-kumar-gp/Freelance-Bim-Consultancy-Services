@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# SPA fallback: let React Router handle deep links like /about or /projects.
+# Real files (e.g. /admin/index.html, images) are still served first.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

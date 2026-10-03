@@ -10,29 +10,17 @@ const projectsData: ProjectData[] = Object.values(projectModules)
   .map((m: any) => m.default || m)
   .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
-type CategoryFilter = 'All' | 'Architectural' | 'Interiors' | 'BIM';
+// Filter tabs come from the categories actually used by projects, in portfolio order
+const categories: string[] = ['All', ...Array.from(new Set(projectsData.map((p) => p.category)))];
 
 export default function ProjectsPage() {
-  const [filter, setFilter] = useState<CategoryFilter>('All');
+  const [filter, setFilter] = useState<string>('All');
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
   const [modalInitialImageIdx, setModalInitialImageIdx] = useState<number>(0);
 
-  const categories: CategoryFilter[] = ['All', 'Architectural', 'Interiors', 'BIM'];
-
-  const filteredProjects = filter === 'All' 
-    ? projectsData 
-    : projectsData.filter(p => {
-        if (filter === 'Architectural') {
-          return p.category === 'Architectural' || p.category === 'Architecture';
-        }
-        if (filter === 'Interiors') {
-          return p.category === 'Interiors' || p.category === 'Interior Design';
-        }
-        if (filter === 'BIM') {
-          return p.category === 'BIM' || p.category === 'BIM Services';
-        }
-        return p.category === filter;
-      });
+  const filteredProjects = filter === 'All'
+    ? projectsData
+    : projectsData.filter(p => p.category === filter);
 
   const handleOpenProjectModal = (project: ProjectData, imageIndex: number = 0) => {
     setSelectedProject(project);

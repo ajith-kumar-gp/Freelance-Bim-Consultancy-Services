@@ -5,7 +5,7 @@ export function BimMainCard({ className = "" }: { className?: string }) {
   return (
     <div 
       id="bim-main-card"
-      className={`relative bg-white text-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl border-2 border-dashed border-slate-300 max-w-xl w-full mx-auto font-sans overflow-hidden transition-transform duration-300 hover:shadow-blue-500/10 ${className}`}
+      className={`relative bg-white text-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl border-2 border-dashed border-slate-300 max-w-xl w-full h-full mx-auto font-sans overflow-hidden flex flex-col transition-transform duration-300 hover:shadow-blue-500/10 ${className}`}
     >
       {/* Corner Registration Marks */}
       <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-slate-400"></div>
@@ -46,12 +46,12 @@ export function BimMainCard({ className = "" }: { className?: string }) {
       </div>
 
       {/* 3 Columns for ARCHITECTURE, INTERIORS, BIM */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-4 mt-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-4 mt-6 flex-1 content-center">
         
         {/* Column 1: ARCHITECTURE */}
         <div className="flex flex-col">
-          <div className="bg-[#0077c8] text-white py-1.5 px-3 transform -skew-x-12 shadow-md mb-3">
-            <h4 className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-center transform skew-x-12">
+          <div className="bg-[#0077c8] text-white h-10 px-2 flex items-center justify-center transform -skew-x-12 shadow-md mb-3">
+            <h4 className="text-xs lg:text-sm font-extrabold uppercase tracking-wide whitespace-nowrap text-center transform skew-x-12">
               ARCHITECTURE
             </h4>
           </div>
@@ -73,8 +73,8 @@ export function BimMainCard({ className = "" }: { className?: string }) {
 
         {/* Column 2: INTERIORS */}
         <div className="flex flex-col">
-          <div className="bg-[#0066b2] text-white py-1.5 px-3 transform -skew-x-12 shadow-md mb-3">
-            <h4 className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-center transform skew-x-12">
+          <div className="bg-[#0066b2] text-white h-10 px-2 flex items-center justify-center transform -skew-x-12 shadow-md mb-3">
+            <h4 className="text-xs lg:text-sm font-extrabold uppercase tracking-wide whitespace-nowrap text-center transform skew-x-12">
               STRUCTURAL BIM
             </h4>
           </div>
@@ -96,8 +96,8 @@ export function BimMainCard({ className = "" }: { className?: string }) {
 
         {/* Column 3: BIM */}
         <div className="flex flex-col">
-          <div className="bg-[#004f8c] text-white py-1.5 px-3 transform -skew-x-12 shadow-md mb-3">
-            <h4 className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-center transform skew-x-12">
+          <div className="bg-[#004f8c] text-white h-10 px-2 flex items-center justify-center transform -skew-x-12 shadow-md mb-3">
+            <h4 className="text-xs lg:text-sm font-extrabold uppercase tracking-wide whitespace-nowrap text-center transform skew-x-12">
               BIM
             </h4>
           </div>

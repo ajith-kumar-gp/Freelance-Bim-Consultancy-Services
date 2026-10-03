@@ -1,123 +1,82 @@
-# BIM Earth - Enterprise Digital Twin & Sustainable Architecture Platform
+# BIM Earth Consultancy — Website
 
-BIM Earth is an ultra-premium, interactive website designed for advanced architectural consultation, computational BIM engineering, high-fidelity virtual twin design, and curated interior spaces. 
-
-Designed with a high-contrast **Technical Biophilic & Parametric Cyber-Earth** theme, it leverages state-of-the-art interactive micro-animations, glassmorphism containers, and a clean typography grid.
+Marketing website for BIM Earth Consultancy (Architecture, Interior Design, BIM services and BIM training), with a **Decap CMS** admin panel so content can be edited without touching code.
 
 ---
 
-## 🛠️ Technology Stack & Architecture
+## Tech stack
 
-- **Frontend Core**: React 18, TypeScript, Vite
-- **Styling**: Tailwind CSS (with native CSS nesting and `@theme` variables)
-- **Animations**: `motion/react` for buttery-smooth page entries, hovering transitions, and modal overlays
-- **Icons**: `lucide-react` (clean, unified vector symbols)
-- **CMS Admin**: Decap CMS (a secure, Git-based flat-file management system)
-- **Data Engine**: Flat-file JSON structure. No heavy SQL/NoSQL cloud database is required. The UI dynamically imports and processes records using Vite’s hyper-fast globbing engine:
-  ```typescript
-  const modules = import.meta.glob('/src/content/blog/*.json', { eager: true });
-  ```
+- **Frontend**: React 19, TypeScript, Vite 6, React Router 7
+- **Styling**: Tailwind CSS v4 (theme tokens in `src/index.css`)
+- **Animations / icons**: `motion/react`, `lucide-react`
+- **Forms**: EmailJS (Contact and Booking pages) — see [emailjs.md](emailjs.md)
+- **CMS**: Decap CMS 3 (git-based; content is committed to the repo)
+- **Hosting**: Netlify (Identity + Git Gateway for admin login)
 
----
+## How content works
 
-## 🧭 How to Access and Use the Admin Panel
+There is no database. All site content is JSON in `src/content/`:
 
-The administration interface is fully configured and ready to use. You can manage everything from home slides, projects, clients, certifications, testimonials, FAQs, and blog posts without touching any code!
+| Type | Location | Loaded by |
+| --- | --- | --- |
+| Single pages (homepage, about, founder, services, contact, legal, settings, seo) | `src/content/*.json` | direct `import` |
+| Collections (projects, gallery, testimonials, faqs, team-members, clients, certifications, blog) | `src/content/<collection>/*.json` | `import.meta.glob(...)`, sorted by `order` |
 
-### 1. In Local Development / AI Studio Workspace
-1. Simply append `/admin/` to your dev server URL:
-   * **URL**: `http://localhost:3000/admin/` or `https://<preview-domain>/admin/`
-2. Since `local_backend: true` is configured in `/public/admin/config.yml`, Decap CMS will detect your local workspace and allow you to log in instantly **without any password**.
-3. All additions, edits, or deletions you perform in the admin interface will be written directly to your flat JSON files under `src/content/` in real-time!
+Images live in `public/` (project photos in `public/ProjectImages/<Project Name>/`). Images uploaded through the CMS go to `public/uploads/`.
 
-### 2. In Production
-When deployed to live servers, Decap CMS authenticates directly with GitHub to let you manage content. Changes saved in the CMS will be automatically committed as Git commits to your repo, triggering automatic redeployments!
-
-To enable this:
-1. Open `/public/admin/config.yml`.
-2. Locate the `backend` configuration:
-   ```yaml
-   backend:
-     name: github
-     repo: owner/bim-earth-consultancy # <-- Change this to your GitHub username and repo name!
-     branch: main
-   ```
-3. Set up an **OAuth Gateway** (details below in the Deployment section) so users can sign in with their GitHub account.
+The CMS field definitions are in [public/admin/config.yml](public/admin/config.yml). **If you add a new field to a JSON file, add it to `config.yml` too**, otherwise it can't be edited in the admin panel.
 
 ---
 
-## 🚀 Step-by-Step Deployment Guide
+## Local development
 
-Since this is a lightning-fast Single-Page Application (SPA) compiled into highly-optimized static HTML, CSS, and JS files, it can be deployed for **100% free** on edge-hosting services.
-
-### Choice A: Netlify (Highly Recommended for Decap CMS)
-Netlify provides native, zero-config support for Decap CMS authentication via its **Identity** feature.
-
-1. **Upload your code to GitHub**: Create a repository on GitHub and push your code files.
-2. **Deploy to Netlify**:
-   - Log in to [Netlify](https://www.netlify.com/).
-   - Click **Add new site** > **Import an existing project** > Choose **GitHub**.
-   - Select your `bim-earth-consultancy` repository.
-   - Configure the build settings:
-     * **Build Command**: `npm run build`
-     * **Publish directory**: `dist`
-   - Click **Deploy**.
-3. **Configure Decap CMS (Git Gateway)**:
-   - In Netlify, go to **Site settings** > **Identity**.
-   - Click **Enable Identity service**.
-   - Under **Registration preferences**, change to *Invite only* (so random visitors can't register as admins!).
-   - Scroll down to **Services** > **Git Gateway**, and click **Enable Git Gateway** (it will prompt you to connect your GitHub account).
-4. **Done!** Access `https://<your-netlify-site>.netlify.app/admin/`, sign in using Netlify Identity, and start writing articles and publishing projects!
-
----
-
-### Choice B: Vercel
-Vercel is extremely fast and compiles Vite sites in seconds.
-
-1. Create a repository on GitHub and push your code.
-2. Log in to [Vercel](https://vercel.com/) and click **Add New** > **Project**.
-3. Import your repository.
-4. Vercel automatically detects Vite. Ensure the build command is `npm run build` and the output directory is `dist`.
-5. Click **Deploy**.
-6. **Decap CMS Auth on Vercel**:
-   - Since Vercel doesn't have an Identity widget built-in, you can use a simple third-party OAuth helper like [GitHub-OAuth-Gateway](https://github.com/vnoitcoder/github-oauth-gateway) or [decapi](https://github.com/iampatrick/decapi) to manage admin logins.
-   - Simply host the helper on a free service (e.g., Vercel, Render) and add the server gateway URL to your `/public/admin/config.yml` backend block:
-     ```yaml
-     backend:
-       name: github
-       repo: username/repo
-       base_url: https://your-oauth-gateway.vercel.app # <-- Add this
-     ```
-
----
-
-### Choice C: Google Cloud Run (Container Deployment)
-If your infrastructure requires containerized hosting:
-
-1. **Dockerize**: Build a production static file container using Nginx or light Node servers.
-2. **Build the assets**:
-   ```bash
-   npm run build
-   ```
-3. Use your container deployment workflow to serve the static `dist/` assets on Port `3000` or port `8080` behind your ingress proxy.
-
----
-
-## 🎨 Theme Customization Cheat Sheet
-
-Want to tweak the color accents or typography in the future? 
-
-Open `src/index.css` and look under the `@theme` block:
-```css
-@theme {
-  --font-sans: 'Plus Jakarta Sans', sans-serif; /* Body copy & standard UI */
-  --font-display: 'Space Grotesk', sans-serif; /* High-end display headings */
-  --font-mono: 'JetBrains Mono', monospace;     /* Coordinate grids & stats */
-  
-  --color-accent-blue: #10b981;                /* Emerald sustainability accent */
-  --color-accent-emerald: #10b981;             /* Primary biophilic color */
-  --color-accent-cyan: #06b6d4;                /* High-fidelity digital twin cyan */
-}
+```bash
+npm install
+npm run dev            # site at http://localhost:3000
 ```
 
-Simply update these Tailwind color variables or Google Font URLs at the top of the file to instantly restyle the entire corporate ecosystem!
+### Using the admin panel locally
+
+`config.yml` has `local_backend: true`, so the CMS can write straight to your local files without logging in. Run the Decap proxy server in a second terminal:
+
+```bash
+npx decap-server
+```
+
+Then open `http://localhost:3000/admin/`. Saved changes are written to `src/content/` — commit and push them like any other change.
+
+### Environment variables
+
+Copy `.env.example` to `.env.local` and fill in the EmailJS keys. Without them, the forms run in a simulated "sandbox" mode and no email is sent.
+
+---
+
+## Deployment (Netlify)
+
+Build settings and the SPA redirect (so links like `/about` work on refresh) are in [netlify.toml](netlify.toml).
+
+1. Import the GitHub repo into Netlify (build command `npm run build`, publish directory `dist` — picked up automatically from `netlify.toml`).
+2. **Site configuration → Environment variables**: add `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_PUBLIC_KEY`, then redeploy.
+3. **Enable admin login**:
+   - Site configuration → **Identity** → Enable Identity.
+   - Registration → set to **Invite only** (so strangers can't sign up as admins).
+   - Identity → Services → **Git Gateway** → Enable.
+   - Identity → **Invite users** → invite each admin's email.
+4. Admins sign in at `https://<your-site>/admin/`. Each save is committed to the `main` branch, and Netlify rebuilds the site automatically (usually 1–2 minutes).
+
+> Note: Netlify Identity is deprecated for new sites. If it isn't available on your account, switch `backend` in `config.yml` to `name: github` with `repo: <owner>/<repo>` and set up a GitHub OAuth app in Netlify (Site configuration → Access & security → OAuth).
+
+---
+
+## Scripts
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Dev server on port 3000 |
+| `npm run build` | Production build into `dist/` |
+| `npm run preview` | Serve the built `dist/` locally |
+| `npm run lint` | TypeScript type-check |
+
+## Theme customization
+
+Fonts and accent colours are defined in the `@theme` block at the top of `src/index.css`.

@@ -51,42 +51,6 @@
       "description": "Today, BIM Earth Consultancy continues to grow as a BIM-focused consultancy, working toward delivering smarter, more coordinated, and technology-driven solutions for the built environment. Our journey is not just measured by the number of projects we have completed, but by the knowledge we have gained, relationships we have built, and value we have delivered through every project. We look forward to expanding our capabilities, embracing emerging technologies, and creating new possibilities through Building Information Modelling."
     }
   ],
-  "achievements": [
-    {
-      "title": "Global Project Delivery & International Standards",
-      "statValue": "100%",
-      "statLabel": "Client Retention",
-      "description": "Recognized for delivering multi-disciplinary BIM projects across residential, commercial, infrastructure, and retail sectors adhering to international BIM protocols and rigorous quality controls.",
-      "milestones": [
-        "Delivered international LOD 300 - 500 BIM models across global corridors",
-        "Achieved 100% client retention across all major developer and engineering accounts",
-        "Shortened design review cycles by 30% through automated clash resolution"
-      ],
-      "timeline": [
-        "2021: Established core BIM capabilities and project workflows",
-        "2023: Expanded into multi-disciplinary railway and commercial infrastructure",
-        "2025: Integrated advanced digital asset management and 5D cost estimations",
-        "2026: Future forward technology-driven project execution"
-      ]
-    },
-    {
-      "title": "Comprehensive BIM Coverage: 3D to 5D & Facility Management",
-      "statValue": "12+",
-      "statLabel": "Major Projects Delivered",
-      "description": "Delivering end-to-end Building Information Modeling solutions encompassing 3D Architectural/Structural/MEPF modeling, clash detection, 4D construction phasing, 5D cost estimation, and Cobie asset data integration.",
-      "milestones": [
-        "Integrated Revit, Navisworks, AutoCAD, and Civil 3D workflows",
-        "Engineered clash-free multi-service coordination for metro transit stations",
-        "Developed custom Revit parametric families and quantity take-offs"
-      ],
-      "timeline": [
-        "2021: 3D modeling and documentation foundation",
-        "2023: 4D sequencing, scheduling, and clash detection mastery",
-        "2025: 5D cost takeoff and digital asset information management",
-        "2026: Next-generation digital twin infrastructure"
-      ]
-    }
-  ],
   "seoTitle": "About BIM Earth Consultancy - Vision, Mission & Journey",
   "seoDescription": "Discover BIM Earth Consultancy: established in 2021 to deliver innovative, accurate, and reliable Building Information Modelling (BIM) solutions for the AEC industry."
 }

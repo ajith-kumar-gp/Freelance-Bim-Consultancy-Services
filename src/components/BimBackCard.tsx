@@ -1,11 +1,12 @@
 import React from "react";
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, ExternalLink } from "lucide-react";
+import contactData from "../content/contact.json";
 
 export function BimBackCard({ className = "" }: { className?: string }) {
   return (
     <div 
       id="bim-back-card"
-      className={`relative bg-white text-slate-800 rounded-3xl shadow-2xl border-2 border-dashed border-slate-300 max-w-xl w-full mx-auto font-sans overflow-hidden transition-transform duration-300 hover:shadow-blue-500/10 ${className}`}
+      className={`relative bg-white text-slate-800 rounded-3xl shadow-2xl border-2 border-dashed border-slate-300 max-w-xl w-full h-full mx-auto font-sans overflow-hidden flex flex-col transition-transform duration-300 hover:shadow-blue-500/10 ${className}`}
     >
       {/* Corner Registration Marks */}
       <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-slate-400 z-20"></div>
@@ -27,7 +28,7 @@ export function BimBackCard({ className = "" }: { className?: string }) {
           {/* Social Media Links */}
           <div className="flex items-center gap-4 mt-2 text-xs font-semibold text-[#0066b2]">
             <a 
-              href="https://facebook.com" 
+              href={contactData.facebook} 
               target="_blank" 
               rel="noreferrer" 
               className="flex items-center gap-1 hover:text-blue-900 transition-colors"
@@ -36,7 +37,7 @@ export function BimBackCard({ className = "" }: { className?: string }) {
               <span>Facebook</span>
             </a>
             <a 
-              href="https://instagram.com" 
+              href={contactData.instagram} 
               target="_blank" 
               rel="noreferrer" 
               className="flex items-center gap-1 hover:text-blue-900 transition-colors"
@@ -45,7 +46,7 @@ export function BimBackCard({ className = "" }: { className?: string }) {
               <span>Instagram</span>
             </a>
             <a 
-              href="https://twitter.com" 
+              href={contactData.twitter} 
               target="_blank" 
               rel="noreferrer" 
               className="flex items-center gap-1 hover:text-blue-900 transition-colors"
@@ -71,7 +72,7 @@ export function BimBackCard({ className = "" }: { className?: string }) {
       </div>
 
       {/* Bottom Geometric Blue Angled Shape with Contact Info */}
-      <div className="relative bg-[#0066b2] text-white p-6 sm:p-7 pt-8 mt-2 overflow-hidden">
+      <div className="relative flex-1 flex flex-col justify-center bg-[#0066b2] text-white p-6 sm:p-7 pt-8 mt-2 overflow-hidden">
         {/* Geometric Angular Accent Slices */}
         <div className="absolute top-0 right-0 w-48 h-48 bg-[#004f8c] transform rotate-45 translate-x-16 -translate-y-20 opacity-70 pointer-events-none"></div>
         <div className="absolute top-0 right-28 w-2 h-full bg-white/20 transform -skew-x-45 pointer-events-none"></div>
@@ -93,13 +94,13 @@ export function BimBackCard({ className = "" }: { className?: string }) {
 
           {/* Phone */}
           <a 
-            href="tel:+918826508932" 
+            href={`tel:${contactData.phone.replace(/\s+/g, "")}`} 
             className="flex items-center gap-3 hover:text-blue-200 transition-colors group"
           >
             <div className="p-1.5 rounded-lg bg-white/10 group-hover:bg-white/20">
               <Phone size={16} />
             </div>
-            <span className="font-mono text-white">(+91) 8826508932 ; 8826175595</span>
+            <span className="font-mono text-white">{contactData.phone}</span>
           </a>
 
           {/* Address */}

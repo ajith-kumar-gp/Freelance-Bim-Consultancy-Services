@@ -1,31 +1,19 @@
 {
   "title": "NCRTC DELHI-MEERUT-GHAZIABAD CORRIDOR(ARCHITECTURAL FINISHES)",
   "category": "Transit & Infrastructure",
+  "client": "Frischmann Prabhu India Pvt. Ltd.",
   "industry": "Regional Rapid Transit System (RRTS)",
   "location": "Delhi - Meerut - Ghaziabad Corridor",
   "year": "2023 - 2025",
   "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
-  "images": [
-    {
-      "title": "RRTS Station Platform Finishes.jpg",
-      "caption": "Passenger Platform Cladding & Ceiling Finishes BIM",
-      "type": "Architectural Finishes",
-      "url": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "title": "Concourse Level Architectural Fitout.jpg",
-      "caption": "Concourse Public Spaces & High-Traffic Floor Tiling",
-      "type": "Station Fit-out",
-      "url": "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "title": "Acoustic Wall Panels & Signage.jpg",
-      "caption": "Wayfinding Integration and Transit Wall Panel Detailing",
-      "type": "Interior Systems",
-      "url": "https://images.unsplash.com/photo-1508873696983-2df5293cb32f?auto=format&fit=crop&w=1200&q=80"
-    }
+  "images": [],
+  "description": "Architectural GFC (Good for Construction) modelling and documentation submission for Meerut Central Metro Station on the NCRTC Delhi–Meerut–Ghaziabad corridor, including architectural interior finishes and flooring finishes layouts.",
+  "scope": [
+    "Architectural GFC modelling of Meerut Central Metro Station",
+    "Architectural interior finishes modelling",
+    "Flooring finishes layouts",
+    "GFC documentation and submission"
   ],
-  "description": "Detailed architectural finishes and interior station fit-out modeling for the NCRTC Regional Rapid Transit System corridor. Coordinated station platforms, concourse cladding, passenger circulation, and public finishes documentation.",
-  "highlight": "Flawless finishes alignment across multiple elevated and underground RRTS stations.",
+  "highlight": "GFC architectural model and documentation submitted for Meerut Central Metro Station.",
   "order": 7
 }

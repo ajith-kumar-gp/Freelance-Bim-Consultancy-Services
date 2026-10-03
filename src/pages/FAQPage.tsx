@@ -8,14 +8,14 @@ const faqData = Object.values(faqModules)
   .map((m: any) => m.default || m)
   .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
-type FAQCategory = 'All' | 'Architecture' | 'Interior Design' | 'BIM' | 'General';
+type FAQCategory = 'All' | 'General' | 'Architectural BIM' | 'Structural BIM' | 'MEP BIM' | 'BIM Training';
 
 export default function FAQPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState<FAQCategory>('All');
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
-  const categories: FAQCategory[] = ['All', 'Architecture', 'Interior Design', 'BIM', 'General'];
+  const categories: FAQCategory[] = ['All', 'General', 'Architectural BIM', 'Structural BIM', 'MEP BIM', 'BIM Training'];
 
   const toggleAccordion = (idx: number) => {
     setExpandedIndex(expandedIndex === idx ? null : idx);

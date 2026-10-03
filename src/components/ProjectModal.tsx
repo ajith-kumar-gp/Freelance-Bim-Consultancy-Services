@@ -294,6 +294,22 @@ export function ProjectModal({ project, initialImageIndex = 0, onClose }: Projec
                     </p>
                   </div>
 
+                  {project.scope && project.scope.length > 0 && (
+                    <div className="flex flex-col gap-2">
+                      <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-600 dark:text-accent-blue">
+                        Scope of Services
+                      </span>
+                      <ul className="flex flex-col gap-1.5">
+                        {project.scope.map((item, idx) => (
+                          <li key={idx} className="flex gap-2 items-start text-sm text-slate-600 dark:text-slate-300 font-light leading-relaxed">
+                            <CheckCircle2 size={14} className="text-blue-500 dark:text-accent-blue shrink-0 mt-1" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
                   <div className="p-5 rounded-2xl bg-blue-50/50 dark:bg-navy-950/60 border border-blue-100 dark:border-white/10 flex flex-col gap-3">
                     <span className="text-xs font-mono font-bold text-blue-800 dark:text-accent-blue uppercase tracking-wider flex items-center gap-2">
                       <Award size={16} />
@@ -310,6 +326,12 @@ export function ProjectModal({ project, initialImageIndex = 0, onClose }: Projec
                     Project Parameters
                   </h4>
                   <div className="flex flex-col gap-3 text-xs">
+                    {project.client && (
+                      <div className="flex justify-between gap-4 py-1 border-b border-slate-100 dark:border-white/5">
+                        <span className="text-slate-400 font-mono shrink-0">Client</span>
+                        <span className="font-bold text-slate-800 dark:text-white text-right">{project.client}</span>
+                      </div>
+                    )}
                     <div className="flex justify-between py-1 border-b border-slate-100 dark:border-white/5">
                       <span className="text-slate-400 font-mono">Discipline Category</span>
                       <span className="font-bold text-slate-800 dark:text-white">{project.category}</span>

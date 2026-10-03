@@ -7,9 +7,13 @@ local_backend: true
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
+# Branding: logo on the login page
+logo_url: /logo.jpeg
+
 collections:
   - name: "website_content"
     label: "Website Pages (Singletons)"
+    description: "Edit the main text of each page: homepage, about, services, contact details, legal policies and site settings."
     delete: false
     editor:
       preview: false
@@ -34,6 +38,7 @@ collections:
           - { label: "Stats Counter 5 Number", name: "stat5_num", widget: "string" }
           - { label: "Stats Counter 5 Label", name: "stat5_label", widget: "string" }
           - { label: "Who We Are Heading", name: "whoWeAreHeading", widget: "string" }
+          - { label: "Who We Are Image", name: "whoWeAreImage", widget: "image", required: false }
           - { label: "Who We Are Paragraph 1", name: "whoWeAreP1", widget: "text" }
           - { label: "Who We Are Paragraph 2", name: "whoWeAreP2", widget: "text" }
           - { label: "Who We Are Paragraph 3", name: "whoWeAreP3", widget: "text" }
@@ -59,30 +64,6 @@ collections:
               { label: "Title", name: "title", widget: "string" },
               { label: "Description", name: "description", widget: "text" }
             ]}
-          - label: "Achievements List"
-            name: "achievements"
-            widget: "list"
-            fields:
-              - { label: "Achievement Title", name: "title", widget: "string" }
-              - { label: "Statistic Value (e.g. Winner, 40M+)", name: "statValue", widget: "string" }
-              - { label: "Statistic Label (e.g. sq. ft.)", name: "statLabel", widget: "string" }
-              - { label: "Detailed Description", name: "description", widget: "text" }
-              - { label: "Key Milestones achieved", name: "milestones", widget: "list", field: { label: "Milestone", name: "milestone", widget: "string" } }
-              - { label: "Chronological Progression / Timeline", name: "timeline", widget: "list", field: { label: "Timeline Step", name: "step", widget: "string" } }
-          - { label: "SEO Title", name: "seoTitle", widget: "string" }
-          - { label: "SEO Description", name: "seoDescription", widget: "text" }
-
-      - name: "founder"
-        label: "Founder Profile"
-        file: "src/content/founder.json"
-        fields:
-          - { label: "Founder Name", name: "name", widget: "string" }
-          - { label: "Title / Designation", name: "title", widget: "string" }
-          - { label: "Founder Photo", name: "photo", widget: "image" }
-          - { label: "Biography", name: "biography", widget: "text" }
-          - { label: "Qualifications List", name: "qualifications", widget: "list", field: { label: "Qualification", name: "qualification", widget: "string" } }
-          - { label: "Experience List", name: "experience", widget: "list", field: { label: "Experience Item", name: "experience", widget: "string" } }
-          - { label: "Founder Message", name: "message", widget: "text" }
           - { label: "SEO Title", name: "seoTitle", widget: "string" }
           - { label: "SEO Description", name: "seoDescription", widget: "text" }
 
@@ -90,45 +71,25 @@ collections:
         label: "Services Detailed Content"
         file: "src/content/services.json"
         fields:
-          - label: "Architecture Service Details"
+          - label: "Architectural BIM Service Details"
             name: "architecture"
             widget: "object"
-            fields:
+            fields: &service_fields
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Subtitle", name: "subtitle", widget: "string" }
               - { label: "Main Description", name: "description", widget: "text" }
+              - { label: "Overview", name: "overview", widget: "text", required: false }
+              - { label: "Sectors Served", name: "sectors", widget: "text", required: false }
               - { label: "Service Image", name: "image", widget: "image" }
-              - { label: "Sub Services", name: "subServices", widget: "list", fields: [
+              - { label: "Modules Section Heading", name: "modulesHeading", widget: "string", required: false }
+              - { label: "Modules (cards)", name: "subServices", widget: "list", summary: "{{fields.name}}", fields: [
                   { label: "Name", name: "name", widget: "string" },
-                  { label: "Description", name: "description", widget: "text" },
+                  { label: "Description", name: "description", widget: "text", required: false },
                   { label: "Key Features", name: "features", widget: "list", field: { label: "Feature", name: "feature", widget: "string" } }
                 ]}
-          - label: "Interior Design Service Details"
-            name: "interior"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Subtitle", name: "subtitle", widget: "string" }
-              - { label: "Main Description", name: "description", widget: "text" }
-              - { label: "Service Image", name: "image", widget: "image" }
-              - { label: "Sub Services", name: "subServices", widget: "list", fields: [
-                  { label: "Name", name: "name", widget: "string" },
-                  { label: "Description", name: "description", widget: "text" },
-                  { label: "Key Features", name: "features", widget: "list", field: { label: "Feature", name: "feature", widget: "string" } }
-                ]}
-          - label: "BIM Service Details"
-            name: "bim"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Subtitle", name: "subtitle", widget: "string" }
-              - { label: "Main Description", name: "description", widget: "text" }
-              - { label: "Service Image", name: "image", widget: "image" }
-              - { label: "Sub Services", name: "subServices", widget: "list", fields: [
-                  { label: "Name", name: "name", widget: "string" },
-                  { label: "Description", name: "description", widget: "text" },
-                  { label: "Key Features", name: "features", widget: "list", field: { label: "Feature", name: "feature", widget: "string" } }
-                ]}
+          - { label: "Structural BIM Service Details", name: "interior", widget: "object", fields: *service_fields }
+          - { label: "MEP BIM Service Details", name: "bim", widget: "object", fields: *service_fields }
+          - { label: "BIM Training Details", name: "training", widget: "object", fields: *service_fields }
 
       - name: "contact"
         label: "Contact & Social Details"
@@ -197,26 +158,46 @@ collections:
 
   - name: "projects"
     label: "Projects Portfolio"
+    description: "Projects shown on the Projects page and homepage. Lower 'Order' numbers appear first. Add gallery images grouped by service type."
     folder: "src/content/projects"
+    editor:
+      preview: false
     create: true
     delete: true
     extension: "json"
     format: "json"
     slug: "{{title}}"
+    summary: "{{title}} — {{category}}"
+    sortable_fields: ["order", "title", "category"]
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Category", name: "category", widget: "select", options: ["Architectural", "Interiors", "BIM", "Institutional", "Transit & Infrastructure", "Commercial & Retail", "Residential Development"] }
+      - { label: "Client", name: "client", widget: "string", required: false }
       - { label: "Industry", name: "industry", widget: "string" }
       - { label: "Location", name: "location", widget: "string" }
       - { label: "Completion Year", name: "year", widget: "string" }
-      - { label: "Image URL", name: "image", widget: "image" }
+      - { label: "Cover Image", name: "image", widget: "image" }
+      - label: "Project Gallery Images"
+        name: "images"
+        widget: "list"
+        required: false
+        summary: "{{fields.type}} · {{fields.caption}}"
+        fields:
+          - { label: "Image", name: "url", widget: "image" }
+          - { label: "File Title", name: "title", widget: "string", required: false }
+          - { label: "Caption", name: "caption", widget: "string" }
+          - { label: "Type / Tag (e.g. MEP Coordination, Material Take-Off)", name: "type", widget: "string" }
       - { label: "Detailed Description", name: "description", widget: "text" }
+      - { label: "Scope of Services", name: "scope", widget: "list", required: false, field: { label: "Scope Item", name: "item", widget: "string" } }
       - { label: "Key Milestone or Highlight", name: "highlight", widget: "string" }
       - { label: "Order (Numeric sort priority)", name: "order", widget: "number", value_type: "int", default: 10 }
 
   - name: "gallery"
     label: "Gallery Grid"
+    description: "Images shown on the Gallery page. Lower 'Order' numbers appear first."
     folder: "src/content/gallery"
+    editor:
+      preview: false
     create: true
     delete: true
     extension: "json"
@@ -230,7 +211,10 @@ collections:
 
   - name: "testimonials"
     label: "Testimonials"
+    description: "Client reviews shown on the Testimonials page and homepage."
     folder: "src/content/testimonials"
+    editor:
+      preview: false
     create: true
     delete: true
     extension: "json"
@@ -247,38 +231,29 @@ collections:
 
   - name: "faqs"
     label: "FAQs"
+    description: "Questions shown on the FAQ page, grouped by category. The first three also appear on the homepage."
     folder: "src/content/faqs"
+    editor:
+      preview: false
     create: true
     delete: true
     extension: "json"
     format: "json"
     slug: "{{question}}"
+    summary: "{{question}} ({{category}})"
+    sortable_fields: ["order", "category"]
     fields:
       - { label: "Question", name: "question", widget: "string" }
       - { label: "Answer", name: "answer", widget: "text" }
-      - { label: "Category", name: "category", widget: "select", options: ["Architecture", "Interior Design", "BIM", "General"] }
-      - { label: "Order", name: "order", widget: "number", value_type: "int", default: 10 }
-
-  - name: "team_members"
-    label: "Team Members"
-    folder: "src/content/team-members"
-    create: true
-    delete: true
-    extension: "json"
-    format: "json"
-    slug: "{{name}}"
-    fields:
-      - { label: "Full Name", name: "name", widget: "string" }
-      - { label: "Role / Designation", name: "role", widget: "string" }
-      - { label: "Photo", name: "photo", widget: "image" }
-      - { label: "Short Biography", name: "bio", widget: "text" }
-      - { label: "LinkedIn Profile URL", name: "linkedin", widget: "string", required: false }
-      - { label: "Corporate Email Address", name: "email", widget: "string", required: false }
+      - { label: "Category", name: "category", widget: "select", options: ["General", "Architectural BIM", "Structural BIM", "MEP BIM", "BIM Training"] }
       - { label: "Order", name: "order", widget: "number", value_type: "int", default: 10 }
 
   - name: "clients"
     label: "Clients List"
+    description: "Clients listed under 'Our Trusted Corporate Clients' on the About page. If no logo is uploaded, initials are shown."
     folder: "src/content/clients"
+    editor:
+      preview: false
     create: true
     delete: true
     extension: "json"
@@ -286,13 +261,16 @@ collections:
     slug: "{{name}}"
     fields:
       - { label: "Client Name", name: "name", widget: "string" }
-      - { label: "Corporate Logo", name: "logo", widget: "image" }
+      - { label: "Corporate Logo (initials shown if empty)", name: "logo", widget: "image", required: false }
       - { label: "Client Website URL", name: "website", widget: "string", required: false }
       - { label: "Order", name: "order", widget: "number", value_type: "int", default: 10 }
 
   - name: "certifications"
     label: "Certifications & Merits"
+    description: "Certifications shown on the About page."
     folder: "src/content/certifications"
+    editor:
+      preview: false
     create: true
     delete: true
     extension: "json"
@@ -308,21 +286,25 @@ collections:
 
   - name: "blog"
     label: "Blog Posts"
+    description: "Articles and project case studies shown on the Blog page. Use ### for headings and - for bullet points in the body."
     folder: "src/content/blog"
+    editor:
+      preview: false
     create: true
     delete: true
     extension: "json"
     format: "json"
     slug: "{{slug}}"
+    sortable_fields: ["date", "title", "order"]
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Slug URL Identifier", name: "slug", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
       - { label: "Author Name", name: "author", widget: "string" }
       - { label: "Author Designation / Role", name: "authorRole", widget: "string" }
       - { label: "Author Profile Picture", name: "authorImage", widget: "image" }
       - { label: "Cover Header Image", name: "coverImage", widget: "image" }
       - { label: "Short Excerpt", name: "excerpt", widget: "text" }
-      - { label: "Post Body (Markdown)", name: "body", widget: "markdown" }
+      - { label: "Post Body (Markdown)", name: "content", widget: "markdown" }
       - { label: "Tags / Categories", name: "tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
       - { label: "Sort Order priority", name: "order", widget: "number", value_type: "int", default: 10 }

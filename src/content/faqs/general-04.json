@@ -1,0 +1,6 @@
+{
+  "question": "What information do you require to start a BIM project?",
+  "answer": "Depending on the scope, we may require architectural, structural and MEP drawings, CAD files, PDFs, specifications, design models, point-cloud data, surveys and applicable BIM standards.",
+  "category": "General",
+  "order": 4
+}

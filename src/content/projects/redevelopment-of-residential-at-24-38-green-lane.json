@@ -1,31 +1,208 @@
 {
-  "title": "REDEVLOPMENT OF RESIDENTIAL AT 24-38 GREEN LANE",
+  "title": "REDEVELOPMENT OF RESIDENTIAL AT 24-38 GREEN LANE",
   "category": "Residential Development",
+  "client": "Theolia Wind Energy Private Limited",
   "industry": "Residential Regeneration & Redevelopment",
-  "location": "24-38 Green Lane",
+  "location": "Northwood, London (UK)",
   "year": "2024 - 2025",
-  "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+  "image": "/ProjectImages/green-lane-redevelopment/final-proposal/final-proposal-view-01.jpg",
   "images": [
     {
-      "title": "Residential Regeneration BIM.jpg",
-      "caption": "Historic Facade Preservation & Modern Retrofit Model",
-      "type": "Architecture",
-      "url": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      "title": "Final Proposal View 01",
+      "caption": "Final proposed redevelopment design",
+      "type": "Final Proposal",
+      "url": "/ProjectImages/green-lane-redevelopment/final-proposal/final-proposal-view-01.jpg"
     },
     {
-      "title": "Structural Strengthening & Extensions.jpg",
-      "caption": "Load Bearing Verification and Foundation Underpinning",
-      "type": "Structural Engineering",
-      "url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80"
+      "title": "Final Proposal View 02",
+      "caption": "Final proposed redevelopment design",
+      "type": "Final Proposal",
+      "url": "/ProjectImages/green-lane-redevelopment/final-proposal/final-proposal-view-02.jpg"
     },
     {
-      "title": "Interior Layouts & MEP Modernization.jpg",
-      "caption": "Contemporary Living Spaces and Smart Energy Systems",
-      "type": "Interiors & MEP",
-      "url": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80"
+      "title": "Final Proposal View 03",
+      "caption": "Final proposed redevelopment design",
+      "type": "Final Proposal",
+      "url": "/ProjectImages/green-lane-redevelopment/final-proposal/final-proposal-view-03.jpg"
+    },
+    {
+      "title": "Final Proposal View 04",
+      "caption": "Final proposed redevelopment design",
+      "type": "Final Proposal",
+      "url": "/ProjectImages/green-lane-redevelopment/final-proposal/final-proposal-view-04.jpg"
+    },
+    {
+      "title": "Final Proposal View 05",
+      "caption": "Final proposed redevelopment design",
+      "type": "Final Proposal",
+      "url": "/ProjectImages/green-lane-redevelopment/final-proposal/final-proposal-view-05.jpg"
+    },
+    {
+      "title": "Final Proposal View 06",
+      "caption": "Final proposed redevelopment design",
+      "type": "Final Proposal",
+      "url": "/ProjectImages/green-lane-redevelopment/final-proposal/final-proposal-view-06.jpg"
+    },
+    {
+      "title": "Final Proposal View 07",
+      "caption": "Final proposed redevelopment design",
+      "type": "Final Proposal",
+      "url": "/ProjectImages/green-lane-redevelopment/final-proposal/final-proposal-view-07.jpg"
+    },
+    {
+      "title": "Final Proposal View 08",
+      "caption": "Final proposed redevelopment design",
+      "type": "Final Proposal",
+      "url": "/ProjectImages/green-lane-redevelopment/final-proposal/final-proposal-view-08.jpg"
+    },
+    {
+      "title": "Design Option 01 View 01",
+      "caption": "Design option 01 for the residential redevelopment",
+      "type": "Design Option 01",
+      "url": "/ProjectImages/green-lane-redevelopment/design-option-01/design-option-01-view-01.jpg"
+    },
+    {
+      "title": "Design Option 01 View 02",
+      "caption": "Design option 01 for the residential redevelopment",
+      "type": "Design Option 01",
+      "url": "/ProjectImages/green-lane-redevelopment/design-option-01/design-option-01-view-02.jpg"
+    },
+    {
+      "title": "Design Option 01 View 03",
+      "caption": "Design option 01 for the residential redevelopment",
+      "type": "Design Option 01",
+      "url": "/ProjectImages/green-lane-redevelopment/design-option-01/design-option-01-view-03.jpg"
+    },
+    {
+      "title": "Design Option 01 View 04",
+      "caption": "Design option 01 for the residential redevelopment",
+      "type": "Design Option 01",
+      "url": "/ProjectImages/green-lane-redevelopment/design-option-01/design-option-01-view-04.jpg"
+    },
+    {
+      "title": "Design Option 01 View 05",
+      "caption": "Design option 01 for the residential redevelopment",
+      "type": "Design Option 01",
+      "url": "/ProjectImages/green-lane-redevelopment/design-option-01/design-option-01-view-05.jpg"
+    },
+    {
+      "title": "Design Option 01 Ground Floor Plan",
+      "caption": "Ground floor plan for design option 01",
+      "type": "Design Option 01",
+      "url": "/ProjectImages/green-lane-redevelopment/design-option-01/design-option-01-ground-floor-plan.jpg"
+    },
+    {
+      "title": "Design Option 02 View 01",
+      "caption": "Design option 02 for the residential redevelopment",
+      "type": "Design Option 02",
+      "url": "/ProjectImages/green-lane-redevelopment/design-option-02/design-option-02-view-01.jpg"
+    },
+    {
+      "title": "Design Option 02 View 02",
+      "caption": "Design option 02 for the residential redevelopment",
+      "type": "Design Option 02",
+      "url": "/ProjectImages/green-lane-redevelopment/design-option-02/design-option-02-view-02.jpg"
+    },
+    {
+      "title": "Design Option 02 View 03",
+      "caption": "Design option 02 for the residential redevelopment",
+      "type": "Design Option 02",
+      "url": "/ProjectImages/green-lane-redevelopment/design-option-02/design-option-02-view-03.jpg"
+    },
+    {
+      "title": "Design Option 02 View 04",
+      "caption": "Design option 02 for the residential redevelopment",
+      "type": "Design Option 02",
+      "url": "/ProjectImages/green-lane-redevelopment/design-option-02/design-option-02-view-04.jpg"
+    },
+    {
+      "title": "Design Option 02 View 05",
+      "caption": "Design option 02 for the residential redevelopment",
+      "type": "Design Option 02",
+      "url": "/ProjectImages/green-lane-redevelopment/design-option-02/design-option-02-view-05.jpg"
+    },
+    {
+      "title": "Design Option 02 View 06",
+      "caption": "Design option 02 for the residential redevelopment",
+      "type": "Design Option 02",
+      "url": "/ProjectImages/green-lane-redevelopment/design-option-02/design-option-02-view-06.jpg"
+    },
+    {
+      "title": "Design Option 02 View 07",
+      "caption": "Design option 02 for the residential redevelopment",
+      "type": "Design Option 02",
+      "url": "/ProjectImages/green-lane-redevelopment/design-option-02/design-option-02-view-07.jpg"
+    },
+    {
+      "title": "Design Option 02 View 08",
+      "caption": "Design option 02 for the residential redevelopment",
+      "type": "Design Option 02",
+      "url": "/ProjectImages/green-lane-redevelopment/design-option-02/design-option-02-view-08.jpg"
+    },
+    {
+      "title": "Design Option 02 Ground Floor Plan",
+      "caption": "Ground floor plan for design option 02",
+      "type": "Design Option 02",
+      "url": "/ProjectImages/green-lane-redevelopment/design-option-02/design-option-02-ground-floor-plan.jpg"
+    },
+    {
+      "title": "Existing Site View 01",
+      "caption": "Existing site model of 24-38 Green Lane",
+      "type": "Existing Site",
+      "url": "/ProjectImages/green-lane-redevelopment/existing-site/existing-site-view-01.jpg"
+    },
+    {
+      "title": "Existing Site View 02",
+      "caption": "Existing site model of 24-38 Green Lane",
+      "type": "Existing Site",
+      "url": "/ProjectImages/green-lane-redevelopment/existing-site/existing-site-view-02.jpg"
+    },
+    {
+      "title": "Existing Site View 03",
+      "caption": "Existing site model of 24-38 Green Lane",
+      "type": "Existing Site",
+      "url": "/ProjectImages/green-lane-redevelopment/existing-site/existing-site-view-03.jpg"
+    },
+    {
+      "title": "Existing Site View 04",
+      "caption": "Existing site model of 24-38 Green Lane",
+      "type": "Existing Site",
+      "url": "/ProjectImages/green-lane-redevelopment/existing-site/existing-site-view-04.jpg"
+    },
+    {
+      "title": "Existing Site View 05",
+      "caption": "Existing site model of 24-38 Green Lane",
+      "type": "Existing Site",
+      "url": "/ProjectImages/green-lane-redevelopment/existing-site/existing-site-view-05.jpg"
+    },
+    {
+      "title": "Existing Site View 06",
+      "caption": "Existing site model of 24-38 Green Lane",
+      "type": "Existing Site",
+      "url": "/ProjectImages/green-lane-redevelopment/existing-site/existing-site-view-06.jpg"
+    },
+    {
+      "title": "Existing Site View 07",
+      "caption": "Existing site model of 24-38 Green Lane",
+      "type": "Existing Site",
+      "url": "/ProjectImages/green-lane-redevelopment/existing-site/existing-site-view-07.jpg"
+    },
+    {
+      "title": "Existing Ground Floor Plan",
+      "caption": "Existing ground floor plan",
+      "type": "Existing Site",
+      "url": "/ProjectImages/green-lane-redevelopment/existing-site/existing-ground-floor-plan.jpg"
     }
   ],
-  "description": "Full redevelopment and architectural renewal of multi-unit residential property at 24-38 Green Lane. Integrated structural retrofitting, architectural layouts, updated MEP utilities, and comprehensive 3D digital twins.",
-  "highlight": "Preserved structural integrity while delivering contemporary living spaces and updated utilities.",
+  "description": "Residential redevelopment of 24-38 Green Lane, Northwood, London. BIM Earth Consultancy delivered Architecture, Structure and MEP services across the Conceptual, Design, Construction and As-Built stages, developing an existing site model, two design options and the final proposal in BIM, along with as-built models and drawings.",
+  "scope": [
+    "Existing site and building modelling",
+    "Design Option 01 and Design Option 02 models",
+    "Final proposal design model and visualisation",
+    "Architecture, Structure and MEP redevelopment modelling",
+    "Conceptual, Design and Construction stage drawings",
+    "As-built models and drawings"
+  ],
+  "highlight": "Existing site model, two design options and a final proposal developed in BIM to support design decisions.",
   "order": 10
 }

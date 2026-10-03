@@ -1,15 +1,9 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { Compass, Target, ShieldCheck, Milestone, Award, Star, Mail, Linkedin, ExternalLink, Users, Briefcase, X, Clock, TrendingUp, Sparkles, ArrowUpRight } from 'lucide-react';
 import aboutData from '../content/about.json';
 import { AboutBimVisual } from '../components/AboutBimVisual';
 
 // Dynamic imports of repeatable collections
-const teamModules = import.meta.glob('/src/content/team-members/*.json', { eager: true });
-const teamData = Object.values(teamModules)
-  .map((m: any) => m.default || m)
-  .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
-
 const clientModules = import.meta.glob('/src/content/clients/*.json', { eager: true });
 const clientsData = Object.values(clientModules)
   .map((m: any) => m.default || m)
@@ -19,6 +13,15 @@ const certificationModules = import.meta.glob('/src/content/certifications/*.jso
 const certificationsData = Object.values(certificationModules)
   .map((m: any) => m.default || m)
   .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+
+// "2021 — Foundation → 2022 — Growth → ..." from the CMS, split into { year, label } steps
+const journeySteps = (aboutData.journeySummary || '')
+  .split('→')
+  .map((part: string) => {
+    const [year, ...rest] = part.split(/\s+[—–-]\s+/);
+    return { year: year.trim(), label: rest.join(' — ').trim() };
+  })
+  .filter((step: { year: string; label: string }) => step.year);
 
 const iconMap: { [key: string]: any } = {
   ShieldCheck,
@@ -30,7 +33,6 @@ const iconMap: { [key: string]: any } = {
 };
 
 export default function About() {
-  const [selectedAchievement, setSelectedAchievement] = useState<any>(null);
   
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -157,12 +159,36 @@ export default function About() {
           </div>
 
           {/* Journey in One Line Ribbon */}
-          {aboutData.journeySummary && (
-            <div className="p-4 sm:p-6 rounded-2xl glass-card bg-blue-600/5 dark:bg-accent-blue/5 border border-blue-600/20 dark:border-accent-blue/20">
-              <span className="text-[10px] font-mono uppercase font-bold tracking-widest text-blue-600 dark:text-accent-blue block mb-1">Our Journey in One Line</span>
-              <p className="text-xs sm:text-sm font-semibold text-slate-900 dark:text-slate-100 font-mono tracking-wide">
-                {aboutData.journeySummary}
-              </p>
+          {journeySteps.length > 0 && (
+            <div className="p-5 sm:p-7 rounded-3xl glass-card bg-blue-600/5 dark:bg-accent-blue/5 border border-blue-600/20 dark:border-accent-blue/20">
+              <span className="text-[10px] font-mono uppercase font-bold tracking-widest text-blue-600 dark:text-accent-blue block mb-6">Our Journey in One Line</span>
+              <ol className="relative grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-y-6">
+                {/* Connecting line behind the year markers (single row on large screens) */}
+                <div className="hidden lg:block absolute top-[18px] left-[8.33%] right-[8.33%] h-0.5 bg-gradient-to-r from-blue-600/30 via-blue-600/60 to-blue-600/30 dark:from-accent-blue/30 dark:via-accent-blue/60 dark:to-accent-blue/30" />
+                {journeySteps.map((step, idx) => {
+                  const isLast = idx === journeySteps.length - 1;
+                  return (
+                    <motion.li
+                      key={idx}
+                      initial={{ opacity: 0, y: 12 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: idx * 0.08 }}
+                      className="relative flex flex-col items-center text-center gap-2 px-2"
+                    >
+                      <span className={`relative z-10 w-9 h-9 rounded-full flex items-center justify-center border-2 shadow-sm ${
+                        isLast
+                          ? 'bg-blue-600 border-blue-600 text-white dark:bg-accent-blue dark:border-accent-blue dark:text-navy-950'
+                          : 'bg-white border-blue-600/40 text-blue-600 dark:bg-navy-950 dark:border-accent-blue/50 dark:text-accent-blue'
+                      }`}>
+                        <span className="w-2 h-2 rounded-full bg-current" />
+                      </span>
+                      <span className="font-mono font-bold text-sm text-blue-700 dark:text-accent-blue tracking-wider">{step.year}</span>
+                      <span className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-100 leading-snug">{step.label}</span>
+                    </motion.li>
+                  );
+                })}
+              </ol>
             </div>
           )}
 
@@ -211,36 +237,6 @@ export default function About() {
           )}
         </section>
 
-        {/* Corporate Achievements */}
-        <section className="flex flex-col gap-8">
-          <div className="flex items-center gap-3">
-            <Award size={24} className="text-blue-600 dark:text-accent-blue" />
-            <h2 className="text-2xl sm:text-3xl font-sans font-bold text-slate-900 dark:text-white">Key Achievements & Merits</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {aboutData.achievements.map((ach: any, idx: number) => (
-              <motion.button
-                key={idx}
-                whileHover={{ y: -4, scale: 1.01 }}
-                whileTap={{ scale: 0.99 }}
-                onClick={() => setSelectedAchievement(ach)}
-                className="p-6 rounded-2xl glass-card shadow-sm flex gap-4 items-center text-left hover:border-blue-600/30 dark:hover:border-accent-blue/30 group transition-colors duration-300 w-full"
-              >
-                <div className="bg-amber-500/10 text-amber-500 p-3 rounded-xl shrink-0 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
-                  <Star size={20} />
-                </div>
-                <div className="flex flex-col flex-grow gap-1">
-                  <span className="text-xs sm:text-sm text-slate-850 dark:text-slate-200 font-bold tracking-tight leading-tight group-hover:text-blue-900 dark:group-hover:text-accent-blue transition-colors duration-200">{ach.title || ach}</span>
-                  <span className="text-[10px] font-mono uppercase text-slate-400 group-hover:text-slate-500 transition-colors duration-200 flex items-center gap-1">
-                    <span>Click to view statistics & timeline</span>
-                    <ArrowUpRight size={10} className="opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                  </span>
-                </div>
-              </motion.button>
-            ))}
-          </div>
-        </section>
-
         {/* Certifications Section */}
         {certificationsData.length > 0 && (
           <section className="flex flex-col gap-8">
@@ -278,51 +274,6 @@ export default function About() {
           </section>
         )}
 
-        {/* Team Members Section */}
-        {teamData.length > 0 && (
-          <section className="flex flex-col gap-8">
-            <div className="flex items-center gap-3">
-              <Users size={24} className="text-blue-600 dark:text-accent-blue" />
-              <h2 className="text-2xl sm:text-3xl font-sans font-bold text-slate-900 dark:text-white">Meet Our Leadership Team</h2>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {teamData.map((member: any, idx: number) => (
-                <div 
-                  key={idx} 
-                  className="rounded-[2rem] p-2 glass-card hover:shadow-lg transition-all flex flex-col h-full bg-white/30 dark:bg-navy-900/30 overflow-hidden group"
-                >
-                  <div className="relative rounded-[1.7rem] overflow-hidden h-[240px]">
-                    <img 
-                      src={member.photo} 
-                      alt={member.name} 
-                      className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                  <div className="p-5 flex flex-col flex-grow">
-                    <h4 className="font-sans font-bold text-lg text-slate-950 dark:text-white">{member.name}</h4>
-                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-600 dark:text-accent-blue mb-3">{member.role}</span>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-light mb-4">{member.bio}</p>
-                    
-                    <div className="border-t border-slate-200/40 dark:border-white/10 pt-4 mt-auto flex items-center gap-3 text-slate-400">
-                      {member.linkedin && (
-                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 dark:hover:text-accent-blue transition-colors">
-                          <Linkedin size={16} />
-                        </a>
-                      )}
-                      {member.email && (
-                        <a href={`mailto:${member.email}`} className="hover:text-blue-600 dark:hover:text-accent-blue transition-colors">
-                          <Mail size={16} />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
         {/* Clients Section */}
         {clientsData.length > 0 && (
           <section className="flex flex-col gap-8">
@@ -339,12 +290,19 @@ export default function About() {
                   rel="noopener noreferrer"
                   className="flex flex-col items-center gap-2 group transition-transform hover:-translate-y-1"
                 >
-                  <img 
-                    src={client.logo} 
-                    alt={client.name} 
-                    className="w-14 h-14 rounded-full object-cover shadow-inner border border-white/40 dark:border-white/10 group-hover:border-blue-600 dark:group-hover:border-accent-blue transition-colors"
-                    referrerPolicy="no-referrer"
-                  />
+                  {client.logo ? (
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      className="w-14 h-14 rounded-full object-cover shadow-inner border border-white/40 dark:border-white/10 group-hover:border-blue-600 dark:group-hover:border-accent-blue transition-colors"
+                      referrerPolicy="no-referrer"
+                    />
+                  ) : (
+                    // No logo uploaded yet: show the client's initials instead
+                    <span className="w-14 h-14 rounded-full flex items-center justify-center bg-blue-50 dark:bg-navy-950/60 text-blue-800 dark:text-accent-blue font-bold text-sm shadow-inner border border-white/40 dark:border-white/10 group-hover:border-blue-600 dark:group-hover:border-accent-blue transition-colors">
+                      {client.name.split(/\s+/).filter((w: string) => /^[A-Za-z]/.test(w)).slice(0, 2).map((w: string) => w[0].toUpperCase()).join('')}
+                    </span>
+                  )}
                   <span className="text-[11px] font-sans font-semibold text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">{client.name}</span>
                 </a>
               ))}
@@ -354,131 +312,6 @@ export default function About() {
 
       </div>
 
-      {/* Interactive Achievements Merits Modal */}
-      <AnimatePresence>
-        {selectedAchievement && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10">
-            {/* Modal Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setSelectedAchievement(null)}
-              className="absolute inset-0 bg-slate-950/65 backdrop-blur-md cursor-pointer"
-            />
-
-            {/* Modal Body */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 30 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 30 }}
-              transition={{ type: "spring", damping: 25, stiffness: 350 }}
-              className="relative w-full max-w-4xl max-h-[85vh] md:max-h-[80vh] overflow-y-auto rounded-[2.5rem] bg-white dark:bg-navy-950 p-6 sm:p-10 shadow-2xl border border-slate-200/60 dark:border-white/10 flex flex-col gap-8 text-left z-10"
-            >
-              {/* Close Button */}
-              <button
-                onClick={() => setSelectedAchievement(null)}
-                className="absolute top-5 right-5 sm:top-8 sm:right-8 text-slate-400 hover:text-slate-900 dark:hover:text-white bg-slate-100 dark:bg-white/5 hover:bg-slate-200 p-2.5 rounded-full transition-colors"
-                aria-label="Close modal"
-              >
-                <X size={18} />
-              </button>
-
-              {/* Header Info */}
-              <div className="flex gap-4 items-start pr-10">
-                <div className="bg-amber-500/10 text-amber-500 p-3 rounded-2xl shrink-0">
-                  <Award size={28} />
-                </div>
-                <div className="flex flex-col gap-1">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-blue-600 dark:text-accent-blue font-bold">Achievement Credentials</span>
-                  <h3 className="text-xl sm:text-2xl font-sans font-bold text-slate-950 dark:text-white leading-tight">
-                    {selectedAchievement.title}
-                  </h3>
-                </div>
-              </div>
-
-              {/* Main Content Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                
-                {/* Left Panel: Big Statistics and Description */}
-                <div className="lg:col-span-6 flex flex-col gap-6">
-                  {/* Big Stat Box */}
-                  <div className="p-6 rounded-[2rem] bg-gradient-to-br from-blue-900/5 to-blue-900/15 dark:from-white/5 dark:to-white/10 border border-blue-900/10 dark:border-white/5 flex flex-col gap-2 relative overflow-hidden">
-                    <span className="text-4xl sm:text-5xl font-sans font-extrabold tracking-tight text-blue-900 dark:text-accent-blue leading-none">
-                      {selectedAchievement.statValue}
-                    </span>
-                    <span className="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-bold">
-                      {selectedAchievement.statLabel}
-                    </span>
-                    <div className="absolute right-4 bottom-4 opacity-5 text-blue-900 dark:text-white pointer-events-none">
-                      <TrendingUp size={80} />
-                    </div>
-                  </div>
-
-                  {/* Narrative Stats Breakdown */}
-                  <div className="flex flex-col gap-2">
-                    <span className="text-xs font-mono uppercase tracking-widest text-slate-400 font-bold flex items-center gap-1.5">
-                      <Sparkles size={12} className="text-amber-500" />
-                      <span>Corporate Narrative</span>
-                    </span>
-                    <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
-                      {selectedAchievement.description}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Right Panel: Timelines and Milestones */}
-                <div className="lg:col-span-6 flex flex-col gap-8">
-                  {/* Milestones Card */}
-                  {selectedAchievement.milestones && selectedAchievement.milestones.length > 0 && (
-                    <div className="flex flex-col gap-4">
-                      <span className="text-xs font-mono uppercase tracking-widest text-slate-400 font-bold flex items-center gap-1.5">
-                        <Star size={12} className="text-blue-500 dark:text-accent-blue" />
-                        <span>Key Milestones Reached</span>
-                      </span>
-                      <div className="flex flex-col gap-3">
-                        {selectedAchievement.milestones.map((milestone: string, mIdx: number) => (
-                          <div key={mIdx} className="flex gap-3 items-start text-left bg-slate-50/50 dark:bg-white/5 p-3 rounded-xl border border-slate-100 dark:border-white/5">
-                            <div className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-accent-blue shrink-0 mt-2"></div>
-                            <span className="text-xs text-slate-700 dark:text-slate-300 font-light">{milestone}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Timeline Progression */}
-                  {selectedAchievement.timeline && selectedAchievement.timeline.length > 0 && (
-                    <div className="flex flex-col gap-4">
-                      <span className="text-xs font-mono uppercase tracking-widest text-slate-400 font-bold flex items-center gap-1.5">
-                        <Clock size={12} className="text-blue-500 dark:text-accent-blue" />
-                        <span>Chronological Progress</span>
-                      </span>
-                      <div className="relative border-l border-slate-200 dark:border-white/10 ml-2 pl-4 flex flex-col gap-4">
-                        {selectedAchievement.timeline.map((step: string, tIdx: number) => (
-                          <div key={tIdx} className="relative">
-                            <div className="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-blue-600 dark:bg-accent-blue"></div>
-                            <span className="text-xs text-slate-600 dark:text-slate-400 font-light leading-relaxed block">{step}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                </div>
-
-              </div>
-              
-              {/* Footer Credentials */}
-              <div className="border-t border-slate-200/50 dark:border-white/5 pt-4 mt-auto flex justify-between items-center text-[10px] text-slate-400 dark:text-slate-500 font-mono">
-                <span>© BIM Earth Digital Audit Credentials</span>
-                <span>Security Verified • Level 500 Compliant</span>
-              </div>
-
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
     </div>
   );
 }

@@ -1,31 +1,22 @@
 {
   "title": "BHOPAL METRO",
   "category": "Transit & Infrastructure",
+  "client": "Fountainhead",
   "industry": "Mass Rapid Transit System (MRTS)",
   "location": "Bhopal, Madhya Pradesh",
   "year": "2023 - 2025",
-  "image": "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=1200&q=80",
-  "images": [
-    {
-      "title": "Bhopal Metro Station Viaduct BIM.jpg",
-      "caption": "Elevated Metro Station BIM Model & Track Alignment",
-      "type": "Transit BIM",
-      "url": "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "title": "Concourse Structural Steel & Civil.jpg",
-      "caption": "Passenger Concourse Multi-Tier Structural Clearance Analysis",
-      "type": "Structural Steel",
-      "url": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "title": "Traction & Utility Routing.jpg",
-      "caption": "Overhead Electrification & Station MEP Infrastructure",
-      "type": "MEP Infrastructure",
-      "url": "https://images.unsplash.com/photo-1508873696983-2df5293cb32f?auto=format&fit=crop&w=1200&q=80"
-    }
+  "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+  "images": [],
+  "description": "BIM Earth Consultancy provided BIM management and documentation consultancy services for the Bhopal Metro Project, focusing on the development of structured BIM execution and information delivery plans. The objective was to establish a clear framework for BIM implementation, information management, coordination, and deliverable requirements throughout the project lifecycle.",
+  "scope": [
+    "Preparation and development of the BIM Execution Plan (BEP)",
+    "Development of the Master Information Delivery Plan (MIDP)",
+    "Preparation of discipline-specific Task Information Delivery Plans (TIDPs)",
+    "Establishment of BIM roles, responsibilities, workflows, and information exchange procedures",
+    "Definition of BIM deliverables, project milestones, and information requirements",
+    "Development of a structured framework for coordination between project disciplines",
+    "Alignment of information delivery with project requirements and BIM standards"
   ],
-  "description": "Large-scale infrastructure BIM modeling and station engineering for the Bhopal Metro network. Delivered high-precision structural detailing, track alignment interfaces, station MEP coordination, and virtual construction simulations.",
-  "highlight": "100% clash-free spatial coordination across civil, electrical, and viaduct interfaces.",
+  "highlight": "Delivered the BEP, MIDP and TIDP documentation, providing a structured framework for BIM implementation and coordinated information delivery.",
   "order": 2
 }

@@ -103,6 +103,8 @@ export default function BookingPage() {
     for (let d = 1; d <= totalDays; d++) {
       const currentCellDate = new Date(year, month, d);
       const isPast = currentCellDate < today;
+      // Office is closed on Sundays
+      const isClosed = isPast || currentCellDate.getDay() === 0;
 
       const mStr = String(month + 1).padStart(2, '0');
       const dStr = String(d).padStart(2, '0');
@@ -118,10 +120,10 @@ export default function BookingPage() {
         <button
           key={`day-${d}`}
           type="button"
-          disabled={isPast}
+          disabled={isClosed}
           onClick={() => handleDateSelect(d)}
           className={`p-2 w-full aspect-square text-xs font-semibold rounded-xl transition-all flex items-center justify-center ${
-            isPast 
+            isClosed 
               ? 'text-slate-300 dark:text-slate-700 cursor-not-allowed opacity-30' 
               : isSelected
               ? 'bg-blue-600 text-white font-bold scale-105 shadow-md shadow-blue-600/20 dark:bg-accent-blue dark:text-navy-950'

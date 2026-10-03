@@ -17,7 +17,9 @@ export interface ProjectData {
   year: string;
   image: string;
   images?: ProjectImage[];
+  client?: string;
   description: string;
+  scope?: string[];
   highlight: string;
   order?: number;
 }

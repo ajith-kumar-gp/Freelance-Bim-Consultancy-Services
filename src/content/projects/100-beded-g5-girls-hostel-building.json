@@ -1,31 +1,162 @@
 {
-  "title": "100 BEDED G+5 GIRLS HOSTEL BUILDING",
+  "title": "100-BEDDED G+5 GIRLS HOSTEL BUILDING",
   "category": "Institutional",
+  "client": "Bharat Thakur & Associates",
   "industry": "Educational & Institutional Housing",
-  "location": "Delhi NCR, India",
+  "location": "Assam, India",
   "year": "2023 - 2024",
-  "image": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1200&q=80",
+  "image": "/ProjectImages/girls-hostel-assam/architectural-bim/architectural-3d-view.jpg",
   "images": [
     {
-      "title": "Hostel Elevation & Structural BIM.jpg",
-      "caption": "G+5 Structural Framing and Architectural Elevation",
-      "type": "Architecture & BIM",
-      "url": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1200&q=80"
+      "title": "Architectural 3D View",
+      "caption": "LOD 300 architectural BIM model of the G+5 hostel block",
+      "type": "Architectural BIM",
+      "url": "/ProjectImages/girls-hostel-assam/architectural-bim/architectural-3d-view.jpg"
     },
     {
-      "title": "MEP Multi-Disciplinary Coordination.jpg",
-      "caption": "Sanitary, Electrical, and Fire Fighting System Routing",
-      "type": "MEP Coordination",
-      "url": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
+      "title": "Long Sectional 3D View 01",
+      "caption": "Architectural long section through the hostel building",
+      "type": "Architectural BIM",
+      "url": "/ProjectImages/girls-hostel-assam/architectural-bim/long-sectional-3d-view-01.jpg"
     },
     {
-      "title": "Floor Plan & Room Modules.jpg",
-      "caption": "100-Bed Student Living Quarter Space Optimization",
-      "type": "Space Planning",
-      "url": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80"
+      "title": "Long Sectional 3D View 02",
+      "caption": "Architectural long section through the hostel building",
+      "type": "Architectural BIM",
+      "url": "/ProjectImages/girls-hostel-assam/architectural-bim/long-sectional-3d-view-02.jpg"
+    },
+    {
+      "title": "Long Sectional 3D View 03",
+      "caption": "Architectural long section through the hostel building",
+      "type": "Architectural BIM",
+      "url": "/ProjectImages/girls-hostel-assam/architectural-bim/long-sectional-3d-view-03.jpg"
+    },
+    {
+      "title": "Long Sectional 3D View 04",
+      "caption": "Architectural long section through the hostel building",
+      "type": "Architectural BIM",
+      "url": "/ProjectImages/girls-hostel-assam/architectural-bim/long-sectional-3d-view-04.jpg"
+    },
+    {
+      "title": "Long Sectional 3D View 05",
+      "caption": "Architectural long section through the hostel building",
+      "type": "Architectural BIM",
+      "url": "/ProjectImages/girls-hostel-assam/architectural-bim/long-sectional-3d-view-05.jpg"
+    },
+    {
+      "title": "Architectural Ground Floor Plan",
+      "caption": "Ground floor plan generated from the architectural BIM model",
+      "type": "Architectural BIM",
+      "url": "/ProjectImages/girls-hostel-assam/architectural-bim/architectural-ground-floor-plan.jpg"
+    },
+    {
+      "title": "Architectural Typical Floor Plan",
+      "caption": "Typical floor plan generated from the architectural BIM model",
+      "type": "Architectural BIM",
+      "url": "/ProjectImages/girls-hostel-assam/architectural-bim/architectural-typical-floor-plan.jpg"
+    },
+    {
+      "title": "Architectural Roof Floor Plan",
+      "caption": "Roof plan generated from the architectural BIM model",
+      "type": "Architectural BIM",
+      "url": "/ProjectImages/girls-hostel-assam/architectural-bim/architectural-roof-floor-plan.jpg"
+    },
+    {
+      "title": "Structural 3D View",
+      "caption": "LOD 300 structural BIM model: columns, beams, slabs and foundations",
+      "type": "Structural BIM",
+      "url": "/ProjectImages/girls-hostel-assam/structural-bim/structural-3d-view.jpg"
+    },
+    {
+      "title": "Structural Long Sectional 3D View 01",
+      "caption": "Structural long section through the framing system",
+      "type": "Structural BIM",
+      "url": "/ProjectImages/girls-hostel-assam/structural-bim/structural-long-sectional-3d-view-01.jpg"
+    },
+    {
+      "title": "Structural Long Sectional 3D View 02",
+      "caption": "Structural long section through the framing system",
+      "type": "Structural BIM",
+      "url": "/ProjectImages/girls-hostel-assam/structural-bim/structural-long-sectional-3d-view-02.jpg"
+    },
+    {
+      "title": "Structural Long Sectional 3D View 03",
+      "caption": "Structural long section through the framing system",
+      "type": "Structural BIM",
+      "url": "/ProjectImages/girls-hostel-assam/structural-bim/structural-long-sectional-3d-view-03.jpg"
+    },
+    {
+      "title": "Structural Long Sectional 3D View 04",
+      "caption": "Structural long section through the framing system",
+      "type": "Structural BIM",
+      "url": "/ProjectImages/girls-hostel-assam/structural-bim/structural-long-sectional-3d-view-04.jpg"
+    },
+    {
+      "title": "Structural Ground Floor Plan",
+      "caption": "Ground floor structural plan from the BIM model",
+      "type": "Structural BIM",
+      "url": "/ProjectImages/girls-hostel-assam/structural-bim/structural-ground-floor-plan.jpg"
+    },
+    {
+      "title": "Structural Typical Floor Plan",
+      "caption": "Typical floor structural plan from the BIM model",
+      "type": "Structural BIM",
+      "url": "/ProjectImages/girls-hostel-assam/structural-bim/structural-typical-floor-plan.jpg"
+    },
+    {
+      "title": "Structural Roof Floor Plan",
+      "caption": "Roof level structural plan from the BIM model",
+      "type": "Structural BIM",
+      "url": "/ProjectImages/girls-hostel-assam/structural-bim/structural-roof-floor-plan.jpg"
+    },
+    {
+      "title": "MEP 3D View 01",
+      "caption": "LOD 300 MEP BIM model of building services",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/girls-hostel-assam/mep-bim/mep-3d-view-01.jpg"
+    },
+    {
+      "title": "MEP 3D View 02",
+      "caption": "LOD 300 MEP BIM model of building services",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/girls-hostel-assam/mep-bim/mep-3d-view-02.jpg"
+    },
+    {
+      "title": "MEP 3D View 03",
+      "caption": "LOD 300 MEP BIM model of building services",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/girls-hostel-assam/mep-bim/mep-3d-view-03.jpg"
+    },
+    {
+      "title": "MEP Coordination View 01",
+      "caption": "Multidisciplinary coordination and clash detection in Navisworks",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/girls-hostel-assam/mep-bim/mep-coordination-view-01.jpg"
+    },
+    {
+      "title": "MEP Coordination View 02",
+      "caption": "Multidisciplinary coordination and clash detection in Navisworks",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/girls-hostel-assam/mep-bim/mep-coordination-view-02.jpg"
+    },
+    {
+      "title": "Architecture & MEP Coordinated View",
+      "caption": "Plumbing risers and fixtures coordinated with the architectural model",
+      "type": "MEP BIM",
+      "url": "/ProjectImages/girls-hostel-assam/mep-bim/federated-architectural-model.jpg"
     }
   ],
-  "description": "Comprehensive G+5 institutional hostel development providing 100-bed student accommodation. Executed multi-disciplinary BIM coordination, structural design validation, MEP utility integration, and complete construction documentation.",
-  "highlight": "Zero MEP clash on-site with optimal spatial and circulation efficiency for 100 residents.",
+  "description": "BIM Earth Consultancy provided comprehensive BIM modelling and coordination services for a 100-bedded G+5 Girls Hostel Building in Assam. The scope included Architectural, Structural, and MEP modelling at LOD 300, along with multidisciplinary coordination and clash detection using Autodesk Navisworks. The BIM approach helped improve design coordination, identify potential clashes at an early stage, and support efficient project planning and construction.",
+  "scope": [
+    "Architectural BIM modelling at LOD 300",
+    "Structural BIM modelling at LOD 300",
+    "MEP BIM modelling at LOD 300",
+    "Integration and coordination of multidisciplinary BIM models",
+    "Clash detection and coordination using Autodesk Navisworks",
+    "Identification and reporting of design and system conflicts",
+    "Model review and coordination to support constructability and reduce site-level clashes",
+    "Preparation of coordinated BIM models for project planning and execution"
+  ],
+  "highlight": "Delivered coordinated Architecture, Structure and MEP BIM models at LOD 300 with Navisworks clash detection, identifying potential conflicts before construction.",
   "order": 1
 }

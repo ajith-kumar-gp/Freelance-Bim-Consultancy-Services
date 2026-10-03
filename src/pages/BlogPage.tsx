@@ -6,7 +6,43 @@ import { Calendar, User, Clock, ArrowRight, Search, Tag, X } from 'lucide-react'
 const blogModules = import.meta.glob('/src/content/blog/*.json', { eager: true });
 const blogData = Object.values(blogModules)
   .map((m: any) => m.default || m)
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime() || (a.order ?? 0) - (b.order ?? 0));
+
+// Renders **bold** spans inside a line of post text
+function renderInline(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    part.startsWith('**') && part.endsWith('**')
+      ? <strong key={i} className="font-semibold text-slate-900 dark:text-white">{part.slice(2, -2)}</strong>
+      : part
+  );
+}
+
+// Minimal Markdown renderer for post bodies: ## / ### headings, "- " bullet lists, **bold** and paragraphs
+function renderPostBody(body: string) {
+  return body.trim().split(/\n\s*\n/).map((block, idx) => {
+    const lines = block.split('\n');
+    const heading = block.match(/^(#{2,3})\s+(.*)$/);
+    if (heading && lines.length === 1) {
+      return (
+        <h3 key={idx} className="font-sans font-bold text-lg sm:text-xl text-slate-900 dark:text-white mt-2">
+          {heading[2]}
+        </h3>
+      );
+    }
+    if (lines.every((line) => /^\s*[-*]\s+/.test(line))) {
+      return (
+        <ul key={idx} className="list-disc pl-5 flex flex-col gap-1.5 marker:text-blue-600 dark:marker:text-accent-blue">
+          {lines.map((line, i) => <li key={i}>{renderInline(line.replace(/^\s*[-*]\s+/, ''))}</li>)}
+        </ul>
+      );
+    }
+    return (
+      <p key={idx} className="leading-relaxed font-sans">
+        {lines.map((line, i) => <span key={i}>{i > 0 && <br />}{renderInline(line)}</span>)}
+      </p>
+    );
+  });
+}
 
 export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -244,9 +280,8 @@ export default function BlogPage() {
                 </div>
 
                 {/* Reading Body */}
-                <div className="px-6 sm:px-10 py-8 text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed font-light whitespace-pre-wrap max-w-none flex flex-col gap-6">
-                  {/* Since Decap CMS saves as Markdown under 'body' (or we mapped as 'body' or 'content'), let's fallback to 'body' or 'content' */}
-                  <p className="whitespace-pre-line leading-relaxed font-sans">{readingPost.body || readingPost.content}</p>
+                <div className="px-6 sm:px-10 py-8 text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed font-light max-w-none flex flex-col gap-5">
+                  {renderPostBody(readingPost.content || '')}
                 </div>
 
                 {/* Close Footer bar */}

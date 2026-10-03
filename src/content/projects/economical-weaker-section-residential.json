@@ -1,67 +1,95 @@
 {
   "title": "ECONOMICAL WEAKER SECTION RESIDENTIAL",
-  "category": "Architectural",
-  "industry": "Affordable Housing & Urban Development",
-  "location": "Greater Noida / Delhi NCR",
+  "category": "Residential Development",
+  "client": "Sikkim Government",
+  "industry": "Government Affordable Housing",
+  "location": "Assam, India",
   "year": "2023 - 2024",
-  "image": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/3D Architecture.jpg",
+  "image": "/ProjectImages/ews-residential/architectural-bim/3d-architectural-model.jpg",
   "images": [
     {
-      "title": "3D Architecture.jpg",
-      "caption": "3D Architectural Render & Facade Modeling",
-      "type": "3D BIM View",
-      "url": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/3D Architecture.jpg"
+      "title": "3D Architectural Model",
+      "caption": "3D architectural BIM model developed in Revit",
+      "type": "Architectural BIM",
+      "url": "/ProjectImages/ews-residential/architectural-bim/3d-architectural-model.jpg"
     },
     {
-      "title": "3D Coorination View.jpg",
-      "caption": "3D Multi-Disciplinary Spatial Coordination & Clash Prevention",
-      "type": "Coordination",
-      "url": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/3D Coorination View.jpg"
+      "title": "3D Coordination View",
+      "caption": "Coordinated architectural and structural BIM model",
+      "type": "Architectural BIM",
+      "url": "/ProjectImages/ews-residential/architectural-bim/3d-coordination-view.jpg"
     },
     {
-      "title": "3D Structure.jpg",
-      "caption": "3D Structural Framing & Load-Bearing Model",
-      "type": "Structural",
-      "url": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/3D Structure.jpg"
+      "title": "Architectural Ground Floor Plan",
+      "caption": "Ground floor plan generated from the Revit model",
+      "type": "Architectural BIM",
+      "url": "/ProjectImages/ews-residential/architectural-bim/architectural-ground-floor-plan.jpg"
     },
     {
-      "title": "Brick Count & Material Take off.PNG",
-      "caption": "Masonry Quantity Schedule & Brick Count Schedule Take-Off",
-      "type": "Material Take-Off",
-      "url": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/Brick Count & Material Take off.PNG"
+      "title": "Brick Count Material Take-Off",
+      "caption": "Masonry brick count schedule extracted from the Revit model",
+      "type": "Architectural BIM",
+      "url": "/ProjectImages/ews-residential/architectural-bim/brick-count-material-take-off.png"
     },
     {
-      "title": "Exterior & Interior Wall Plaster Material take off.PNG",
-      "caption": "Wall Surface Area & Plaster Finish BOQ Schedule",
-      "type": "Material Take-Off",
-      "url": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/Exterior & Interior Wall Plaster Material take off.PNG"
+      "title": "Wall Plaster Material Take-Off",
+      "caption": "Exterior and interior wall plaster quantities from the Revit model",
+      "type": "Architectural BIM",
+      "url": "/ProjectImages/ews-residential/architectural-bim/wall-plaster-material-take-off.png"
     },
     {
-      "title": "RCC Column Material Take off.PNG",
-      "caption": "Reinforced Cement Concrete (RCC) Column Volumetric Schedule",
-      "type": "Material Take-Off",
-      "url": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/RCC Column Material Take off.PNG"
+      "title": "Floor Material Take-Off",
+      "caption": "Floor finish quantities extracted from the Revit model",
+      "type": "Architectural BIM",
+      "url": "/ProjectImages/ews-residential/architectural-bim/floor-material-take-off.jpg"
     },
     {
-      "title": "RCC Slab Material Take off.PNG",
-      "caption": "Floor Slab Concrete & Reinforcement Steel BOQ Quantity Extraction",
-      "type": "Material Take-Off",
-      "url": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/RCC Slab Material Take off.PNG"
+      "title": "Wall Tile Material Take-Off",
+      "caption": "Wall tile quantities extracted from the Revit model",
+      "type": "Architectural BIM",
+      "url": "/ProjectImages/ews-residential/architectural-bim/wall-tile-material-take-off.png"
     },
     {
-      "title": "RCC Structural Framing Material Take off.PNG",
-      "caption": "Comprehensive Structural Framing Quantities & Beam Schedules",
-      "type": "Material Take-Off",
-      "url": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/RCC Structural Framing Material Take off.PNG"
+      "title": "3D Structural Model",
+      "caption": "3D structural BIM model developed in Revit",
+      "type": "Structural BIM",
+      "url": "/ProjectImages/ews-residential/structural-bim/3d-structural-model.jpg"
     },
     {
-      "title": "Wall Tile Material Take off.PNG",
-      "caption": "Wet Areas & Interior Wall Tile Surface Calculations",
-      "type": "Material Take-Off",
-      "url": "/ProjectImages/ECONOMICAL WEAKER SECTION RESIDENTIAL/Wall Tile Material Take off.PNG"
+      "title": "Structural Floor Plan",
+      "caption": "Structural floor plan generated from the Revit model",
+      "type": "Structural BIM",
+      "url": "/ProjectImages/ews-residential/structural-bim/structural-floor-plan.jpg"
+    },
+    {
+      "title": "RCC Column Material Take-Off",
+      "caption": "RCC column concrete quantities from the Revit model",
+      "type": "Structural BIM",
+      "url": "/ProjectImages/ews-residential/structural-bim/rcc-column-material-take-off.png"
+    },
+    {
+      "title": "RCC Slab Material Take-Off",
+      "caption": "RCC slab concrete quantities from the Revit model",
+      "type": "Structural BIM",
+      "url": "/ProjectImages/ews-residential/structural-bim/rcc-slab-material-take-off.png"
+    },
+    {
+      "title": "RCC Structural Framing Material Take-Off",
+      "caption": "RCC beam and framing quantities from the Revit model",
+      "type": "Structural BIM",
+      "url": "/ProjectImages/ews-residential/structural-bim/rcc-structural-framing-material-take-off.png"
     }
   ],
-  "description": "Full-scale architectural design, space planning, and layout engineering for Economical Weaker Section (EWS) residential community housing. Maximized structural area efficiency, sustainable natural ventilation, and compliant architectural construction documentation.",
-  "highlight": "Optimized unit layouts and 100% compliant architectural construction documentation.",
+  "description": "The Economically Weaker Section (EWS) Residential Project was successfully delivered, covering comprehensive 3D modelling and quantity take-off services, demonstrating the effective application of BIM in government residential and affordable housing projects. An accurate, coordinated 3D BIM model was developed in Autodesk Revit to support efficient project planning, quantity estimation, and material management.",
+  "scope": [
+    "Development of detailed 3D BIM models in Revit",
+    "Modelling of major building components and architectural elements",
+    "Preparation of material quantity take-offs directly from the Revit model",
+    "Extraction of quantities for major construction elements and materials",
+    "Organization of model data to support cost estimation and material planning",
+    "Review of model information to improve quantity accuracy and consistency",
+    "Delivery of structured BIM data to support project planning and execution"
+  ],
+  "highlight": "Quantity take-offs extracted directly from the Revit model improved estimation accuracy and reduced manual measurement effort.",
   "order": 4
 }

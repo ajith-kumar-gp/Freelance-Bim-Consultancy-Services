@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  Menu, X, Sun, Moon, Phone, Mail, MapPin, Clock, ArrowUp, Compass
+  Menu, X, Sun, Moon, Phone, Mail, MapPin, Clock, ArrowUp, Compass, ChevronRight
 } from 'lucide-react';
 import contactData from '../content/contact.json';
 import settingsData from '../content/settings.json';
@@ -53,10 +53,31 @@ export default function Layout({ children }: LayoutProps) {
     { name: 'Gallery', path: '/gallery' },
     { name: 'Blog', path: '/blog' },
     { name: 'About', path: '/about' },
-    // { name: 'Founder', path: '/founder' },
     { name: 'Testimonials', path: '/testimonials' },
     { name: 'FAQ', path: '/faq' },
     { name: 'Contact', path: '/contact' }
+  ];
+
+  const footerLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Services', path: '/services' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'Gallery', path: '/gallery' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'Testimonials', path: '/testimonials' },
+    { name: 'FAQs', path: '/faq' },
+    { name: 'Contact', path: '/contact' },
+    { name: 'Book Consultation', path: '/booking' }
+  ];
+
+  const footerServices = [
+    'Architectural BIM Services',
+    'Structural BIM Services',
+    'MEP BIM Services',
+    'Clash Detection & Coordination',
+    'Quantity Take-Off & BOQ',
+    'BIM Training Programs'
   ];
 
   return (
@@ -269,7 +290,7 @@ export default function Layout({ children }: LayoutProps) {
                 </div>
               </div>
               <p className="text-slate-400 text-xs leading-relaxed">
-                Elite corporate multi-disciplinary consultancy providing state-of-the-art Architectural design, luxury Interior execution, and lifecycle Level 2 & 3 BIM coordination.
+                Your trusted partner in Building Information Modelling — Architectural, Structural and MEP BIM services, multidisciplinary coordination and professional BIM training.
               </p>
               <div className="flex items-center gap-3.5 mt-2">
                 <a href={contactData.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded bg-navy-900 hover:bg-accent-blue hover:text-navy-950 text-slate-300 transition-all shadow-sm">
@@ -287,32 +308,40 @@ export default function Layout({ children }: LayoutProps) {
             {/* Column 2: Quick Links */}
             <div className="flex flex-col gap-4">
               <h4 className="font-sans font-bold text-sm text-white tracking-widest uppercase border-b border-navy-800 pb-2">
-                Consultancy
+                Quick Links
               </h4>
-              <div className="grid grid-cols-2 gap-2 text-xs">
-                <Link to="/" className="hover:text-accent-blue transition-colors">Home</Link>
-                <Link to="/about" className="hover:text-accent-blue transition-colors">About Us</Link>
-                <Link to="/services" className="hover:text-accent-blue transition-colors">Services</Link>
-                <Link to="/projects" className="hover:text-accent-blue transition-colors">Portfolio</Link>
-                <Link to="/gallery" className="hover:text-accent-blue transition-colors">Gallery</Link>
-                <Link to="/founder" className="hover:text-accent-blue transition-colors">The Founder</Link>
-                <Link to="/faq" className="hover:text-accent-blue transition-colors">FAQs</Link>
-                <Link to="/testimonials" className="hover:text-accent-blue transition-colors">Testimonials</Link>
-              </div>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 text-xs">
+                {footerLinks.map((link) => (
+                  <li key={link.path}>
+                    <Link
+                      to={link.path}
+                      className="group inline-flex items-center gap-1.5 text-slate-400 hover:text-accent-blue transition-colors"
+                    >
+                      <ChevronRight size={12} className="text-navy-600 group-hover:text-accent-blue group-hover:translate-x-0.5 transition-all" />
+                      <span>{link.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* Column 3: Corporate Services */}
+            {/* Column 3: Services */}
             <div className="flex flex-col gap-4">
               <h4 className="font-sans font-bold text-sm text-white tracking-widest uppercase border-b border-navy-800 pb-2">
-                Specialties
+                Our Services
               </h4>
-              <ul className="flex flex-col gap-2.5 text-xs text-slate-400">
-                <li>Architectural Masterplanning</li>
-                <li>Commercial Facade Design</li>
-                <li>Luxury Interior space planning</li>
-                <li>LOD 500 BIM digital twin compilation</li>
-                <li>MEP Clash-Detection & Resolution</li>
-                <li>High-Rise Structural Modeling</li>
+              <ul className="flex flex-col gap-2.5 text-xs">
+                {footerServices.map((service) => (
+                  <li key={service}>
+                    <Link
+                      to="/services"
+                      className="group inline-flex items-center gap-1.5 text-slate-400 hover:text-accent-blue transition-colors"
+                    >
+                      <ChevronRight size={12} className="text-navy-600 group-hover:text-accent-blue group-hover:translate-x-0.5 transition-all" />
+                      <span>{service}</span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
