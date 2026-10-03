@@ -281,29 +281,33 @@ export default function About() {
               <Briefcase size={24} className="text-blue-600 dark:text-accent-blue" />
               <h2 className="text-2xl sm:text-3xl font-sans font-bold text-slate-900 dark:text-white">Our Trusted Corporate Clients</h2>
             </div>
-            <div className="flex flex-wrap justify-center items-center gap-8 p-8 sm:p-10 rounded-[2.5rem] glass-card shadow-sm bg-white/20 dark:bg-navy-900/20 backdrop-blur-md">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 p-6 sm:p-8 rounded-[2.5rem] glass-card shadow-sm bg-white/20 dark:bg-navy-900/20 backdrop-blur-md">
               {clientsData.map((client: any, idx: number) => (
-                <a 
-                  key={idx} 
-                  href={client.website || "#"} 
-                  target="_blank" 
+                <a
+                  key={idx}
+                  href={client.website || "#"}
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-2 group transition-transform hover:-translate-y-1"
+                  title={client.name}
+                  className="flex flex-col items-center gap-3 group"
                 >
-                  {client.logo ? (
-                    <img
-                      src={client.logo}
-                      alt={client.name}
-                      className="w-14 h-14 rounded-full object-cover shadow-inner border border-white/40 dark:border-white/10 group-hover:border-blue-600 dark:group-hover:border-accent-blue transition-colors"
-                      referrerPolicy="no-referrer"
-                    />
-                  ) : (
-                    // No logo uploaded yet: show the client's initials instead
-                    <span className="w-14 h-14 rounded-full flex items-center justify-center bg-blue-50 dark:bg-navy-950/60 text-blue-800 dark:text-accent-blue font-bold text-sm shadow-inner border border-white/40 dark:border-white/10 group-hover:border-blue-600 dark:group-hover:border-accent-blue transition-colors">
-                      {client.name.split(/\s+/).filter((w: string) => /^[A-Za-z]/.test(w)).slice(0, 2).map((w: string) => w[0].toUpperCase()).join('')}
-                    </span>
-                  )}
-                  <span className="text-[11px] font-sans font-semibold text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">{client.name}</span>
+                  {/* Logo tile stays white in dark mode so brand colours read correctly */}
+                  <span className="w-full h-24 rounded-2xl bg-white border border-slate-200/80 dark:border-white/10 shadow-sm flex items-center justify-center px-5 py-4 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg group-hover:border-blue-600/40 dark:group-hover:border-accent-blue/60">
+                    {client.logo ? (
+                      <img
+                        src={client.logo}
+                        alt={`${client.name} logo`}
+                        loading="lazy"
+                        className="max-h-14 max-w-full object-contain grayscale-[35%] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                      />
+                    ) : (
+                      // No logo uploaded yet: show the client's initials instead
+                      <span className="w-12 h-12 rounded-full flex items-center justify-center bg-blue-50 text-blue-800 font-bold text-sm">
+                        {client.name.split(/\s+/).filter((w: string) => /^[A-Za-z]/.test(w)).slice(0, 2).map((w: string) => w[0].toUpperCase()).join('')}
+                      </span>
+                    )}
+                  </span>
+                  <span className="text-xs font-sans font-semibold text-center text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">{client.name}</span>
                 </a>
               ))}
             </div>
