@@ -14,5 +14,6 @@
     "MEP 3D BIM modelling at LOD 300"
   ],
   "highlight": "Coordinated LOD 300 Architecture, Structure and MEP models for the hostel building.",
-  "order": 3
+  "order": 3,
+  "visible": false
 }

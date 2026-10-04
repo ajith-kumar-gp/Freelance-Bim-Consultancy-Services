@@ -129,5 +129,6 @@
     "Asset management and structured information development for project handover"
   ],
   "highlight": "Supported the project from Detailed Design to As-Built stage, with reliable asset information delivered for handover and facility management.",
-  "order": 8
+  "order": 8,
+  "visible": true
 }

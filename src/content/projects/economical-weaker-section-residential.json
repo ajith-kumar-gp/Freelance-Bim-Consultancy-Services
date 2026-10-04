@@ -91,5 +91,6 @@
     "Delivery of structured BIM data to support project planning and execution"
   ],
   "highlight": "Quantity take-offs extracted directly from the Revit model improved estimation accuracy and reduced manual measurement effort.",
-  "order": 4
+  "order": 4,
+  "visible": true
 }

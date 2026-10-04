@@ -204,5 +204,6 @@
     "As-built models and drawings"
   ],
   "highlight": "Existing site model, two design options and a final proposal developed in BIM to support design decisions.",
-  "order": 10
+  "order": 10,
+  "visible": true
 }

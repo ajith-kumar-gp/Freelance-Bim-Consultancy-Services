@@ -15,5 +15,6 @@
     "Design services"
   ],
   "highlight": "Escalator BIM models delivered with embedded asset information.",
-  "order": 9
+  "order": 9,
+  "visible": false
 }

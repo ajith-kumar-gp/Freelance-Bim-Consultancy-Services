@@ -9,6 +9,7 @@ import { ProjectModal } from '../components/ProjectModal';
 const projectModules = import.meta.glob('/src/content/projects/*.json', { eager: true });
 const projectsData: ProjectData[] = Object.values(projectModules)
   .map((m: any) => m.default || m)
+  .filter((p) => p.visible !== false) // "Show on Website" switch in the CMS
   .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
 // Filter tabs come from the categories actually used by projects, in portfolio order

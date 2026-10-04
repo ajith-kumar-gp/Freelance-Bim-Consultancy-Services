@@ -15,5 +15,6 @@
     "GFC documentation and submission"
   ],
   "highlight": "GFC architectural model and documentation submitted for Meerut Central Metro Station.",
-  "order": 7
+  "order": 7,
+  "visible": false
 }

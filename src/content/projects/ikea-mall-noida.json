@@ -16,5 +16,6 @@
     "Design services"
   ],
   "highlight": "Lift and escalator BIM models and sheets delivered with asset information.",
-  "order": 6
+  "order": 6,
+  "visible": false
 }

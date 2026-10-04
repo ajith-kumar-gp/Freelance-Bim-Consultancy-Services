@@ -183,7 +183,11 @@ collections:
     slug: "{{title}}"
     summary: "{{title}} — {{category}}"
     sortable_fields: ["order", "title", "category"]
+    view_filters:
+      - { label: "Shown on website", field: "visible", pattern: true }
+      - { label: "Hidden", field: "visible", pattern: false }
     fields:
+      - { label: "Show on Website", name: "visible", widget: "boolean", default: true, hint: "Switch off to hide this project from the Projects page, homepage and menu without deleting it." }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Category", name: "category", widget: "select", options: ["Architectural", "Interiors", "BIM", "Institutional", "Transit & Infrastructure", "Commercial & Retail", "Residential Development"] }
       - { label: "Client", name: "client", widget: "string", required: false }

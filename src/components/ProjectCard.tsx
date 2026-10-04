@@ -22,6 +22,7 @@ export interface ProjectData {
   scope?: string[];
   highlight: string;
   order?: number;
+  visible?: boolean;
 }
 
 export interface ProjectCardProps {

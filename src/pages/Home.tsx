@@ -14,6 +14,7 @@ import { ProjectModal } from '../components/ProjectModal';
 const projectModules = import.meta.glob('/src/content/projects/*.json', { eager: true });
 const projectsList = Object.values(projectModules)
   .map((m: any) => m.default || m)
+  .filter((p) => p.visible !== false) // "Show on Website" switch in the CMS
   .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
 const testimonialModules = import.meta.glob('/src/content/testimonials/*.json', { eager: true });

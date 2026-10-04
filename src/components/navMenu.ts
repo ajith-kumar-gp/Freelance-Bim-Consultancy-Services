@@ -21,7 +21,7 @@ const load = (modules: Record<string, unknown>) =>
     .map((m: any) => m.default || m)
     .sort((a: any, b: any) => (a.order ?? 0) - (b.order ?? 0));
 
-const projects = load(import.meta.glob('/src/content/projects/*.json', { eager: true }));
+const projects = load(import.meta.glob('/src/content/projects/*.json', { eager: true })).filter((p: any) => p.visible !== false);
 const gallery = load(import.meta.glob('/src/content/gallery/*.json', { eager: true }));
 const faqs = load(import.meta.glob('/src/content/faqs/*.json', { eager: true }));
 const blogPosts = load(import.meta.glob('/src/content/blog/*.json', { eager: true })).sort(

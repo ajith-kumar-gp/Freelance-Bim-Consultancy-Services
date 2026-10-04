@@ -158,5 +158,6 @@
     "Preparation of coordinated BIM models for project planning and execution"
   ],
   "highlight": "Delivered coordinated Architecture, Structure and MEP BIM models at LOD 300 with Navisworks clash detection, identifying potential conflicts before construction.",
-  "order": 1
+  "order": 1,
+  "visible": true
 }
